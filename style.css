@@ -1,0 +1,50 @@
+html, body, h1 {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    font-size: 1vw;
+    background-color: #484349;
+}
+
+body {
+    height: auto;
+    width: 60rem;
+    
+    font-size: 1.5rem;
+    
+    background-color:  springgreen;
+    border-radius: 2rem;
+    padding-bottom: 0.1rem;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    border-bottom: 0.5rem solid #484349;
+    padding-top: 0.1rem;
+    padding-bottom: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: #2E86AB;
+}
+
+a:hover {
+    background-color: #484349;
+    color: lavender;
+}
+
+a:focus {
+    border: none;
+    background-color: #484349;
+    color: lavender;
+}
