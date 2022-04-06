@@ -73,11 +73,11 @@ a:focus {
 @media screen and (max-width: 828px) {
     
     h1 {
-        font-size: 5rem;
+        font-size: 8rem;
     }
 
     h2 {
-        font-size: 3.5rem;
+        font-size: 5rem;
     }
 
     body {
