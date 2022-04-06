@@ -9,14 +9,16 @@ html {
     align-items: center;
     justify-content: center;
     height: 100%;
+    width: 100%;
 
     font-size: 1vw;
     background-color: #484349;
+    overflow: hidden;
 }
 
 body {
-    height: auto;
-    width: 60rem;
+    height: 80%;
+    width: 80%;
     
     font-size: 1.5rem;
     
@@ -51,4 +53,24 @@ a:focus {
     border: none;
     background-color: #484349;
     color: lavender;
+}
+/* iphone 11 specific styles */ 
+@media screen and (max-width: 828px) {
+    
+    h1 {
+        font-size: 5rem;
+    }
+
+    body {
+        font-size: 2.5rem;
+    }
+
+    dt {
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    dd {
+        margin-left: 2rem;
+    }
 }
