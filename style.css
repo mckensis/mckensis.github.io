@@ -1,54 +1,81 @@
+:root {
+    --main-color: #484349;
+    --secondary-color: springgreen;
+}
+
+/* Main styles */
+
 html, body, h1, h2 {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Main page styles */
-
 html {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-
     font-size: 1vw;
-    background-color: #484349;
-    overflow: hidden;
+}
+
+body > header {
+    color: lavender;
+    position: sticky;
+    top: 0;
+    background-color: var(--main-color);
+    width: 100%;
+    border-bottom: 2rem solid var(--secondary-color);
+    z-index: 2;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    padding: 3rem 0rem;
+    margin: 0rem 2rem;
+    border: 1px solid var(--main-color);
 }
 
 body {
     height: auto;
-    width: 80%;
-    
-    font-size: 1.5rem;
-    
-    background-color:  springgreen;
-    border-radius: 2rem;
-    padding-bottom: 1rem;
+    width: 100%;
+    font-size: 4rem;
+    background-color: var(--main-color);
+}
+
+article {
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    text-align: center;
+    background-color: var(--secondary-color);
+    padding: 2rem 0rem;
+    margin-bottom: 2rem;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    z-index: 2;
+}
+
+article:nth-child(even) {
+    background-color: var(--secondary-color, 30%);
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 10rem;
     text-align: center;
-    border-bottom: 0.5rem solid #484349;
-    padding: 0.1rem 0 0.5rem 0;
+    border-bottom: 0.5rem solid var(--main-color);
+    padding: 0.5rem 0;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 5rem;
 }
-
-dl, h2 {
-    margin: 0.5rem 0 0 0.5rem;
-}
-
-dd {
-    margin: 0 0 2rem 1.5rem;
-}
-
 
 /* Styles for Links */
 
@@ -68,19 +95,7 @@ a:focus {
     color: lavender;
 }
 
-
-/* iPhone 11 Styles */ 
-@media screen and (max-width: 828px) {
-    
-    h1 {
-        font-size: 9rem;
-    }
-
-    h2 {
-        font-size: 5rem;
-    }
-
-    body {
-        font-size: 3rem;
-    }
+a[href^="https"] {
+    padding-right: 30px;
+    /*border: 1px solid red;*/
 }
