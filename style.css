@@ -96,6 +96,8 @@ a:focus {
 }
 
 a[href^="https"] {
-    padding-right: 30px;
-    /*border: 1px solid red;*/
+    padding-right: 18px;
+    background-image: url("./images/external-link.png");
+    background-repeat: no-repeat;
+    background-position: 100% 75%;
 }
