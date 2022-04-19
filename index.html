@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Aidan's projects</title>
+  <head>
     <meta charset="UTF-8">
-    <link href="./style.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-    <header>
-        <h1>Projects</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mckensis</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+	<header>
         <nav>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
+            <h1>aidan m.</h1>
+            <ul class="navLinks">
                 <li><a href="https://github.com/mckensis" target="_blank">Github</a></li>
+                <li><a href="#">About</a></li>
             </ul>
+            <a href="mailto:adn.mck@gmail.com"><button class="contact">Contact</button></a>
         </nav>
     </header>
-<section>
-    <article>
-        <header>
+    <section class="mainPage">
+        
+        <article class="project">
             <h2>Project #1:</h2>
-        </header>
-            <a href="./qr-code-component/index.html">QR Code Component</a> | Frontend Mentor Challenge<br>
-            (April 2022)
-    </article>
-    <article>
-        <header>
-            <h2>Project #2:</h2>
-        </header>
-            <a href="./nft-preview-card-component/index.html">NFT Preview Card Component</a> | Frontend Mentor Challenge<br>
-            (April 2022)
-    </article>
-</section>
+            <hr class="line">
+            <h3>QR Code Component</h3>
+            <p>Frontend Mentor challenge | April 2022</p>
+            <p><a href="./qr-code-component/index.html" class="projectLink">See the project live</a></p>
+        </article>
 
-    <footer>
-        <p>its a footer</p>
-    </footer>
-</body>
+        <article class="project">
+          <h2>Project #2:</h2>
+          <hr class="line">
+          <h3>NFT Preview Card Component</h3>
+          <p>Frontend Mentor challenge | April 2022</p>
+          <p><a href="./nft-preview-card-component/index.html" class="projectLink">See the project live</a></p>
+      </article>
 
+    </section>
+  </body>
 </html>
