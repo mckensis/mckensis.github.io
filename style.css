@@ -59,7 +59,7 @@ nav {
     font-size: 1.6rem;
 }
 .contact {
-    height: 3rem;
+    height: 4rem;
     width: 6rem;
     font-size: 1.1rem;
     font-family: 'Akshar', sans-serif;
@@ -69,7 +69,7 @@ nav {
     border-radius: 1rem;
     border: none;
     box-shadow: 0 0 1rem var(--lightGreen);
-    margin: 1.5rem 0.5rem;
+    margin: 1rem 0.5rem;
 }
 .contact:hover {
     background-color: var(--darkGreen);
