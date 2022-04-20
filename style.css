@@ -50,6 +50,7 @@ nav {
     display: flex;
     line-height: 4rem;
     justify-content: space-between;
+    background: linear-gradient(var(--darkGrey), var(--black));
 }
 .navLinks li {
     padding: 1rem 1rem;
@@ -66,6 +67,8 @@ nav {
     color: var(--black);
     align-self: center;
     border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem var(--lightGreen);
     margin: 1.5rem 0.5rem;
 }
 .contact:hover {
@@ -79,7 +82,12 @@ nav {
     color: var(--white);
 }
 .navLinks a:hover {
-    text-decoration: overline underline;
+    color: var(--darkGreen);
+    box-sizing: border-box;
+    border-radius: 1rem;
+    background-color: #20BF55;
+    box-shadow: 0 0 1rem var(--lightGreen);
+    color: var(--black);
 }
 section.mainPage {
     width: 100vw;
@@ -91,7 +99,7 @@ article.project {
     box-sizing: border-box;
     margin: 2rem 5rem;
     padding: 0rem 1rem;
-    height: 13rem;
+    height: 15rem;
     background-color: var(--darkGreen);
     color: var(--white);
     font-size: 1.5rem;
@@ -103,9 +111,19 @@ article.project {
 a.projectLink {
     font-size: 1.2em;
     color: var(--black);
-    text-decoration-style: double;
+    text-decoration: none;
     text-decoration-color: var(--lightGreen);
-    text-decoration-thickness: 2px;
+    background-color: var(--lightGreen);
+    border: 1px solid var(--lightGreen);
+    border-radius: 1rem;
+    box-shadow: 0rem 0rem 0.5rem var(--lightGrey);
+    padding: 0.5rem;
+}
+
+a.projectLink:hover {
+    color: var(--white);
+    background-color: var(--black);
+    box-shadow: 0.1rem 0.1rem 1rem var(--darkGrey);
 }
 
 hr.line {
@@ -113,5 +131,5 @@ hr.line {
 }
 
 article p {
-    padding-top: 0.5rem;
+    padding: 0.75rem;
 }
