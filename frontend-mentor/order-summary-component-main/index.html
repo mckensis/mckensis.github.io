@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root {
+      --paleBlue: hsl(225, 100%, 94%);
+      --brightBlue: hsl(245, 75%, 52%);
+      --vPaleBlue: hsl(225, 100%, 98%);
+      --desatBlue: hsl(224, 23%, 55%);
+      --darkBlue: hsl(223, 47%, 23%);
+    }
+
+    html {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      padding: 6rem 1rem;
+      width: 100%;
+      height: 100vh;
+      font-size: 10px;
+      font-family: 'Red Hat Display', sans-serif;
+      background: url("./images/pattern-background-mobile.svg") no-repeat;
+      background-color: var(--paleBlue);
+    }
+
+    body {
+      box-sizing:border-box;
+      width: 40rem;
+      height: 57rem;
+      background-color: white;
+      box-shadow: 0rem 5rem 2rem var(--paleBlue);
+      border:0.1rem solid var(--paleBlue);
+      border-radius: 2rem;
+      text-align: center;
+      font-size: 1.6rem;
+      color: var(--desatBlue);
+      font-weight: 500;
+    }
+
+    h1 {
+      padding-top: 1.5rem;
+      font-weight: 900;
+      font-size: 2rem;
+      text-align: center;
+      color: var(--darkBlue);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 0.5rem 2rem;
+      height: 5rem;
+      line-height: 5rem;
+    }
+
+    h2.proceed {
+      color: white;
+      background-color: var(--brightBlue);
+      border-radius: 1rem;
+      box-shadow: 0rem 3rem 1rem var(--paleBlue);
+    }
+
+    h2.cancel {
+      margin-bottom: 1.5rem;
+    }
+
+    p.description {
+      padding: 0.5rem 3rem;
+    }
+
+    img[src*="hero"] {
+      max-width: 100%;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+    }
+
+    section.annualPlan {
+      height: 8rem;
+      overflow: hidden;
+      margin: 0rem 2rem 2rem 2rem;
+      border-radius: 1rem;
+      background-color: var(--vPaleBlue);
+    }
+
+    img[src*="music"] {
+      float: left;
+      margin: 2rem;
+    }
+
+    .planP {
+      float:inline-start;
+      line-height: 2rem;
+    }
+
+    .annualTitle {
+      font-size: 1.3rem;
+      color: var(--darkBlue);
+      font-weight: 900;
+    }
+
+    .annualPrice {
+      font-size: 1.3rem;
+      color: var(--desatBlue);
+      font-weight: 500;
+    }
+
+    a.changePlan {
+      float: right;
+      margin-right: 2rem;
+      font-size: 1.2rem;
+      font-weight: 900;
+      line-height: 8rem;
+    }
+
+    a.changePlan:hover {
+      color: var(--desatBlue);
+      text-decoration: none;
+    }
+
+    h2.cancel:hover {
+      color: var(--darkBlue);
+      cursor: pointer;
+    }
+
+    h2.proceed:hover {
+      background-color: rgb(56, 41, 224, 0.7);
+      cursor: pointer;
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    @media (max-width: 1441px) {
+      html {
+        background: url("./images/pattern-background-desktop.svg") no-repeat;
+        background-color: var(--paleBlue);
+      }
+    }
+
+  </style>
+
+
+</head>
+<body>
+  <img src="./images/illustration-hero.svg" alt="logo">
+  <h1>Order Summary</h1>
+
+  <p class="description">You can now listen to millions of songs, audiobooks, and podcasts on any 
+  device anywhere you like!</p>
+
+  <section class="annualPlan">
+    <img src="./images/icon-music.svg" class="musicIcon">
+    <p class="planP"><span class="annualTitle">Annual Plan</span><br>
+    <span class="annualPrice">$59.99/year</span></p>
+    <a href="#" class="changePlan">Change</a></section>
+
+  <h2 class="proceed">Proceed to Payment</h2>
+  <h2 class="cancel">Cancel Order</h2>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/mckensis">Aidan Mckenzie</a>.
+  </div>
+</body>
+</html>
