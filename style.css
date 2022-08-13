@@ -29,12 +29,14 @@ h1 {
     font-size: 3rem;
     padding: 1rem;
 }
+/* Project headings */
 h2 {
     font-size: 2rem;
     padding: 0.5rem 0rem;
     margin-bottom: 0;
     text-align: center;
 }
+/* Project title heading */
 h3 {
     padding: 0.25rem;
     font-size: 1.8rem;
@@ -61,20 +63,20 @@ nav {
 .contact {
     height: 4rem;
     width: 6rem;
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     font-family: 'Akshar', sans-serif;
-    background-color: var(--lightGreen);
+    background-color: var(--darkGreen);
     color: var(--black);
     align-self: center;
     border-radius: 1rem;
     border: none;
-    box-shadow: 0 0 1rem var(--lightGreen);
     margin: 1rem 0.5rem;
 }
 .contact:hover {
-    background-color: var(--darkGreen);
+    background-color: var(--lightGreen);
     cursor: pointer;
     border-radius: 1.5rem;
+    box-shadow: 0 0 5rem var(--lightGreen);
 }
 .navLinks a {
     text-decoration: none;
@@ -85,13 +87,14 @@ nav {
     color: var(--darkGreen);
     box-sizing: border-box;
     border-radius: 1rem;
-    background-color: #20BF55;
-    box-shadow: 0 0 1rem var(--lightGreen);
+    background-color: var(--lightGreen);
+    box-shadow: 0 0 5rem var(--lightGreen);
     color: var(--black);
 }
 section.mainPage {
     width: 100vw;
     height: calc(100vh - 6rem);
+    background: fixed linear-gradient(var(--black) 90%, var(--darkGrey));
 }
 
 /* Project section styles */
@@ -100,7 +103,7 @@ article.project {
     margin: 2rem 5rem;
     padding: 0rem 1rem;
     height: 15rem;
-    background-color: var(--darkGreen);
+    background-color: var(--black);
     color: var(--white);
     font-size: 1.5rem;
     border-radius: 1rem;
@@ -112,22 +115,20 @@ a.projectLink {
     font-size: 1.2em;
     color: var(--black);
     text-decoration: none;
-    text-decoration-color: var(--lightGreen);
-    background-color: var(--lightGreen);
-    border: 1px solid var(--lightGreen);
+    background-color: var(--darkGreen);
+    border: 1px solid var(--darkGreen);
     border-radius: 1rem;
-    box-shadow: 0rem 0rem 0.5rem var(--lightGrey);
     padding: 0.5rem;
 }
 
 a.projectLink:hover {
     color: var(--white);
     background-color: var(--black);
-    box-shadow: 0.1rem 0.1rem 1rem var(--darkGrey);
+    box-shadow: 0rem 0rem 5rem var(--lightGreen);
 }
 
 hr.line {
-    color: var(--black);
+    color: var(--lightGreen);
 }
 
 article p {
