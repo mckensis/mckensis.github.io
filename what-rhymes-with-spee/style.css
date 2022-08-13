@@ -13,7 +13,7 @@ html {
     justify-content: center;
     text-align: center;
     color: black;
-    background: linear-gradient(#05ffa1, #b967ff, #fffb96);
+    background-color: black;
 }
 
 
@@ -22,6 +22,7 @@ body {
     width: 100vw;
     height: 100vh;
     font-size: 2rem;
+    background: linear-gradient(#05ffa1, #b967ff, #fffb96);    
 }
 
 h1 {
