@@ -134,3 +134,13 @@ hr.line {
 article p {
     padding: 0.75rem;
 }
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section p {
+    font-size: 20rem;
+}
