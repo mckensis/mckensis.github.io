@@ -1,12 +1,3 @@
-/* Custom variables */
-:root {
-    --darkGrey: #484349;
-    --black: #0A0A0B;
-    --lightGrey: #D1D5DE;   
-    --lightGreen: #53DD6C;
-    --darkGreen: #20BF55;
-    --white: #F2EFEA; 
-}
 /* Set border box and margin / padding to 0 */
 * {
     box-sizing: border-box;
@@ -16,9 +7,7 @@
 /* Base styles */
 html {
     font-size: 10px;
-    font-family: 'Akshar', sans-serif;;
-    background-color: var(--black);
-    color: var(--white);
+    font-family: 'Akshar', sans-serif;
     width: 100vw;
     height: 100vh;
     overflow-y: hidden;
@@ -46,13 +35,11 @@ h3 {
 /* Navbar styles */
 header {
     height: 6rem;
-    border-bottom: 1px solid var(--black);
 }
 nav {
     display: flex;
     line-height: 4rem;
-    justify-content: space-between;
-    background: linear-gradient(var(--darkGrey), var(--black));
+    justify-content: flex-end;
 }
 .navLinks li {
     padding: 1rem 1rem;
@@ -65,36 +52,25 @@ nav {
     width: 6rem;
     font-size: 1.6rem;
     font-family: 'Akshar', sans-serif;
-    background-color: var(--darkGreen);
-    color: var(--black);
     align-self: center;
     border-radius: 1rem;
     border: none;
     margin: 1rem 0.5rem;
 }
 .contact:hover {
-    background-color: var(--lightGreen);
     cursor: pointer;
     border-radius: 1.5rem;
-    box-shadow: 0 0 5rem var(--lightGreen);
 }
 .navLinks a {
     text-decoration: none;
     padding: 1rem 1rem;
-    color: var(--white);
 }
 .navLinks a:hover {
-    color: var(--darkGreen);
     box-sizing: border-box;
     border-radius: 1rem;
-    background-color: var(--lightGreen);
-    box-shadow: 0 0 5rem var(--lightGreen);
-    color: var(--black);
 }
 section.mainPage {
-    width: 100vw;
     height: calc(100vh - 6rem);
-    background: fixed linear-gradient(var(--black) 90%, var(--darkGrey));
 }
 
 /* Project section styles */
@@ -103,32 +79,16 @@ article.project {
     margin: 2rem 5rem;
     padding: 0rem 1rem;
     height: 15rem;
-    background-color: var(--black);
-    color: var(--white);
     font-size: 1.5rem;
     border-radius: 1rem;
     text-align: center;
-    box-shadow: 0 0 1rem var(--lightGreen);
 }
 
 a.projectLink {
     font-size: 1.2em;
-    color: var(--black);
     text-decoration: none;
-    background-color: var(--darkGreen);
-    border: 1px solid var(--darkGreen);
     border-radius: 1rem;
     padding: 0.5rem;
-}
-
-a.projectLink:hover {
-    color: var(--white);
-    background-color: var(--black);
-    box-shadow: 0rem 0rem 5rem var(--lightGreen);
-}
-
-hr.line {
-    color: var(--lightGreen);
 }
 
 article p {
