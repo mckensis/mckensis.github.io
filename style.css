@@ -1,4 +1,10 @@
-/* Set border box and margin / padding to 0 */
+/* Custom variables */
+:root {
+    --white: #F5F1ED; /* Isabelline */
+    --black: #595A4A; /* Ebony */
+    --blue: #7180AC; /* Glaucous */
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,12 +13,17 @@
 
 html {
     font-family: 'Akshar', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    font-weight: 200;
+    scroll-padding-top: 7rem;
+    scroll-snap-type: y mandatory;
 }
 
 h2 {
-    font-size: 2.2rem;
+    font-size: 3rem;
     text-transform: uppercase;
-    letter-spacing: 0.25rem;
+    letter-spacing: 0.5rem;
     margin-bottom: 1rem;
 }
 
@@ -21,7 +32,7 @@ h2 {
 header {
     padding: 1rem;
     font-size: 1.5rem;
-    background-color: #fff;
+    background-color: var(--black);
     position: sticky;
     top: 0;
 }
@@ -31,24 +42,47 @@ nav {
     grid-auto-flow: column;
     grid-template-columns: 1fr max-content max-content;
     align-items: center;
-    gap: 2rem;
+    column-gap: 2rem;
 }
 
-nav a {
+nav a,
+nav a:visited {
     text-decoration: none;
-    color: black;
+    color: var(--white);
+    transition: text-decoration 0.1s;
+}
+
+nav a:hover,
+nav a:visited:hover {
+    text-decoration: underline var(--blue);
+}
+
+nav a:hover:not(nav a.home):not(nav .contact) {
+    position: relative;
+    bottom: 0.2rem;
 }
 
 nav a.home {
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 4rem;
+    place-self: start;
 }
 
 nav .contact {
-    background-color: orange;
     padding: 1rem;
-    font-family: 'Akshar', sans-serif;
+    color: var(--white);
+    background-color: var(--blue);
+    background: linear-gradient(to bottom, var(--blue) 50%,  #201E50 50%);
+    background-size: 100% 200%;
+    background-position: left top;
     border-radius: 1.5rem;
+    transition: background-position 0.25s;
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+nav .contact:hover {
+    background-position: left bottom;
+    text-decoration: none;
 }
 
 ul.navLinks {
@@ -65,45 +99,63 @@ ul.navLinks li {
 
 main {
     display: grid;
+    margin: 0 auto;
     grid-auto-flow: row;
-    gap: 5rem;
+    gap: 3rem;
+    max-width: 1000px;
 }
 
+/* Base section styles for hero, about, and projects */
+
 section {
+    scroll-snap-align: start;
     margin: 0 3rem;
+    max-width: 1000px;
 }
 
 section p {
-    font-size: 1.5rem;
-    line-height: 3rem;
+    font-size: 1.8rem;
+    line-height: 3.5rem;
 }
 
+/* Hero section styles */
+
 .hero {
-    margin-top: 2rem;
-    padding: 2rem;
-    min-height: 80vh;
-    font-weight: 200;
-    border: 1px solid red;
+    height: 100vh;
+    border-radius: 2rem;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 .hero p {
-    font-size: 2.5rem;
+    font-size: 3rem;
     line-height: 5rem;
 }
 
-.tools {
-    display: grid;
-    grid-auto-flow: row;
-    grid-auto-rows: max-content;
+.hero a {
+    text-decoration: none;
+    color: var(--blue);
 }
 
-.tools div {
+.hero a:hover {
+    color: inherit;
+    text-decoration: underline var(--blue);
+}
+
+/* About section styles */
+
+.about p {
+    text-align: justify;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+}
+
+
+/* Tech icon styles */
+
+div.icons {
+    margin-top: 1.5rem;
     display: grid;
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
@@ -111,6 +163,11 @@ section p {
     gap: 1rem;
 }
 
-.tools p {
-    margin-bottom: 1rem;
+i {
+    color: var(--white);
+    transition: color 0.5s ease-out;
+}
+
+i:hover {
+    color: #7180AC;
 }
