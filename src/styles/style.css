@@ -1,0 +1,118 @@
+/* Manrope - Google Fonts */
+/* Regular */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope/Manrope-Regular.woff2') format('woff2'),
+         url('../fonts/manrope/Manrope-Regular.woff') format('woff');
+}
+/* ExtraLight */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope/Manrope-ExtraLight.woff2') format('woff2'),
+         url('../fonts/manrope/Manrope-ExtraLight.woff') format('woff');
+    font-weight: 200;
+}
+/* Light */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope/Manrope-Light.woff2') format('woff2'),
+         url('../fonts/manrope/Manrope-Light.woff') format('woff');
+    font-weight: 300;
+}
+/* Medium */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope/Manrope-Medium.woff2') format('woff2'),
+         url('../fonts/manrope/Manrope-Medium.woff') format('woff');
+    font-weight: 500;
+}
+/* SemiBold */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope/Manrope-SemiBold.woff2') format('woff2'),
+         url('../fonts/manrope/Manrope-SemiBold.woff') format('woff');
+    font-weight: 600;
+}
+/* Bold */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope/Manrope-Bold.woff2') format('woff2'),
+         url('../fonts/manrope/Manrope-Bold.woff') format('woff');
+    font-weight: 700;
+}
+/* ExtraBold */
+@font-face {
+    font-family: 'Manrope';
+    src: url('../fonts/manrope/Manrope-ExtraBold.woff2') format('woff2'),
+         url('../fonts/manrope/Manrope-ExtraBold.woff') format('woff');
+    font-weight: 800;
+}
+
+/* Custom variables */
+:root {
+    --white: #F5F1ED; /* Isabelline */
+    --black: #595A4A; /* Ebony */
+    --blue: #7180AC; /* Glaucous */
+    --darkblue: #201E50;
+    --black: #030104;
+    --grey: #414141;
+    --mid-blue: #2C3E50;
+}
+
+/* download the google font and do @font-face */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Manrope', sans-serif;
+    background: linear-gradient(var(--mid-blue) 15%, var(--black));
+    color: var(--white);
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: max-content 1fr;
+}
+
+main {
+    display: grid;
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 100%;
+    place-content: center;
+}
+
+section {
+    display: grid;
+    place-content: center;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin-bottom: 2rem;
+    text-decoration: underline 1rem var(--blue);
+}
+
+h3 {
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+a:hover {
+    cursor: pointer;
+}

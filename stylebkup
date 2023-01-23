@@ -1,0 +1,138 @@
+
+/* About section styles */
+
+
+section p {
+    font-size: 1.8rem;
+    line-height: 3.5rem;
+}
+
+.about p {
+    text-align: justify;
+    margin: 1rem 2rem;
+}
+
+/* Project section styles */
+
+.projects .individual-project {
+    margin: 1rem 2rem;
+    display: grid;
+    border: 1px solid var(--white);
+    border-radius: 1rem;
+    padding: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content 1fr;
+    column-gap: 2rem;
+}
+
+.individual-project h3 {
+    place-self: center;
+    grid-column: 1 / -1;
+}
+
+.individual-project > * {
+    place-self: center;
+}
+
+.individual-project a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 400;
+}
+
+.individual-project a:hover {
+    color: inherit;
+    text-decoration: underline var(--blue);
+}
+
+.project-link {
+    grid-column: 1 / -1;
+}
+
+
+/* Tech icon styles */
+
+div.icons {
+    margin: 1.5rem 2rem;
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 1rem;
+}
+
+i {
+    color: var(--white);
+    transition: color 0.5s ease-out;
+}
+
+i:hover {
+    color: var(--blue);
+}
+
+/* Slideshow styles */
+
+.slideshow {
+    display: grid;
+    grid-template-columns: 3rem 300px 3rem;
+    grid-template-rows: max-content max-content;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.slideshow .images {
+    display: none;
+}
+
+.slideshow img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+.slideshow > a:focus,
+.slideshow > a:hover {
+    color: var(--white);
+    background: var(--blue);
+}
+
+.slideshow .dot.active {
+    background-color: var(--blue);
+}
+
+.slideshow .dot:hover {
+    background-color: var(--darkblue);
+}
+
+.slide {
+    grid-column: 2;
+}
+
+.slideshow .dots {
+    display: flex;
+    flex-direction: row;
+    grid-column: 2;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.slideshow .dot {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.slideshow .arrow {
+    align-self: center;
+    font-size: 6rem;
+    padding: 0 0.25rem;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    color: var(--blue);
+}

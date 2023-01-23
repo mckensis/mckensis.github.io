@@ -1,0 +1,82 @@
+/* Nav Bar styles */
+
+header {
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #2C3E50;
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr max-content max-content;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+    color: var(--white);
+    transition: text-decoration 0.5s;
+    text-decoration: 0.5rem underline transparent;
+}
+
+nav a:hover,
+nav a:visited:hover {
+    text-decoration: 0.5rem underline var(--blue);
+}
+
+nav a.home {
+    font-weight: 800;
+    font-size: 4.5rem;
+    text-decoration: none;
+    place-self: start;
+    transition: color 0.5s ease-out;
+}
+
+nav a.home:hover {
+    color: var(--blue);
+}
+
+nav .contact {
+    padding: 1rem;
+
+    font-weight: 800;
+    
+    color: var(--darkblue);
+    background-color: var(--white);
+    background: radial-gradient(white, #F5F1ED);
+    
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--darkblue);
+    border-radius: 1.5rem;
+
+    transition: box-shadow 0.25s, transform 0.5s;
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+nav .contact:hover {
+    box-shadow: 0 0 10px var(--white);
+    outline: 2px solid var(--black);
+    transform: rotate(1deg);
+    text-decoration: none;
+}
+
+nav .contact:active {
+    opacity: 0.75;
+}
+
+nav ul {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2rem;
+}
+
+nav li {
+    list-style-type: none;
+}

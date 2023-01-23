@@ -1,0 +1,65 @@
+/* Hero section styles */
+
+.hero {
+    display: grid;
+    padding: 3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: max-content;
+    grid-auto-flow: row;
+    place-content: center;
+    column-gap: 2rem;
+    row-gap: 0.5rem;
+}
+
+.hero h1 {
+    grid-column: 1 / -1;
+}
+
+.hero p {
+    grid-column: 1 / -1;
+    font-size: 2.5rem;
+    line-height: 5rem;
+    color: var(--blue);
+}
+
+.hero a,
+.hero button {
+    padding: 2rem;
+
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    
+    color: var(--darkblue);
+    background-color: var(--white);
+    background: radial-gradient(#F5F1ED, #FFFFFF);
+    
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--darkblue);
+    border-radius: 1.5rem;
+
+    transition: box-shadow 0.25s, transform 0.5s;
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.hero a:hover,
+.hero button:hover {
+    box-shadow: 0 0 10px var(--white);
+    outline: 2px solid var(--black);
+}
+
+.hero button:hover {
+    transform: rotate(-2deg);
+}
+
+.hero a:hover {
+    transform: rotate(2deg);
+}
+
+.hero a:active,
+.hero button:active {
+    opacity: 0.75;
+}
