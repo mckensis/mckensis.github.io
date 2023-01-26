@@ -14,17 +14,32 @@ function LoadPage() {
     body.append(main);
 
     header.append(Nav());
-    main.append(Hero());
+    main.append(Projects());
 
     const links = document.querySelectorAll('nav li a');
 
     links.forEach(link => {
         link.addEventListener('click', (e) => {
-            if (link.textContent !== 'Github') {
+            if (link.textContent !== 'Github' && link.textContent !== 'Download CV') {
+                link.classList.add('active');
+                links.forEach(link => {
+                    if (link !== e.target) {
+                        link.classList.remove('active');
+                    }
+                });
+
                 LoadSection(link.textContent);
             }
         });
     });
+
+    const home = document.querySelector('nav a.home');
+    home.addEventListener('click', () => {
+        LoadSection('Home');
+        links.forEach(link => {
+            link.classList.remove('active');
+        })
+    })
 }
 
 export default LoadPage;

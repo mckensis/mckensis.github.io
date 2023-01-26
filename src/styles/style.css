@@ -33,13 +33,6 @@
          url('../fonts/manrope/Manrope-SemiBold.woff') format('woff');
     font-weight: 600;
 }
-/* Bold */
-@font-face {
-    font-family: 'Manrope';
-    src: url('../fonts/manrope/Manrope-Bold.woff2') format('woff2'),
-         url('../fonts/manrope/Manrope-Bold.woff') format('woff');
-    font-weight: 700;
-}
 /* ExtraBold */
 @font-face {
     font-family: 'Manrope';
@@ -50,16 +43,18 @@
 
 /* Custom variables */
 :root {
+    --primary-text-color: #7180AC;
+    --secondary-text-color: #F5F1ED;
+
     --white: #F5F1ED; /* Isabelline */
-    --black: #595A4A; /* Ebony */
-    --blue: #7180AC; /* Glaucous */
-    --darkblue: #201E50;
     --black: #030104;
-    --grey: #414141;
+    
+    --blue: #7180AC; /* Glaucous */
     --mid-blue: #2C3E50;
+    --darkblue: #201E50;
 }
 
-/* download the google font and do @font-face */
+/* Default page styles */
 
 * {
     box-sizing: border-box;
@@ -67,24 +62,27 @@
     padding: 0;
 }
 
+*:hover {
+    cursor: default;
+}
+
 html {
     font-family: 'Manrope', sans-serif;
     background: linear-gradient(var(--mid-blue) 15%, var(--black));
-    color: var(--white);
+    background-attachment: fixed;
 }
 
 body {
-    display: grid;
     height: 100vh;
+    display: grid;
     grid-template-rows: max-content 1fr;
+    color: var(--white);
 }
 
 main {
     display: grid;
     margin: 0 auto;
     max-width: 1000px;
-    height: 100%;
-    place-content: center;
 }
 
 section {
@@ -92,27 +90,85 @@ section {
     place-content: center;
 }
 
+.hero,
+.about,
+.projects {
+    grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
+    grid-auto-flow: row;
+    place-content: center;
+    row-gap: 0.5rem;
+}
+
 h1 {
-    font-size: 4rem;
+    grid-column: 1 / -1;
+    font-size: 4.5rem;
 }
 
 h2 {
-    font-size: 3rem;
+    place-self: center;
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: 0.25rem;
     text-transform: uppercase;
-    letter-spacing: 0.5rem;
-    margin-bottom: 2rem;
-    text-decoration: underline 1rem var(--blue);
 }
 
 h3 {
-    font-size: 2rem;
-    color: var(--white);
-    font-weight: 900;
-    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
     letter-spacing: 0.25rem;
-    margin-bottom: 1rem;
+    text-transform: uppercase;
+    border-bottom: 0.5rem solid var(--blue);
 }
 
-a:hover {
+hr {
+    width: 50%;
+    place-self: center;
+    height: 0.5rem;
+    margin: 1rem;
+    border-radius: 2rem;
+    background-color: var(--white);
+    outline: none;
+    border: none;
+}
+
+/* Default links */
+
+a:hover,
+button:hover {
     cursor: pointer;
+}
+
+a:hover:not(a.active):not(a.home):not(a.big-link) {
+    text-decoration: 0.5rem underline var(--blue);
+}
+
+a:active,
+button:active {
+    opacity: 0.75;
+}
+
+/* Large links i.e. 'Contact' and 'Projects' links, etc */
+
+.big-link {
+    padding: 1rem;
+    font-weight: 800;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--darkblue);
+    background-color: var(--white);
+    background: radial-gradient(white, #F5F1ED);
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--darkblue);
+    border-radius: 1.5rem;
+    transition: box-shadow 0.25s, transform 0.5s;
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.big-link:hover {
+    box-shadow: 0 0 10px var(--white);
+    outline: 2px solid var(--black);
+    transform: rotate(2deg);
 }

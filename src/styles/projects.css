@@ -1,151 +1,81 @@
-/* Project section styles */
-
-section.projects {
-    grid-template-columns: 1fr 1fr;
-}
-
-section.projects h2 {
-    grid-column: 1 / -1;
+/* Projects section styles */
+.projects {
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+    scroll-behavior: smooth;
 }
 
 .individual-project {
-    margin: 1rem 2rem;
+    height: 85vh;
     display: grid;
-    border: 1px solid var(--white);
-    border-radius: 1rem;
-    padding: 1rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: max-content 375px max-content 100px max-content;
-    column-gap: 2rem;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content max-content repeat(2, max-content);
     row-gap: 1rem;
+    margin: 1rem 2rem;
+    padding: 2rem;
+    border: 3px solid var(--white);
+    border-radius: 1rem;
+    box-shadow: 1px 1px 5px var(--white);
+    scroll-snap-align: start;
+    transition: background-color 0.25s ease-in-out;
 }
 
-.individual-project > * {
-    place-self: center;
+.individual-project:hover {
+    background-color: rgba(0,0,0,0.25);
 }
 
-.individual-project h3 {
-    place-self: center;
+.individual-project h2 {
+    transition: color 0.5s ease-in-out;
+    text-shadow: 3px 3px var(--black);
+}
+
+/* Heading with title and links */
+.header {
     grid-column: 1 / -1;
+    grid-auto-flow: column;
+    place-content: center;
+    grid-template-columns: max-content 1fr;
+    margin-bottom: 1rem;
 }
 
-.individual-project .info p {
+.header .project-links {
+    display: grid;
+    grid-column: 2 / -1;
+    justify-content: end;
+    place-self: end;
+    grid-auto-flow: column;
+    place-items: center;
+    gap: 2rem;
+}
+
+.project-links a:nth-of-type(1):hover {
+    transform: rotate(-2deg);
+}
+
+.individual-project section.details,
+.individual-project section.development {
+    gap: 1rem;
+    place-self: start;
+}
+
+.details p,
+.development p {
     font-size: 1.3rem;
 }
 
-.individual-project a {
-    font-size: 2rem;
-    text-decoration: none;
-    color: var(--blue);
-    font-weight: 400;
-}
-
-.individual-project a:hover {
-    color: inherit;
-    text-decoration: underline var(--blue);
-}
-
-.project-links {
-    display: grid;
-    width: 100%;
-    grid-auto-flow: column;
-    place-content: space-evenly;
-}
-
-.project-links a {
-    padding: 0.5rem 0.75rem;
-    background: linear-gradient(#67b26f, #4ca2cd);
-    outline: 2px solid black;
-    box-shadow: 0 0 10px black;
-    color: black;
-    border-radius: 2rem;
-}
-
-.project-links a:hover {
-    text-decoration: none;
-    background: linear-gradient(#4ecdc4, #556270);
-    outline: 3px solid black;
-    box-shadow: 0 0 15px black;
-    color: black;
-}
-
-/* Slideshow styles */
-
-.slideshow {
-    display: grid;
-    grid-template-columns: 3rem 300px 3rem;
-    grid-template-rows: 350px max-content;
-    text-align: center;
-    gap: 0.5rem;
-}
-
-.slideshow .images {
-    display: none;
-}
-
-.slideshow img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-radius: 2rem;
-}
-
-.slideshow > a:focus,
-.slideshow > a:hover {
-    color: var(--white);
-    background: var(--blue);
-}
-
-.slideshow .dot.active {
-    background-color: var(--darkblue);
-}
-
-.slideshow .dot:hover {
-    background-color: var(--blue);
-}
-
-.slide {
-    grid-column: 2;
-}
-
-.slideshow .dots {
-    display: flex;
-    flex-direction: row;
-    grid-column: 2;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.slideshow .dot {
-    height: 1rem;
-    width: 1rem;
-    border-radius: 50%;
-    background-color: var(--white);
-    cursor: pointer;
-}
-
-.slideshow .arrow {
-    align-self: center;
-    font-size: 6rem;
-    padding: 0 0.25rem;
-    cursor: pointer;
-}
-
-.arrow:hover {
-    color: var(--blue);
-}
-
-/* Project Tag styles */
+/* Tag styles */
 
 .tags {
     display: grid;
-    width: 100%;
-    grid-template-columns: max-content max-content max-content;
-    grid-template-rows: max-content;
+    grid-column: 1 / -1;
+    grid-auto-flow: column;
     grid-auto-rows: max-content;
-    gap: 1rem;
-    place-content: center;
+    grid-auto-columns: max-content;
     place-items: center;
+    place-self: start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .tags span {
@@ -153,8 +83,7 @@ section.projects h2 {
     text-align: center;
     background-color: var(--darkblue);
     border-radius: 1rem;
-    color: var(--white);
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 0.75px;
     outline: 1px solid black;
     box-shadow: 0 0 5px black;
@@ -162,6 +91,7 @@ section.projects h2 {
 
 .tags span:hover {
     box-shadow: 0 0 10px black;
-    cursor: pointer;
-    background-color: var(--blue);
+    background-color: var(--mid-blue);
+    outline: 2px solid black;
+    cursor: default;
 }

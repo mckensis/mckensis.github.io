@@ -17,6 +17,9 @@ function LoadSection(section) {
         case 'Projects':
             main.append(Projects());
             break;
+        case 'Home':
+            main.append(Hero());
+            break;
         default:
             main.append(Hero());
             break;
