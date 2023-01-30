@@ -4,6 +4,7 @@
     grid-template-columns: 1fr 1fr;
     row-gap: 1.5rem;
     column-gap: 2rem;
+    max-width: 855px;
 }
 
 .hero p {
@@ -26,6 +27,7 @@
     grid-row: 1;
     grid-column: 2;
     place-self: center;
+    justify-self:end;
     padding: 0.25rem;
     border: 0.5rem solid var(--white);
     border-radius: 50%;

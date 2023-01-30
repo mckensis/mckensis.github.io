@@ -29,6 +29,22 @@
     text-shadow: 3px 3px var(--black);
 }
 
+.individual-project section.details,
+.individual-project section.development {
+    gap: 1rem;
+    place-self: start;
+}
+
+.project-links {
+    display: grid;
+    grid-column: 2 / -1;
+    justify-content: end;
+    place-self: end;
+    grid-auto-flow: column;
+    place-items: center;
+    gap: 1.5rem;
+}
+
 .project-links img {
     transition: transform 0.25s ease-in-out;
 }
@@ -51,22 +67,6 @@
     place-content: center;
     grid-template-columns: max-content 1fr;
     margin-bottom: 1rem;
-}
-
-.header .project-links {
-    display: grid;
-    grid-column: 2 / -1;
-    justify-content: end;
-    place-self: end;
-    grid-auto-flow: column;
-    place-items: center;
-    gap: 2rem;
-}
-
-.individual-project section.details,
-.individual-project section.development {
-    gap: 1rem;
-    place-self: start;
 }
 
 .details li {

@@ -102,6 +102,8 @@ function CreateLinks(links) {
     const section = document.createElement('section');
     section.className = 'project-links';
 
+    const heading = document.createElement('h4');
+    heading.textContent = 'View Project';
 
     const liveLink = document.createElement('a');    
     const live = document.createElement('img');
@@ -111,16 +113,16 @@ function CreateLinks(links) {
     live.src = viewLive;
     
     const codeLink = document.createElement('a');
+    const code = document.createElement('img');
     codeLink.href = BASE_GITHUB_URL + links.github;
     codeLink.target = '_blank';
     codeLink.title = 'View on GitHub';
-    const code = document.createElement('img');
     code.src = viewGithub;
 
     liveLink.append(live);
     codeLink.append(code);
 
-    section.append(liveLink, codeLink);
+    section.append(heading, liveLink, codeLink);
 
     return section;
 }
