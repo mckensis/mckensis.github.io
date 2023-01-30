@@ -1,14 +1,16 @@
 import '../styles/style.css';
 import '../styles/hero.css';
-import Img from '../images/icon.jpg';
+import Portrait from '../images/icon.jpg';
+import Mail from '../images/icons/email-2.png';
 import LoadSection from '../LoadSection';
 
 function Hero() {
     const hero = document.createElement('section');
     hero.className = 'hero';
 
-    const image = new Image();
-    image.src = Img;
+    const portrait = document.createElement('img');
+    portrait.classList.add('portrait');
+    portrait.src = Portrait;
 
     const header = document.createElement('h1');
     header.textContent = `Hi, I'm Aidan`;
@@ -25,14 +27,16 @@ function Hero() {
         LoadSection('Projects');
     });
 
+    const mailIcon = document.createElement('img');
+    mailIcon.src = Mail;
+
     const contact = document.createElement('a');
     contact.textContent = 'Contact Me';
-    contact.classList.add('big-link');
+    contact.classList.add('big-link', 'hero-contact');
     contact.href = 'mailto:adn.mck@gmail.com?subject=Hi Aidan';
-
-    hero.append(header, para, projects, contact);
-
-    hero.append(image);
+    
+    contact.append(mailIcon);
+    hero.append(header, para, projects, contact, portrait);
 
     return hero;
 }

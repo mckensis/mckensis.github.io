@@ -23,7 +23,7 @@
     transform: rotate(-2deg);
 }
 
-.hero img {
+.hero img.portrait {
     grid-row: 1;
     grid-column: 2;
     place-self: center;
@@ -31,4 +31,13 @@
     padding: 0.25rem;
     border: 0.5rem solid var(--white);
     border-radius: 50%;
+}
+
+.big-link.hero-contact {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: max-content max-content;
+    place-items: center;
+    place-content: center;
+    gap: 1rem;
 }

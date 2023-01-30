@@ -9,7 +9,8 @@ function About() {
     heading.textContent = 'About Me';
 
     const para = document.createElement('p');
-    para.textContent = `I'm a self-taught developer who has been learning web development since early 2022 and I'm now looking to enter the industry and grow within a professional environment. `
+    para.textContent = `I'm a self-taught developer who has been learning web development since early 2022. `
+        + `I'm now looking to enter the industry and grow within a professional environment. `
         + `My current goal is to find a role where I can begin my career and continue developing my skillset.`;
 
     const tools = document.createElement('p');
