@@ -1,6 +1,9 @@
 import '../styles/style.css';
 import '../styles/projects.css';
 import '../styles/slideshow.css';
+import newWindow from '../images/icons/new_window.png'
+import viewGithub from '../images/icons/github.png';
+import viewLive from '../images/icons/live.png';
 import Slideshow from '../Slideshow';
 import GetScreenshots from '../GetScreenshots';
 
@@ -99,17 +102,25 @@ function CreateLinks(links) {
     const section = document.createElement('section');
     section.className = 'project-links';
 
-    const live = document.createElement('a');
-    live.textContent = 'Live Project';
-    live.classList.add('big-link');
-    live.href = links.live;
-    
-    const code = document.createElement('a');
-    code.textContent = 'GitHub';
-    code.classList.add('big-link');
-    code.href = BASE_GITHUB_URL + links.github;
 
-    section.append(live, code);
+    const liveLink = document.createElement('a');    
+    const live = document.createElement('img');
+    liveLink.href = links.live;
+    liveLink.target = '_blank';
+    liveLink.title = 'View project live';
+    live.src = viewLive;
+    
+    const codeLink = document.createElement('a');
+    codeLink.href = BASE_GITHUB_URL + links.github;
+    codeLink.target = '_blank';
+    codeLink.title = 'View on GitHub';
+    const code = document.createElement('img');
+    code.src = viewGithub;
+
+    liveLink.append(live);
+    codeLink.append(code);
+
+    section.append(liveLink, codeLink);
 
     return section;
 }
@@ -121,13 +132,15 @@ function CreateDetailsSection(details) {
     const heading = document.createElement('h3');
     heading.textContent = 'Project Details';
 
-    section.append(heading);
+    const list = document.createElement('ul');
 
     details.forEach(piece => {
-        const paragraph = document.createElement('p');
-        paragraph.textContent = piece;
-        section.append(paragraph);
+        const item = document.createElement('li');
+        item.textContent = piece;
+        list.append(item);
     })
+
+    section.append(heading, list);
     
     return section;
 }

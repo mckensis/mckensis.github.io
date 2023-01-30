@@ -8,29 +8,16 @@ function About() {
     const heading = document.createElement('h2');
     heading.textContent = 'About Me';
 
-    const paraOne = document.createElement('p');
-    paraOne.textContent = `I'm a self-taught developer hoping to enter the industry, and I'm not afraid to put in the work to make it happen. `
-        + `I'm extremely passionate about creating user-friendly experiences on the internet. `
-        + `My current goal is to find a role where I can begin my career and continue learning / developing my skills.`;
+    const para = document.createElement('p');
+    para.textContent = `I'm a self-taught developer who has been learning web development since early 2022 and I'm now looking to enter the industry and grow within a professional environment. `
+        + `My current goal is to find a role where I can begin my career and continue learning new skills, as well as developing my current skills further.`;
 
-    const paraTwo = document.createElement('p');
-    paraTwo.textContent = `I love turning a blank page into something I am proud of, `
-        + `and the feeling you get after successfully troubleshooting an issue.`;
-
-    const facts = document.createElement('h2');
-    facts.textContent = 'A Few Facts';
-
-    const factOne = document.createElement('p');
-    const factTwo = document.createElement('p');
-    const factThree = document.createElement('p');
-
-    factOne.textContent = `I love cooking, especially various types of curries, and also for themed meals i.e. Burns' Night, Halloween, etc.`;
-    factTwo.textContent = `90s point & click games such as the Monkey Island series, and Legend of Kyrandia are among my favourites.`;
-    factThree.textContent = `I worked for over five years as part of upper management in a pub which was owned by one of the largest pub companies in the UK.`;
+    const tools = document.createElement('p');
+    tools.textContent = 'I am eager to learn many new technologies, languages, and frameworks, but the main ones I currently use are:';
 
     const hr = document.createElement('hr');
 
-    about.append(paraOne, paraTwo, hr, factOne, factTwo, factThree);
+    about.append(para, hr, tools);
 
     return about;
 }

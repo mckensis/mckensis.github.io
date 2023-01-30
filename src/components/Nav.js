@@ -33,7 +33,7 @@ function Nav() {
     
     const cv = document.createElement('li');
     const cvLink = document.createElement('a');
-    cvLink.textContent = 'Download CV';
+    cvLink.textContent = 'View CV';
     cvLink.href = '#';
     cvLink.target = '_blank';
 

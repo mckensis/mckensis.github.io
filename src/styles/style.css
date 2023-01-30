@@ -101,8 +101,9 @@ section {
 }
 
 h1 {
-    grid-column: 1 / -1;
+    grid-column: 1;
     font-size: 4.5rem;
+    place-self: end;
 }
 
 h2 {
@@ -169,6 +170,6 @@ button:active {
 
 .big-link:hover {
     box-shadow: 0 0 10px var(--white);
-    outline: 2px solid var(--black);
+    outline: 4px solid var(--black);
     transform: rotate(2deg);
 }

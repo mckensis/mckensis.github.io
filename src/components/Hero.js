@@ -1,10 +1,14 @@
 import '../styles/style.css';
 import '../styles/hero.css';
+import Img from '../images/icon.jpg';
 import LoadSection from '../LoadSection';
 
 function Hero() {
     const hero = document.createElement('section');
     hero.className = 'hero';
+
+    const image = new Image();
+    image.src = Img;
 
     const header = document.createElement('h1');
     header.textContent = `Hi, I'm Aidan`;
@@ -27,6 +31,8 @@ function Hero() {
     contact.href = 'mailto:adn.mck@gmail.com?subject=Hi Aidan';
 
     hero.append(header, para, projects, contact);
+
+    hero.append(image);
 
     return hero;
 }

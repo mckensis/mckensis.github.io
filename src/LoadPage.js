@@ -14,7 +14,7 @@ function LoadPage() {
     body.append(main);
 
     header.append(Nav());
-    main.append(Projects());
+    main.append(Hero());
 
     const links = document.querySelectorAll('nav li a');
 
@@ -38,8 +38,8 @@ function LoadPage() {
         LoadSection('Home');
         links.forEach(link => {
             link.classList.remove('active');
-        })
-    })
+        });
+    });
 }
 
 export default LoadPage;
