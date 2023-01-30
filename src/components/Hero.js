@@ -1,7 +1,7 @@
 import '../styles/style.css';
 import '../styles/hero.css';
 import Portrait from '../images/icon.jpg';
-import Mail from '../images/icons/email-2.png';
+import Mail from '../images/icons/email.png';
 import LoadSection from '../LoadSection';
 
 function Hero() {

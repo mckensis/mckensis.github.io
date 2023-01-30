@@ -1,10 +1,9 @@
 import '../styles/style.css';
 import '../styles/projects.css';
 import '../styles/slideshow.css';
-import newWindow from '../images/icons/new_window.png'
-import viewGithub from '../images/icons/github.png';
-import viewLive from '../images/icons/live.png';
 import Slideshow from '../Slideshow';
+import viewLive from '../images/icons/live.png';
+import viewGithub from '../images/icons/github.png';
 import GetScreenshots from '../GetScreenshots';
 
 function GetProjects() {
@@ -38,7 +37,22 @@ function GetProjects() {
         images: [],
     };
 
-    return [ battleship, weather ];
+    const todo = {
+        title: 'To-Do List',
+        alias: 'to-do-list',
+        info: [
+            `View lists on the left & tasks on the right`,
+            `Add a new list or task within either section`,
+            `Mark a tasks as complete, or change task priority`,
+        ],
+        development: `I used async and await along with multiple APIs from OpenWeather such as 'Geocoding', 'CurrentWeather', and '3 Hour / 5 Day Forecast'.`,
+        live: 'to-do-list',
+        code: 'to-do-list',
+        tags: [ 'HTML', 'CSS', 'JavaScript', 'Webpack', 'LocalStorage' ],
+        images: [],
+    };
+
+    return [ battleship, weather, todo ];
 }
 
 function CreateSlideshow(images) {
@@ -201,7 +215,7 @@ function Projects() {
         projects.append(parent);
         let slideshow = parent.querySelector('.slideshow')
         parents.push(slideshow);
-    })
+    });
 
     Slideshow(parents);
 
