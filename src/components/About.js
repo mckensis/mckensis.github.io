@@ -13,7 +13,7 @@ function About() {
         + `My current goal is to find a role where I can begin my career and continue developing my skillset.`;
 
     const tools = document.createElement('p');
-    tools.textContent = 'I am eager to learn new technologies, languages, and frameworks, but the main ones I currently use are:';
+    tools.textContent = 'While I am eager to learn new languages & frameworks, I am primarily using the following at the moment:';
 
     const hr = document.createElement('hr');
 
