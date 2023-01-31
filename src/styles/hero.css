@@ -1,10 +1,58 @@
 /* Hero section styles */
 
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bigLinkWiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 .hero {
     grid-template-columns: 1fr 1fr;
-    row-gap: 1.5rem;
     column-gap: 2rem;
-    max-width: 855px;
+    max-width: 1000px;
+}
+
+.hero h1,
+.hero p {
+    animation: 0.5s ease-in 0s 1 slideInFromTop;
+}
+
+.hero img.portrait {
+    animation: 1s ease-in 0s 1 slideInFromTop;
+}
+
+
+.hero button.big-link {
+    animation: 1.5s ease-in 0s 1 slideInFromTop;
+}
+
+.hero a.big-link {
+    animation: 2s ease-in 0s 1 slideInFromTop;
 }
 
 .hero p {
@@ -14,6 +62,7 @@
 }
 
 .hero .big-link {
+    margin-top: 3rem;
     padding: 2rem;
     font-size: 2rem;
     text-align: center;

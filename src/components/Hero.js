@@ -19,7 +19,7 @@ function Hero() {
     para.textContent = 'Front-end developer from Glasgow, Scotland';
 
     const projects = document.createElement('button');
-    projects.textContent = 'Check out my projects';
+    projects.textContent = 'View My Projects';
     projects.type = 'button';
     projects.classList.add('big-link');
     projects.addEventListener('click', () => {
