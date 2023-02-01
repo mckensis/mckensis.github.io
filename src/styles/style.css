@@ -102,9 +102,9 @@ section {
 }
 
 h1 {
-    grid-column: 1;
+    grid-column: 1 / -1;
     font-size: 5rem;
-    place-self: end;
+    place-self: start;
 }
 
 h2 {

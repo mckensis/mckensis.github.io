@@ -2,9 +2,9 @@
 
 .hero {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: max-content max-content max-content max-content;
+    grid-template-rows: repeat(4, max-content);
     column-gap: 2rem;
-    row-gap: 0.5rem;
+    row-gap: 0rem;
     max-width: 1000px;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .hero .big-link {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     padding: 2rem;
     font-size: 2rem;
     text-align: center;

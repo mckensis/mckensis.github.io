@@ -22,7 +22,7 @@ function Hero() {
     const projects = document.createElement('button');
     projects.textContent = 'View My Projects';
     projects.type = 'button';
-    projects.classList.add('big-link');
+    projects.classList.add('big-link','hero-projects');
     projects.addEventListener('click', () => {
         document.querySelector('nav li a.project-link').classList.add('active');
         LoadSection('Projects');
