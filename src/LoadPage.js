@@ -20,7 +20,7 @@ function LoadPage() {
 
     links.forEach(link => {
         link.addEventListener('click', (e) => {
-            if (link.textContent !== 'Github' && link.textContent !== 'Download CV') {
+            if (link.parentElement.className !== 'external') {
                 link.classList.add('active');
                 links.forEach(link => {
                     if (link !== e.target) {

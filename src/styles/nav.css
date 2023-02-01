@@ -36,7 +36,7 @@ nav li {
     gap: 0.25rem;
 }
 
-nav .external:hover::after {
+nav li.external:hover::after {
     content: url('../images/icons/external.png');
     width: 2rem;
 }
