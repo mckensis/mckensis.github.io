@@ -19,7 +19,7 @@ nav {
 nav ul {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 8rem;
+    grid-auto-columns: 10rem;
     place-items: center;
     list-style: none;
 }
@@ -30,6 +30,17 @@ nav a {
     text-decoration: 0.5rem underline transparent;
 }
 
+nav li {
+    display: grid;
+    grid-template-columns: max-content 24px;
+    gap: 0.25rem;
+}
+
+nav .external:hover::after {
+    content: url('../images/icons/external.png');
+    width: 2rem;
+}
+
 .home {
     font-weight: 800;
     font-size: 4.5rem;
@@ -38,6 +49,7 @@ nav a {
     place-self: start;
     transition: color 0.5s ease-out, text-shadow 0.25s ease-in-out;
 }
+
 
 .home:hover {
     color: var(--blue);

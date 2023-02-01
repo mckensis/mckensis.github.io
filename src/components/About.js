@@ -1,5 +1,6 @@
 import '../styles/about.css';
 import '../styles/style.css';
+import '../styles/animations.css';
 
 function About() {
     const about = document.createElement('section');
@@ -14,7 +15,7 @@ function About() {
         + `My current goal is to find a role where I can begin my career and continue developing my skillset.`;
 
     const tools = document.createElement('p');
-    tools.textContent = 'While I am eager to learn new languages & frameworks, I am primarily using the following at the moment:';
+    tools.textContent = 'Some more info here';
 
     const hr = document.createElement('hr');
 

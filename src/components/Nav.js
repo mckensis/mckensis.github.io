@@ -1,5 +1,6 @@
 import '../styles/style.css';
 import '../styles/nav.css';
+import '../styles/animations.css';
 
 function Nav() {
     const nav = document.createElement('nav');
@@ -27,12 +28,14 @@ function Nav() {
     
     const github = document.createElement('li');
     const githubLink = document.createElement('a');
+    github.className = 'external';
     githubLink.textContent = 'Github';    
     githubLink.href = 'https://github.com/mckensis';
     githubLink.target = '_blank';
     
     const cv = document.createElement('li');
     const cvLink = document.createElement('a');
+    cv.className = 'external';
     cvLink.textContent = 'View CV';
     cvLink.href = '#';
     cvLink.target = '_blank';

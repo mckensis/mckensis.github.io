@@ -1,5 +1,6 @@
 import '../styles/style.css';
 import '../styles/projects.css';
+import '../styles/animations.css';
 import '../styles/slideshow.css';
 import Slideshow from '../Slideshow';
 import viewLive from '../images/icons/live.png';
@@ -43,9 +44,9 @@ function GetProjects() {
         info: [
             `View lists on the left & tasks on the right`,
             `Add a new list or task within either section`,
-            `Mark a tasks as complete, or change task priority`,
+            `Mark a task as complete, or change task priority`,
         ],
-        development: `I used async and await along with multiple APIs from OpenWeather such as 'Geocoding', 'CurrentWeather', and '3 Hour / 5 Day Forecast'.`,
+        development: `I used localstorage in this project to keep track of a user's tasks and lists that they create, as well as any tasks that have been completed.`,
         live: 'to-do-list',
         code: 'to-do-list',
         tags: [ 'HTML', 'CSS', 'JavaScript', 'Webpack', 'LocalStorage' ],

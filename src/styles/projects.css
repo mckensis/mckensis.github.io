@@ -1,4 +1,5 @@
 /* Projects section styles */
+
 .projects {
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;

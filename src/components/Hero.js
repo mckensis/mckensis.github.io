@@ -1,5 +1,6 @@
 import '../styles/style.css';
 import '../styles/hero.css';
+import '../styles/animations.css';
 import Portrait from '../images/icon.jpg';
 import Mail from '../images/icons/email.png';
 import LoadSection from '../LoadSection';
