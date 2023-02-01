@@ -33,26 +33,28 @@
 
 .hero {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content max-content max-content max-content;
     column-gap: 2rem;
+    row-gap: 0.5rem;
     max-width: 1000px;
 }
 
 .hero h1,
 .hero p {
-    animation: 0.5s ease-in 0s 1 slideInFromTop;
+    animation: 0.25s ease-in 0s 1 slideInFromTop;
 }
 
 .hero img.portrait {
-    animation: 1s ease-in 0s 1 slideInFromTop;
+    animation: 0.75s ease-in 0s 1 slideInFromTop;
 }
 
 
 .hero button.big-link {
-    animation: 1.5s ease-in 0s 1 slideInFromTop;
+    animation: 1.25s ease-in 0s 1 slideInFromTop;
 }
 
 .hero a.big-link {
-    animation: 2s ease-in 0s 1 slideInFromTop;
+    animation: 1.5s ease-in 0s 1 slideInFromTop;
 }
 
 .hero p {
@@ -62,7 +64,7 @@
 }
 
 .hero .big-link {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     padding: 2rem;
     font-size: 2rem;
     text-align: center;
@@ -74,9 +76,8 @@
 
 .hero img.portrait {
     grid-row: 1;
-    grid-column: 2;
+    grid-column: 1 / -1;
     place-self: center;
-    justify-self:end;
     padding: 0.25rem;
     border: 0.5rem solid var(--white);
     border-radius: 50%;
