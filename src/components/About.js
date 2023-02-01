@@ -1,6 +1,6 @@
+import '../styles/animations.css';
 import '../styles/about.css';
 import '../styles/style.css';
-import '../styles/animations.css';
 
 function About() {
     const about = document.createElement('section');

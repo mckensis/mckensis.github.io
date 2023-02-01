@@ -1,7 +1,7 @@
-import '../styles/style.css';
-import '../styles/projects.css';
 import '../styles/animations.css';
+import '../styles/projects.css';
 import '../styles/slideshow.css';
+import '../styles/style.css';
 import Slideshow from '../Slideshow';
 import viewLive from '../images/icons/live.png';
 import viewGithub from '../images/icons/github.png';

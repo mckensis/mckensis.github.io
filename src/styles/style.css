@@ -101,6 +101,10 @@ section {
     row-gap: 0.5rem;
 }
 
+.burger {
+    display: none;
+}
+
 h1 {
     grid-column: 1 / -1;
     font-size: 5rem;
@@ -180,4 +184,120 @@ button:active {
     box-shadow: 0 0 10px var(--white);
     outline: 4px solid var(--black);
     transform: rotate(2deg);
+}
+
+/* Media query for burger nav menu */
+@media (max-width: 950px) {
+    
+        nav ul {
+        display: none;
+        grid-auto-flow: row;
+        grid-auto-rows: max-content;
+        place-content: start;
+        width: 100%;
+        position: absolute;
+        top: 0rem;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+        font-size: 2rem;
+        background-color: var(--mid-blue);
+        transition: all 20s ease;
+    }
+
+    nav ul.open {
+        display: grid;
+    }
+
+    .burger {
+        display: grid;
+        padding: 1rem;
+        grid-auto-flow: row;
+        gap: 5px;
+        width: 100%;
+        z-index: 1;
+        border: none;
+        background-color: transparent;
+        grid-column: 3;
+    }
+
+    .burger span {
+        width: 40px;
+        height: 3px;
+        background-color: var(--white);
+        transition: transform 0.25s ease, background-color 0.25s ease;
+        border-radius: 2rem;
+        pointer-events: none;
+    }
+
+    .burger:hover,
+    .burger span:hover {
+        cursor: pointer;
+    }
+
+    .burger span.open {
+        transition: transform 0.25s ease-in-out;
+    }
+
+    .burger:hover span {
+        background-color: var(--blue);
+    }
+
+    .burger.open :nth-child(1) {
+        transform: rotate(45deg);
+        position: absolute;
+        top: 50%;
+        transform-origin: 50% 50%;
+    }
+
+    .burger.open :nth-child(2) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.1, 0.1);
+    }
+
+    .burger.open :nth-child(3) {
+        position: absolute;
+        top: 50%;
+        transform: rotate(-45deg);
+        transform-origin: 50% 50%;
+    }
+
+    nav ul li {
+        margin-left: 1rem;
+        place-self: start;
+        padding: 1rem 0;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.25rem;
+    }
+
+    /* Remove styling for the Contact nav link */
+    nav ul .contact {
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        background: none;
+        color: var(--white);
+        font-weight: unset;
+        outline: none;
+        box-shadow: none;
+        font-size: unset;
+    }
+
+    nav .big-link {
+        text-decoration: 0.5rem underline transparent;
+    }
+    
+    nav .big-link:hover {
+        animation: none;
+        transform: rotate(0);
+        outline: none;
+        box-shadow: none;
+        transition: text-decoration 0.75s;
+        text-decoration: 0.5rem underline var(--blue);
+    }
+
+    nav li.external::after {
+        content: url('../images/icons/external.png');
+        width: 2rem;
+    }
 }
