@@ -1,4 +1,4 @@
-/* Projects section styles */
+/* Projects section */
 
 .projects {
     scroll-snap-type: y mandatory;
@@ -19,10 +19,6 @@
     box-shadow: 1px 1px 5px var(--white);
     scroll-snap-align: start;
     transition: background-color 0.25s ease-in-out;
-}
-
-.individual-project:hover {
-    background-color: rgba(0,0,0,0.25);
 }
 
 .individual-project h2 {
@@ -48,17 +44,6 @@
 
 .project-links img {
     transition: transform 0.25s ease-in-out;
-}
-
-.project-links img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.projects-link a:hover::after {
-    content: 'yo';
-    border: 1px solid red;
-    padding: 3rem;
 }
 
 /* Heading with title and links */
@@ -105,9 +90,10 @@
     box-shadow: 0 0 5px black;
 }
 
-.tags span:hover {
-    box-shadow: 0 0 10px black;
-    background-color: var(--mid-blue);
-    outline: 2px solid black;
-    cursor: default;
+.slideshow {
+    display: none;
+    grid-row: 3 / 5;
+    grid-template-columns: 3.5rem 300px 3.5rem;
+    grid-template-rows: 350px max-content;
+    gap: 0.5rem;
 }

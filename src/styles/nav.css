@@ -1,5 +1,131 @@
+
+/* Nav styles */
+
 /* Navbar */
 
+header {
+    font-size: 1.5rem;
+    background-color: var(--mid-blue);
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    width: calc(100vw - 1rem);
+}
+
+nav ul {
+    display: none;
+    position: absolute;
+    top: 0rem;
+    height: 0;
+    margin-top: 6rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    background-color: var(--mid-blue);
+    list-style: none;
+    overflow: hidden;
+}
+
+nav ul.open {
+    display: grid;
+    height: auto;
+    grid-auto-flow: row;
+    grid-auto-rows: max-content;
+    place-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+nav li {
+    display: grid;
+    padding: 0.25rem 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.25rem;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+nav a.home {
+    font-weight: 800;
+    font-size: 4.5rem;
+    text-decoration: none;
+    place-self: center start;
+    margin-left: 0.5rem;
+}
+
+nav a.active {
+    font-weight: 800;
+    border-bottom: 3px solid var(--blue);
+}
+
+nav a.external::after {
+    padding-left: 0.25rem;
+    content: url('../images/icons/external.png');
+}
+
+.burger {
+    display: grid;
+    grid-auto-flow: row;
+    z-index: 1;
+    gap: 5px;
+    place-self: center end;
+    border: none;
+    background-color: transparent;
+}
+
+.burger span {
+    width: 40px;
+    height: 3px;
+    background-color: var(--white);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+    border-radius: 2rem;
+    pointer-events: none;
+}
+
+.burger:hover,
+.burger span:hover {
+    cursor: pointer;
+}
+
+.burger span.open {
+    transition: transform 0.25s ease-in-out;
+}
+
+.burger:hover span {
+    background-color: var(--blue);
+}
+
+.burger.open :nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    transform-origin: 50% 50%;
+}
+
+.burger.open :nth-child(2) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.1, 0.1);
+}
+
+.burger.open :nth-child(3) {
+    position: absolute;
+    top: 50%;
+    transform: rotate(-45deg);
+    transform-origin: 50% 50%;
+}
+
+/* Navbar Desktop view backup */
+/*
 header {
     font-size: 1.5rem;
     background-color: var(--mid-blue);
@@ -63,4 +189,5 @@ nav li.external:hover::after {
 
 .active:hover {
     cursor: default;
-}
+} 
+*/

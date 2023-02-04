@@ -1,5 +1,3 @@
-import '../styles/animations.css';
-import '../styles/nav.css';
 import '../styles/style.css';
 
 function CreateList() {
@@ -18,7 +16,6 @@ function CreateList() {
 
     const github = document.createElement('li');
     const githubLink = document.createElement('a');
-    github.className = 'external';
     githubLink.className = 'external';
     githubLink.textContent = 'Github';    
     githubLink.href = 'https://github.com/mckensis';
@@ -27,7 +24,6 @@ function CreateList() {
     
     const cv = document.createElement('li');
     const cvLink = document.createElement('a');
-    cv.className = 'external';
     cvLink.className = 'external';
     cvLink.textContent = 'View CV';
     cvLink.href = '#';
@@ -78,6 +74,14 @@ function Nav() {
     hamburger.addEventListener('click', toggleNav.bind(hamburger, list));
 
     nav.append(home, hamburger, list);
+
+    document.addEventListener('click', (e) => {
+        if (e.target !== document.querySelector('nav ul li')
+            && e.target !== document.querySelector('.burger')) {
+                document.querySelector('nav ul').classList.remove('open');
+                document.querySelector('.burger').classList.remove('open');
+        };
+    });
 
     return nav;
 }

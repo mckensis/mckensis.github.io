@@ -1,5 +1,3 @@
-import '../styles/animations.css';
-import '../styles/hero.css';
 import '../styles/style.css';
 import Portrait from '../images/icon.jpg';
 import Mail from '../images/icons/email.png';
@@ -14,7 +12,10 @@ function Hero() {
     portrait.src = Portrait;
 
     const header = document.createElement('h1');
-    header.textContent = `Hi, I'm Aidan`;
+    header.textContent = `Hi,`;
+
+    const span = document.createElement('span');
+    span.textContent = `I'm Aidan`;
 
     const para = document.createElement('p');
     para.textContent = 'Front-end developer from Glasgow, Scotland';
@@ -36,8 +37,9 @@ function Hero() {
     contact.classList.add('big-link', 'hero-contact');
     contact.href = 'mailto:adn.mck@gmail.com?subject=Hi Aidan';
     
+    header.append(span);
     contact.append(mailIcon);
-    hero.append(header, para, projects, contact, portrait);
+    hero.append(portrait, header, para, projects, contact);
 
     return hero;
 }

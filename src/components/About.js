@@ -1,5 +1,3 @@
-import '../styles/animations.css';
-import '../styles/about.css';
 import '../styles/style.css';
 
 function About() {
@@ -9,17 +7,32 @@ function About() {
     const heading = document.createElement('h2');
     heading.textContent = 'About Me';
 
-    const para = document.createElement('p');
-    para.textContent = `I'm a self-taught developer who has been learning web development since early 2022. `
-        + `I'm now looking to enter the industry and grow within a professional environment. `
-        + `My current goal is to find a role where I can begin my career and continue developing my skillset.`;
+    const one = document.createElement('p');
+    one.textContent =
+        `I'm a self-taught developer who has been fully focusing my time and energy on learning web development since the beginning of 2022.`;
 
-    const tools = document.createElement('p');
-    tools.textContent = 'Some more info here';
+    const two = document.createElement('p');
+    two.textContent =
+        `I dabbled with C, Python, SQLite, and Lua during Covid lockdowns when I completed Harvard's CS50 course and part of GD50.`
+    
+    const three = document.createElement('p');
+    three.textContent = 
+    `This made me realise how much passion and energy I have for programming, and I decided to focus on a career change.`;
 
-    const hr = document.createElement('hr');
+    const four = document.createElement('p');
+    four.textContent =
+        `My current goal is to find a role where I can begin my career and continue developing my skillset within a professional environment while doing a job that I am incredibly passionate about.`;
 
-    about.append(para, hr, tools);
+    let sentences = [one, two, three, four];
+
+    sentences.forEach(sentence => {
+        about.append(sentence);
+        
+        if (sentences.indexOf(sentence) !== sentences.length -1) {
+            const hr = document.createElement('hr');
+            about.append(hr);
+        };
+    });
 
     return about;
 }

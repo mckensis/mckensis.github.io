@@ -9,7 +9,10 @@ function LoadPage() {
     const body = document.querySelector('body');
     const header = document.createElement('header');
     const main = document.createElement('main');
-    
+
+    const bg = document.createElement('div');
+    bg.className = 'bg';
+    body.append(bg);
     body.append(header);
     body.append(main);
 

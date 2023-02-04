@@ -1,10 +1,8 @@
-import '../styles/animations.css';
-import '../styles/projects.css';
-import '../styles/slideshow.css';
 import '../styles/style.css';
 import Slideshow from '../Slideshow';
 import viewLive from '../images/icons/live.png';
 import viewGithub from '../images/icons/github.png';
+import viewScreenshots from '../images/icons/slideshow-50.png';
 import GetScreenshots from '../GetScreenshots';
 
 function GetProjects() {
@@ -12,11 +10,11 @@ function GetProjects() {
         title: 'Battleship',
         alias: 'battleship',
         info: [
-            `Classic Battleship board game`, 
+            `Classic Battleship game`, 
             `Play against an AI player`,
-            `First player to destroy the enemy's 5 ships wins`,
+            `Destroy 5 ships to win`,
         ],
-        development: 'I wrote unit tests with Jest during development of this project and purposefully broke the project with each new test until functionality was complete.',
+        development: 'I wrote unit tests with the Jest framework during development of this project. I purposefully caused each newly written test to fail and then built the functionality to allow the test to pass. I repeated this until the project was complete.',
         live: 'battleship',
         code: 'battleship',
         tags: [ 'HTML', 'CSS', 'JavaScript', 'Webpack', 'Jest', 'TDD' ],
@@ -27,9 +25,9 @@ function GetProjects() {
         title: 'Weather Forecast',
         alias: 'forecast',
         info: [
-            `Enter a location to search for the weather`,
-            `Current weather will display for the location`,
-            `Later & tomorrow forecasts will also display`,
+            `Search for a location`,
+            `Current weather will display`,
+            `Later & Tomorrow will also display`,
         ],
         development: `I used async and await along with multiple APIs from OpenWeather such as 'Geocoding', 'CurrentWeather', and '3 Hour / 5 Day Forecast'.`,
         live: 'weather-forecast',
@@ -42,11 +40,13 @@ function GetProjects() {
         title: 'To-Do List',
         alias: 'to-do-list',
         info: [
-            `View lists on the left & tasks on the right`,
-            `Add a new list or task within either section`,
-            `Mark a task as complete, or change task priority`,
+            `View lists on the left`,
+            `View tasks on the right`,
+            `Add a new list or task`,
+            `Change the priority of a task`,
+            `Mark a task as complete`,
         ],
-        development: `I used localstorage in this project to keep track of a user's tasks and lists that they create, as well as any tasks that have been completed.`,
+        development: `I used localstorage in this project to keep track of a user's tasks and lists that they have created, as well as any tasks that have been completed.`,
         live: 'to-do-list',
         code: 'to-do-list',
         tags: [ 'HTML', 'CSS', 'JavaScript', 'Webpack', 'LocalStorage' ],
@@ -77,6 +77,10 @@ function CreateSlideshow(images) {
     
     const dots = document.createElement('div');
 
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Close';
+    closeBtn.classList.add('slideshow-close','big-link');
+
     images.forEach(image => {
         const img = document.createElement('img');
         img.src = image;
@@ -93,22 +97,22 @@ function CreateSlideshow(images) {
         dots.children[0].classList.add('active');
     }
 
-    slideshow.append(previous, slide, next, dots, imagesDiv);
+    slideshow.append(closeBtn, previous, slide, next, dots, imagesDiv);
 
     return slideshow;
 }
 
 function CreateTags(tags) {
-    const section = document.createElement('section');
-    section.classList.add('tags');
+    const list = document.createElement('ul');
+    list.classList.add('tags');
     
     tags.forEach(tag => {
-        const span = document.createElement('span');
-        span.textContent = tag;
-        section.append(span);
+        const item = document.createElement('li');
+        item.textContent = tag;
+        list.append(item);
     });
     
-    return section;
+    return list;
 }
 
 function CreateLinks(links) {
@@ -118,7 +122,7 @@ function CreateLinks(links) {
     section.className = 'project-links';
 
     const heading = document.createElement('h4');
-    heading.textContent = 'View Project';
+    heading.textContent = 'View';
 
     const liveLink = document.createElement('a');    
     const live = document.createElement('img');
@@ -134,10 +138,17 @@ function CreateLinks(links) {
     codeLink.title = 'View on GitHub';
     code.src = viewGithub;
 
+    const viewImages = document.createElement('img');
+    viewImages.src = viewScreenshots;
+    viewImages.alt = 'Screenshots link';
+    viewImages.title = 'View Project Screenshots';
+
     liveLink.append(live);
     codeLink.append(code);
 
-    section.append(heading, liveLink, codeLink);
+    viewImages.addEventListener('click', viewSlideshow.bind(links.article));
+
+    section.append(heading, liveLink, codeLink, viewImages);
 
     return section;
 }
@@ -176,18 +187,28 @@ function CreateDevelopmentSection(info) {
     return section;
 }
 
+function viewSlideshow() {
+    const slideshow = this.querySelector('.slideshow');
+    slideshow.style.display = 'grid';
+    document.body.style.overflow = 'hidden';
+
+    const close = this.querySelector('.slideshow-close');
+
+    close.addEventListener('click', () => {
+        document.body.style.overflow = 'unset';
+        slideshow.style.display = 'none';
+    });
+}
+
 function CreateProject(project) {
     const article = document.createElement('article');
     article.className = 'individual-project';
     
-    //Header Section
-    const header = document.createElement('section');
-    header.classList.add('header');
     //Heading
     const heading = document.createElement('h2');
     heading.textContent = project.title;
     //Links
-    const links = CreateLinks({ live: project.live, github: project.code });
+    const links = CreateLinks({ live: project.live, github: project.code, article });
     //Slideshow
     const slideshow = CreateSlideshow(project.images);
     //Tags
@@ -197,8 +218,7 @@ function CreateProject(project) {
     //Development
     const development = CreateDevelopmentSection(project.development);
     
-    header.append(heading, links);
-    article.append(header, tags, info, development, slideshow);
+    article.append(heading, links, tags, info, development, slideshow);
     
     return article;
 }
