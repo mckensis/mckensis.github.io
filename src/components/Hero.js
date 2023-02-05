@@ -12,7 +12,7 @@ function Hero() {
     portrait.src = Portrait;
 
     const header = document.createElement('h1');
-    header.textContent = `Hi,`;
+    header.textContent = `Hi, `;
 
     const span = document.createElement('span');
     span.textContent = `I'm Aidan`;

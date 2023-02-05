@@ -20,7 +20,7 @@ module.exports = {
             type: 'asset/resource',
           },
           {
-            test: /\.(woff|woff2|)$/i,
+            test: /\.(woff|woff2)$/i,
             type: 'asset/resource',
           },
         ],

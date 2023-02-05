@@ -10,11 +10,14 @@ function LoadPage() {
     const header = document.createElement('header');
     const main = document.createElement('main');
 
-    const bg = document.createElement('div');
-    bg.className = 'bg';
-    body.append(bg);
     body.append(header);
     body.append(main);
+
+    //The background gradient is an absolute positioned div
+    //To disable background scroll on mobile
+    const backgroundGradient = document.createElement('div');
+    backgroundGradient.className = 'bg';
+    body.append(backgroundGradient);
 
     header.append(Nav());
     main.append(Hero());

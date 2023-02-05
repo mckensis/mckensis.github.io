@@ -41,6 +41,12 @@
     font-weight: 800;
 }
 
+@font-face {
+    font-family: 'Pacifico';
+    src: url('../fonts/Pacifico-Regular.woff2') format('woff2'),
+         url('../fonts/Pacifico-Regular.woff') format('woff');
+}
+
 /* Custom Animations */
 @keyframes navMenuWidth {
     0% {
@@ -136,26 +142,34 @@ html {
 
 body {
     display: grid;
-    width: 100vw;
     padding-bottom: 2rem;
+    margin: 0;
     grid-template-rows: max-content 1fr;
     color: var(--white);
 }
 
+header {
+    font-size: 1.5rem;
+    background-color: var(--mid-blue);
+    position: sticky;
+    top: 0;
+}
+
 main {
     display: grid;
-    width: 100vw;
+    margin: 1rem;
 }
 
 .hero,
 .about,
 .projects {
     display: grid;
-    place-self: center;
-    grid-template-columns: 1fr;
     grid-auto-rows: max-content;
     grid-auto-flow: row;
-    width: 90vw;
+}
+
+a.home {
+    font-family: 'Pacifico';
 }
 
 hr {
@@ -179,14 +193,13 @@ button:active {
 .big-link {
     text-align: center;
     display: grid;
-    place-items: center;
     grid-auto-flow: column;
+    grid-auto-columns: max-content;
     place-items: center;
     place-content: center;
-    grid-auto-columns: max-content;
     gap: 1rem;
     height: 5rem;
-    padding: 1rem;
+    padding: 1rem 0;
     font-weight: 800;
     font-size: 2rem;
     color: var(--darkblue);
@@ -201,19 +214,11 @@ button:active {
 }
 
 /* NavBar */
-header {
-    font-size: 1.5rem;
-    background-color: var(--mid-blue);
-    position: sticky;
-    top: 0;
-}
-
 nav {
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 1fr max-content;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    width: calc(100vw - 1rem);
 }
 
 nav ul {
@@ -234,7 +239,7 @@ nav ul.open {
     grid-auto-flow: row;
     grid-auto-rows: max-content;
     place-items: center;
-    gap: 1.5rem;
+    row-gap: 1.5rem;
     width: 100%;
     padding-bottom: 2rem;
     animation: 0.25s 0s 1 linear navMenuWidth;
@@ -250,11 +255,11 @@ nav ul a {
 }
 
 nav a.home {
-    font-weight: 800;
-    font-size: 4.5rem;
+    font-weight: 400;
+    font-size: 4rem;
     text-decoration: none;
     place-self: center start;
-    margin-left: 0.5rem;
+    padding-left: 1rem;
 }
 
 nav a.active {
@@ -263,6 +268,7 @@ nav a.active {
 }
 
 nav a.big-link {
+    padding: 1rem;
     font-size: 1.5rem;
 }
 
@@ -279,6 +285,7 @@ nav .burger {
     place-self: center end;
     border: none;
     background-color: transparent;
+    margin-right: 1rem;
 }
 
 nav .burger span {
@@ -338,6 +345,7 @@ nav .burger.open span:nth-of-type(3) {
 
 .hero img.portrait {
     width: 50%;
+    max-width: 300px;
     place-self: center;
     padding: 0.25rem;
     border: 0.5rem solid var(--white);
@@ -363,6 +371,7 @@ nav .burger.open span:nth-of-type(3) {
 .individual-project {
     display: grid;
     grid-auto-rows: max-content;
+    place-self: center;
     row-gap: 1rem;
     width: 90vw;
     border: 3px solid var(--white);
@@ -400,7 +409,7 @@ nav .burger.open span:nth-of-type(3) {
     list-style: none;
 }
 
-.details li::before {
+.individual-project .details li::before {
     content: "\2e3A";
     color: var(--blue);
     padding-right: 1rem;
@@ -580,52 +589,49 @@ nav .burger.open span:nth-of-type(3) {
 
 /* Not mobile */
 
-/*
-*:hover {
-    cursor: default;
+@media (hover) {
+    *:hover {
+        cursor: default;
+    }
+    .hero button:hover {
+        transform: rotate(-2deg);
+    }
+    .big-link:hover {
+        cursor: pointer;
+        box-shadow: 0 0 10px var(--white);
+        outline: 4px solid var(--black);
+        transform: rotate(2deg);
+    }
+    .burger:hover {
+        cursor: pointer;
+    }
+    
+    .burger:hover span {
+        background-color: var(--blue);
+    }
+    
+    a:hover,
+    button:hover {
+        cursor: pointer;
+    }
+    
+    a:hover:not(a.active):not(a.home):not(a.big-link) {
+        text-decoration: 0.5rem underline var(--blue);
+    }
+    
+    .individual-project:hover {
+        background-color: rgba(0,0,0,0.25);
+    }
+    
+    .project-links img:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    
+    .projects .tags span:hover {
+        box-shadow: 0 0 10px black;
+        background-color: var(--mid-blue);
+        outline: 2px solid black;
+        cursor: default;
+    }
 }
-
-.hero button:hover {
-    transform: rotate(-2deg);
-}
-
-.big-link:hover {
-    cursor: pointer;
-    box-shadow: 0 0 10px var(--white);
-    outline: 4px solid var(--black);
-    transform: rotate(2deg);
-}
-
-.burger:hover {
-    cursor: pointer;
-}
-
-.burger:hover span {
-    background-color: var(--blue);
-}
-
-a:hover,
-button:hover {
-    cursor: pointer;
-}
-
-a:hover:not(a.active):not(a.home):not(a.big-link) {
-    text-decoration: 0.5rem underline var(--blue);
-}
-
-.individual-project:hover {
-    background-color: rgba(0,0,0,0.25);
-}
-
-.project-links img:hover {
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
-.projects .tags span:hover {
-    box-shadow: 0 0 10px black;
-    background-color: var(--mid-blue);
-    outline: 2px solid black;
-    cursor: default;
-}
-*/
