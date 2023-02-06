@@ -644,7 +644,7 @@ nav .burger.open span:nth-of-type(3) {
 }
 
 /* NavBar becoming flex container instead of burger menu */
-@media (min-width: 850px) {
+@media (min-width: 950px) {
     nav {
         grid-template-columns: max-content 1fr;
         max-height: unset;
