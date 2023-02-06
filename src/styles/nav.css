@@ -23,8 +23,6 @@ nav ul {
     position: absolute;
     top: 0rem;
     height: 0;
-    margin-top: 6rem;
-    padding-top: 0.5rem;
     padding-bottom: 1rem;
     font-size: 2rem;
     background-color: var(--mid-blue);

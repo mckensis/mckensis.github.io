@@ -1,4 +1,5 @@
 import '../styles/style.css';
+import Home from '../images/icons/home.png';
 
 function CreateList() {
     const list = document.createElement('ul');
@@ -66,7 +67,7 @@ function Nav() {
     
     const home = document.createElement('a');
     home.className = 'home';
-    home.textContent = 'AM.';
+    home.textContent = 'am.';
 
     const hamburger = CreateHamburger();
     const list = CreateList();
