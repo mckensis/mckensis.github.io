@@ -237,7 +237,7 @@ nav ul.open {
     box-shadow: 0 3px 10px var(--black);
 }
 
-nav li :not(nav .big-link):not(nav a.active) {
+nav a {
     border-bottom: 3px solid var(--blue);
 }
 
@@ -259,6 +259,7 @@ nav a.home {
     place-self: center start;
     padding-left: 1rem;
     font-family: 'Charm';
+    height: 100%;
 }
 
 nav a.active {
@@ -579,8 +580,7 @@ nav .burger.open span:nth-of-type(3) {
     }
 }
 
-/* Not mobile */
-
+/* Any display which has a pointing device */
 @media (hover) {
     *:hover {
         cursor: default;
@@ -634,5 +634,55 @@ nav .burger.open span:nth-of-type(3) {
     a.home:hover {
         transition: color 0.5s ease;
         color: var(--blue);
+    }
+}
+
+@media (min-width: 600px) {
+    .hero h1 span {
+        display: unset;
+    }
+}
+
+/* NavBar becoming flex container instead of burger menu */
+@media (min-width: 850px) {
+    nav {
+        grid-template-columns: max-content 1fr;
+        max-height: unset;
+        gap: 2rem;
+        margin-top: 0.5rem;
+    }
+    nav ul {
+        display: flex;
+        width: 90%;
+        place-self: center end;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 1rem;
+        grid-column: 2;
+        font-size: 1.3rem;
+    }
+
+    nav ul :last-child {
+        justify-self: end;
+    }
+
+    nav .burger {
+        display: none;
+    }
+
+    nav a.big-link {
+        padding: 2rem;
+        height: 3rem;
+        font-size: 1.3rem;
+    }
+
+    nav a {
+        border-bottom: none;
+    }
+
+    nav a.external::after {
+        padding: unset;
+        content: none;
     }
 }
