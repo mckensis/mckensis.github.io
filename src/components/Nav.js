@@ -1,24 +1,22 @@
 import '../styles/style.css';
-import Home from '../images/icons/home.png';
+import LoadSection from '../LoadSection';
 
+//Create the nav list i.e About / Projects / Github / etc
 function CreateList() {
     const list = document.createElement('ul');
     
     const about = document.createElement('li');
-    const aboutLink = document.createElement('a');
-    aboutLink.textContent = 'About';
-    about.append(aboutLink);
+    about.classList.add('internal-link');
+    about.textContent = 'About';
     
     const projects = document.createElement('li');
-    const projectsLink = document.createElement('a');
-    projectsLink.textContent = 'Projects';
-    projectsLink.classList.add('project-link');
-    projects.append(projectsLink);
+    projects.classList.add('internal-link');
+    projects.textContent = 'Projects';
 
     const github = document.createElement('li');
     const githubLink = document.createElement('a');
     githubLink.className = 'external';
-    githubLink.textContent = 'Github';    
+    githubLink.textContent = 'Github';
     githubLink.href = 'https://github.com/mckensis';
     githubLink.target = '_blank';
     github.append(githubLink);
@@ -34,16 +32,31 @@ function CreateList() {
     const contact = document.createElement('li');
     const contactLink = document.createElement('a');
     contactLink.href = 'mailto:adn.mck@gmail.com?subject=Hi Aidan';
-    contactLink.className = 'contact';
-    contactLink.classList.add('big-link');
+    contactLink.classList.add('contact','big-link','external');
     contactLink.textContent = 'Contact';
     contact.append(contactLink);
 
     list.append(about, projects, github, cv, contact);
 
+    const internalLinks = [about, projects];
+
+    internalLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            link.classList.add('active');
+            internalLinks.forEach(link => {
+                    if (link !== e.target) {
+                        link.classList.remove('active');
+                    }
+                });
+
+                LoadSection(link.textContent);
+            });
+        });
+
     return list;
 }
 
+//Create the hamburger button
 function CreateHamburger() {
     const burger = document.createElement('button');
     burger.className = 'burger';
@@ -57,6 +70,7 @@ function CreateHamburger() {
     return burger;
 }
 
+//Toggle the nav menu when hamburger is clicked
 function toggleNav(list) {
     this.classList.toggle('open');
     list.classList.toggle('open');
@@ -76,6 +90,7 @@ function Nav() {
 
     nav.append(home, hamburger, list);
 
+    //Hides the nav menu if it's open and the user clicks outside of it
     document.addEventListener('click', (e) => {
         if (e.target !== document.querySelector('nav ul li')
             && e.target !== document.querySelector('.burger')) {

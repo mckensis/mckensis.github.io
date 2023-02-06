@@ -23,10 +23,10 @@ function LoadPage() {
     main.append(Hero());
 
     const links = document.querySelectorAll('nav li a');
-
+    /*
     links.forEach(link => {
         link.addEventListener('click', (e) => {
-            if (link.parentElement.className !== 'external') {
+            if (!link.parentElement.className.contains('external')) {
                 link.classList.add('active');
                 links.forEach(link => {
                     if (link !== e.target) {
@@ -37,7 +37,7 @@ function LoadPage() {
                 LoadSection(link.textContent);
             }
         });
-    });
+    });*/
 
     const home = document.querySelector('nav a.home');
     home.addEventListener('click', () => {

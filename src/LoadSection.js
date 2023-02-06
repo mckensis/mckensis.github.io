@@ -2,14 +2,8 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 
-function LoadSection(section) {
-
-    const main = document.querySelector('main');
-    
-    if (main.hasChildNodes()) {
-        main.removeChild(main.lastChild);
-    }
-    
+//Handles closing the burger menu when loading a new section
+function CloseBurgerMenu() {
     const burger = document.querySelector('.burger');
     const list = document.querySelector('nav ul');
 
@@ -17,6 +11,19 @@ function LoadSection(section) {
         burger.classList.remove('open');
         list.classList.remove('open');
     }
+    return;
+}
+
+function LoadSection(section) {
+
+    const main = document.querySelector('main');
+    
+    //Removes the current section from main
+    if (main.hasChildNodes()) {
+        main.removeChild(main.lastChild);
+    }
+
+    CloseBurgerMenu();
 
     switch(section) {
         case 'About':

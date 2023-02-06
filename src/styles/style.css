@@ -101,13 +101,13 @@
         transform: rotate(0deg);
     }
     25% {
-        transform: rotate(-2deg);
+        transform: rotate(-1deg);
     }
     50% {
         transform: rotate(0deg);
     }
     75% {
-        transform: rotate(2deg);
+        transform: rotate(1deg);
     }
     100% {
         transform: rotate(0deg);
@@ -239,16 +239,16 @@ nav ul.open {
 }
 
 nav a {
-    border-bottom: 3px solid var(--blue);
+    color: var(--white);
+    text-decoration: none;
 }
 
-nav ul a {
+nav ul li {
     padding: 0.25rem 0;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.25rem;
     color: var(--white);
-    text-decoration: none;
 }
 
 nav a.home {
@@ -264,7 +264,7 @@ nav a.home {
     height: 100%;
 }
 
-nav a.active {
+nav li.active {
     font-weight: 800;
     border-bottom: none;
 }
@@ -586,22 +586,37 @@ nav .burger.open span:nth-of-type(3) {
     *:hover {
         cursor: default;
     }
-    
-    .burger:hover {
-        cursor: pointer;
-    }
 
-    nav a.home {
+    a.home {
         transition: color 1s ease;
     }
 
-    a:hover:not(a.active),
-    button:hover {
+    a.home:hover {
+        transition: color 0.5s ease;
+        color: var(--blue);
+    }
+
+    a:hover,
+    button:hover,
+    .burger:hover,
+    .internal-link:hover:not(.internal-link.active:hover) {
         cursor: pointer;
+    }
+
+    .internal-link,
+    a:not(a.home):not(a.big-link) {
+        transition: text-decoration 0.25s linear;
+        text-decoration: 0.6rem underline transparent;
+    }
+
+    .internal-link:hover,
+    a:hover:not(a.home):not(a.big-link) {
+        transition: text-decoration 0.5s linear;
+        text-decoration: 0.6rem underline var(--blue);
     }
     
     .hero button:hover {
-        transform: rotate(-2deg);
+        transform: rotate(-1deg);
     }
 
     .big-link {
@@ -615,7 +630,7 @@ nav .burger.open span:nth-of-type(3) {
         outline: 4px solid var(--black);
         transition: box-shadow 0.25s, transform 0.5s;
         transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-        transform: rotate(2deg);
+        transform: rotate(1deg);
     }
         
     .burger:hover span {
@@ -623,12 +638,12 @@ nav .burger.open span:nth-of-type(3) {
         background-color: var(--blue);
     }
     
-    a:hover:not(a.active):not(a.home):not(a.big-link):not(.project-links a) {
-        border-bottom: 0.6rem solid var(--blue);
-    }
-    
     .individual-project:hover {
         background-color: rgba(0,0,0,0.25);
+    }
+
+    .project-links img {
+        transition: transform 0.25s ease-in-out;
     }
     
     .project-links img:hover {
@@ -636,16 +651,16 @@ nav .burger.open span:nth-of-type(3) {
         transform: scale(1.1);
         cursor: pointer;
     }
+
+    .projects .tags li {
+        transition: background-color 0.25s ease;
+    }
     
     .projects .tags li:hover {
         box-shadow: 0 0 10px black;
         background-color: var(--mid-blue);
         outline: 2px solid black;
-    }
-
-    a.home:hover {
-        transition: color 0.5s ease;
-        color: var(--blue);
+        transition: background-color 0.25s ease;
     }
 }
 
@@ -687,8 +702,8 @@ nav .burger.open span:nth-of-type(3) {
         grid-template-columns: 33% 1fr;
         max-height: unset;
         gap: 5rem;
-        margin-top: 0.5rem;
     }
+
     nav ul {
         display: flex;
         width: 95%;
