@@ -158,6 +158,10 @@ main {
     margin: 1rem;
 }
 
+button {
+    font-family: 'Manrope', sans-serif;
+}
+
 .hero,
 .about,
 .projects {
@@ -484,6 +488,7 @@ nav .burger.open span:nth-of-type(3) {
 
 .slideshow .slideshow-close {
     position: absolute;
+    padding: 0 1rem;
     top: 1rem;
     right: 1rem;
 }
@@ -579,6 +584,10 @@ nav .burger.open span:nth-of-type(3) {
     .individual-project:nth-of-type(even) {
         animation: 0.25s ease-in 0s 1 slideInFromLeft;
     }
+
+    .slideshow .slideshow-close {
+        animation: none;
+    }
 }
 
 /* Any display which has a pointing device */
@@ -610,7 +619,7 @@ nav .burger.open span:nth-of-type(3) {
     }
 
     .internal-link:hover,
-    a:hover:not(a.home):not(a.big-link) {
+    a:hover:not(a.home):not(a.big-link):not(a.active) {
         transition: text-decoration 0.5s linear;
         text-decoration: 0.6rem underline var(--blue);
     }
