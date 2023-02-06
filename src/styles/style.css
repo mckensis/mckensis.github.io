@@ -43,7 +43,8 @@
 /* Charm - Google Fonts */
 @font-face {
     font-family: 'Charm';
-    src: url('../fonts/Charm.woff2') format('woff2');
+    src: url('../fonts/charm/Charm-Regular.woff2') format('woff2'),
+         url('../fonts/charm/Charm-Regular.woff') format('woff');
 }
 
 /* Custom Animations */
