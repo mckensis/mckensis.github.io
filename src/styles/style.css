@@ -186,7 +186,7 @@ nav a {
 nav ul li {
     padding: 0.25rem 0;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 200;
     letter-spacing: 0.25rem;
     color: var(--white);
 }
@@ -197,7 +197,6 @@ nav a.home {
     font-size: 4rem;
     line-height: 5rem;
     text-decoration: none;
-    border-bottom: none;
     place-self: center start;
     padding-left: 1rem;
     font-family: 'Charm';
@@ -205,11 +204,11 @@ nav a.home {
     position: relative;
 }
 
-nav .internal-link.active {
-    transform: scale(1.1);
+.internal-link.active {
     font-weight: 800;
-    text-decoration: 0.6rem underline var(--blue);
-    transition: all 0.25s ease;
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.6rem;
+    text-decoration-color: var(--blue);
 }
 
 nav a.big-link {
@@ -723,6 +722,10 @@ nav .burger.open span:nth-of-type(3) {
         padding: 1rem;
         gap: 5rem;
         font-size: 1.3rem;
+    }
+
+    nav ul li {
+        font-weight: 600;
     }
 
     nav ul :last-child {
