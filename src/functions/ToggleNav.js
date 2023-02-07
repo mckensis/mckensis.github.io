@@ -1,7 +1,13 @@
 //Toggle the nav menu when hamburger is clicked
-function toggleNav(list) {
-    this.classList.toggle('open');
+function ToggleNav(burger, list) {
+    burger.classList.toggle('open');
     list.classList.toggle('open');
 }
 
-export default toggleNav;
+function NavListeners(burger, list) {
+    burger.addEventListener('click', () => {
+        ToggleNav(burger, list);
+    });
+}
+
+export default NavListeners;

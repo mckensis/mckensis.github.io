@@ -18,11 +18,6 @@ function Listeners() {
                 document.querySelector('.burger').classList.remove('open');
         };
     });
-
-    const hamburger = document.querySelector('.burger');
-    const list = document.querySelector('nav ul')
-
-    hamburger.addEventListener('click', toggleNav.bind(hamburger, list));
 }
 
 export default Listeners;

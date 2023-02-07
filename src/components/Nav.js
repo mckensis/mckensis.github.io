@@ -1,4 +1,5 @@
 import '../styles/style.css';
+import NavListeners from '../functions/ToggleNav';
 
 //Create the nav list i.e About / Projects / Github / etc
 function CreateList() {
@@ -65,6 +66,8 @@ function Nav() {
     const list = CreateList();
 
     nav.append(home, hamburger, list);
+
+    NavListeners(hamburger, list);
 
     return nav;
 }
