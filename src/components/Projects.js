@@ -1,13 +1,19 @@
 import '../styles/style.css';
-import Slideshow from '../Slideshow';
+import Slideshow from '../functions/Slideshow';
 import viewLive from '../images/icons/live.png';
 import viewGithub from '../images/icons/github.png';
-import viewScreenshots from '../images/icons/slideshow-50.png';
-import GetScreenshots from '../GetScreenshots';
+import viewScreenshots from '../images/icons/slideshow.png';
+import GetScreenshots from '../functions/GetScreenshots';
 
 //Shows the slideshow overlay
 function viewSlideshow() {
     const slideshow = this.querySelector('.slideshow');
+    
+    //If the project doesn't have a slideshow, then just return
+    if (!slideshow) {
+        return;
+    }
+
     slideshow.style.display = 'grid';
     document.body.style.overflow = 'hidden';
 
@@ -218,8 +224,6 @@ function CreateProject(project) {
     heading.textContent = project.title;
     //Links
     const links = CreateLinks({ live: project.live, github: project.code, article });
-    //Slideshow
-    const slideshow = CreateSlideshow(project.images);
     //Tags
     const tags = CreateTags(project.tags);
     //Info
@@ -227,7 +231,13 @@ function CreateProject(project) {
     //Development
     const development = CreateDevelopmentSection(project.development);
     
-    article.append(heading, links, tags, info, development, slideshow);
+    article.append(heading, links, tags, info, development);
+    
+    //Slideshow if there are images present
+    if (project.images.length > 0) {
+        const slideshow = CreateSlideshow(project.images);
+        article.append(slideshow);
+    }
     
     return article;
 }

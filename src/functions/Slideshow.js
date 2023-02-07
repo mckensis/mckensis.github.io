@@ -31,7 +31,15 @@ function updateArrows(arrows, images, index) {
 
 function Slideshow(parents) {
 
-    parents.forEach(parent => {
+    let parentsArray = parents;
+
+    for (let i = 0; i < parentsArray.length; i++) {
+        if (!parentsArray[i]) {
+            parentsArray.splice(i);
+        }
+    }
+
+    parentsArray.forEach(parent => {
         let index = 0;
         const arrows = parent.querySelectorAll('.arrow');
         const previous = parent.querySelector('.arrow.previous');

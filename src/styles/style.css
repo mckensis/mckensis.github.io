@@ -47,73 +47,6 @@
          url('../fonts/charm/Charm-Regular.woff') format('woff');
 }
 
-/* Custom Animations */
-@keyframes navMenuSlide {
-    0% {
-        max-height: 0vh;
-    }
-    100% {
-        max-height: 100vh;
-    }
-}
-
-@keyframes slideInFromTop {
-    0% {
-        transform: translateY(-10%);
-        opacity: 0;
-    }
-    60% {
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInFromRight {
-    0% {
-        transform: translateX(1%);
-        opacity: 0;
-    }
-    60% {
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInFromLeft {
-    0% {
-        transform: translateX(-1%);
-        opacity: 0;
-    }
-    60% {
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-@keyframes bigLinkWiggle {
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(-1deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-    75% {
-        transform: rotate(1deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
 /* Custom variables */
 :root {
     --primary-text-color: #7180AC;
@@ -218,7 +151,7 @@ nav {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: space-between;
-    width: 98vw;
+    width: 97vw;
     height: 6rem;
     max-height: 6rem;
 }
@@ -241,7 +174,6 @@ nav ul.open {
     place-items: center;
     row-gap: 2rem;
     width: 100%;
-    animation: 0.5s 0s 1 navMenuSlide;
     border-bottom: 3px solid var(--black);
     box-shadow: 0 3px 10px var(--black);
 }
@@ -548,35 +480,7 @@ nav .burger.open span:nth-of-type(3) {
     z-index: -1;
 }
 
-/* Animations if reduced motion isn't enabled for user */
-@media (prefers-reduced-motion: no-preference) {    
-    .hero img.portrait {
-        animation: 0.25s ease-in 0s 1 slideInFromTop;
-    }
-
-    .hero h1,
-    .hero p {
-        animation: 0.5s ease-in 0s 1 slideInFromTop;
-    }
-    
-    .hero button.big-link {
-        animation: 1s ease-in 0s 1 slideInFromTop;
-    }
-
-    .hero a.big-link {
-        animation: 1.25s ease-in 0s 1 slideInFromTop;
-    }
-
-    .individual-project:nth-of-type(odd) {
-        animation: 0.25s ease-in 0s 1 slideInFromRight;
-    }
-    
-    .individual-project:nth-of-type(even) {
-        animation: 0.25s ease-in 0s 1 slideInFromLeft;
-    }
-}
-
-/* Any display which has a pointing device */
+/* Transitions / cursor settings for any display which has a pointing device */
 @media (hover) {
     *:hover {
         cursor: default;
@@ -667,12 +571,114 @@ nav .burger.open span:nth-of-type(3) {
     }
 }
 
+/* Animations if reduced motion isn't enabled for user */
+@media (prefers-reduced-motion: no-preference) {
+
+    /* Custom Animations */
+    @keyframes navMenuSlide {
+        0% {
+            max-height: 0vh;
+        }
+        100% {
+            max-height: 100vh;
+        }
+    }
+
+    @keyframes slideInFromTop {
+        0% {
+            transform: translateY(-10%);
+            opacity: 0;
+        }
+        60% {
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInFromRight {
+        0% {
+            transform: translateX(1%);
+            opacity: 0;
+        }
+        60% {
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInFromLeft {
+        0% {
+            transform: translateX(-1%);
+            opacity: 0;
+        }
+        60% {
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .hero img.portrait {
+        animation: 0.25s ease-in 0s 1 slideInFromTop;
+    }
+
+    .hero h1,
+    .hero p {
+        animation: 0.5s ease-in 0s 1 slideInFromTop;
+    }
+    
+    .hero button.big-link {
+        animation: 1s ease-in 0s 1 slideInFromTop;
+    }
+
+    .hero a.big-link {
+        animation: 1.25s ease-in 0s 1 slideInFromTop;
+    }
+
+    .individual-project:nth-of-type(odd) {
+        animation: 0.25s ease-in 0s 1 slideInFromRight;
+    }
+    
+    .individual-project:nth-of-type(even) {
+        animation: 0.25s ease-in 0s 1 slideInFromLeft;
+    }
+
+    nav ul.open {
+        animation: 0.5s 0s 1 navMenuSlide;
+    }
+}
+
+/* Big link hover wiggle */
 @media (hover) and (prefers-reduced-motion: no-preference) {
+    @keyframes bigLinkWiggle {
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(-1deg);
+        }
+        50% {
+            transform: rotate(0deg);
+        }
+        75% {
+            transform: rotate(1deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+
     nav .contact:hover {
         animation: .75s ease 0s infinite bigLinkWiggle;
     }
 }
 
+/* Hero layout change for larger screens */
 @media (min-width: 650px) {
     .hero {
         grid-template-columns: 1fr 1fr;
@@ -705,7 +711,7 @@ nav .burger.open span:nth-of-type(3) {
     }
 }
 
-/* NavBar becoming flex container instead of burger menu */
+/* Nav becoming flex container instead of burger menu */
 @media (min-width: 1100px) {
     nav ul {
         display: flex;
@@ -743,6 +749,7 @@ nav .burger.open span:nth-of-type(3) {
     }
 }
 
+/* Increased Nav menu gap */
 @media (min-width: 1500px) {
     nav ul {
         gap: 8rem;

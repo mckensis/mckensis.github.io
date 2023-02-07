@@ -1,6 +1,6 @@
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Projects from "./components/Projects";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Projects from "../components/Projects";
 import Listeners from "./EventListeners";
 
 //Applies the 'active' class to the internal nav link for the active section

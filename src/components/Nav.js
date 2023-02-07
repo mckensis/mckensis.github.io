@@ -1,5 +1,4 @@
 import '../styles/style.css';
-//import LoadSection from '../LoadSection';
 
 //Create the nav list i.e About / Projects / Github / etc
 function CreateList() {

@@ -1,7 +1,6 @@
 import '../styles/style.css';
-import Portrait from '../images/icon.jpg';
+import Portrait from '../images/portrait.jpg';
 import Mail from '../images/icons/email.png';
-import LoadSection from '../LoadSection';
 
 function Hero() {
     const hero = document.createElement('section');

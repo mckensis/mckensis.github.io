@@ -1,7 +1,5 @@
-import Nav from './components/Nav';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
+import Nav from '../components/Nav';
+import Hero from '../components/Hero';
 import Listeners from './EventListeners';
 
 function LoadPage() {
