@@ -62,6 +62,12 @@ function CloseBurgerMenu() {
     return;
 }
 
+//Scroll to the top of the page
+function ScrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
 //Handles loading a new internal section to display within main
 function LoadSection(links, target) {
     const main = document.querySelector('main');
@@ -70,6 +76,7 @@ function LoadSection(links, target) {
     RemoveCurrentSection(main);    
     ManageActiveClass(links, target);
     DisplayNewSection(main, target.textContent);
+    ScrollToTop();
 }
 
 export default LoadSection;
