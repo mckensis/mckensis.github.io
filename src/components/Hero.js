@@ -23,11 +23,7 @@ function Hero() {
     const projects = document.createElement('button');
     projects.textContent = 'View My Projects';
     projects.type = 'button';
-    projects.classList.add('big-link','hero-projects');
-    projects.addEventListener('click', () => {
-        document.querySelector('nav li a.project-link').classList.add('active');
-        LoadSection('Projects');
-    });
+    projects.classList.add('big-link','internal-link');
 
     const mailIcon = document.createElement('img');
     mailIcon.src = Mail;

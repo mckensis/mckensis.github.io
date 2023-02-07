@@ -190,6 +190,7 @@ button:active {
 /* Large links i.e. 'Contact' and 'Projects' links, etc */
 .big-link {
     text-align: center;
+    text-transform: uppercase;
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
@@ -199,7 +200,8 @@ button:active {
     height: 5rem;
     padding: 1rem 0;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.25rem;
     color: var(--darkblue);
     background-color: var(--white);
     outline: none;
@@ -211,12 +213,14 @@ button:active {
 
 /* NavBar */
 nav {
-    display: grid;
+    display: flex;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    max-height: 5rem;
-    width: 95vw;
+    justify-content: space-between;
+    width: 98vw;
+    height: 6rem;
+    max-height: 6rem;
 }
 
 nav ul {
@@ -266,21 +270,19 @@ nav a.home {
     padding-left: 1rem;
     font-family: 'Charm';
     height: 100%;
+    position: relative;
 }
 
-nav li.active {
+nav .internal-link.active {
+    transform: scale(1.1);
     font-weight: 800;
-    border-bottom: none;
+    text-decoration: 0.6rem underline var(--blue);
+    transition: all 0.25s ease;
 }
 
 nav a.big-link {
     padding: 1rem;
     font-size: 1.5rem;
-}
-
-nav a.external::after {
-    padding-left: 0.25rem;
-    content: url('../images/icons/external.png');
 }
 
 nav .burger {
@@ -508,10 +510,6 @@ nav .burger.open span:nth-of-type(3) {
     background-color: var(--darkblue);
 }
 
-.slideshow .dot:hover {
-    background-color: var(--blue);
-}
-
 .slideshow .slide {
     grid-column: 2;
 }
@@ -539,10 +537,6 @@ nav .burger.open span:nth-of-type(3) {
     cursor: pointer;
 }
 
-.slideshow .arrow:hover {
-    color: var(--blue);
-}
-
 /* Fixed position gradient background */
 .bg {
     background: linear-gradient(var(--mid-blue) 15%, var(--black));
@@ -555,11 +549,7 @@ nav .burger.open span:nth-of-type(3) {
 }
 
 /* Animations if reduced motion isn't enabled for user */
-@media (prefers-reduced-motion: no-preference) {
-    nav .contact:hover {
-        animation: .75s ease 0s infinite bigLinkWiggle;
-    }
-    
+@media (prefers-reduced-motion: no-preference) {    
     .hero img.portrait {
         animation: 0.25s ease-in 0s 1 slideInFromTop;
     }
@@ -584,10 +574,6 @@ nav .burger.open span:nth-of-type(3) {
     .individual-project:nth-of-type(even) {
         animation: 0.25s ease-in 0s 1 slideInFromLeft;
     }
-
-    .slideshow .slideshow-close {
-        animation: none;
-    }
 }
 
 /* Any display which has a pointing device */
@@ -608,7 +594,7 @@ nav .burger.open span:nth-of-type(3) {
     a:hover,
     button:hover,
     .burger:hover,
-    .internal-link:hover:not(.internal-link.active:hover) {
+    .internal-link:hover:not(nav .internal-link.active) {
         cursor: pointer;
     }
 
@@ -618,8 +604,8 @@ nav .burger.open span:nth-of-type(3) {
         text-decoration: 0.6rem underline transparent;
     }
 
-    .internal-link:hover,
-    a:hover:not(a.home):not(a.big-link):not(a.active) {
+    .internal-link:hover:not(.active):not(.home):not(.big-link),
+    a:hover:not(a.home):not(a.big-link) {
         transition: text-decoration 0.5s linear;
         text-decoration: 0.6rem underline var(--blue);
     }
@@ -633,7 +619,7 @@ nav .burger.open span:nth-of-type(3) {
         transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
     }
     
-    .big-link:hover {
+    .big-link:hover:not(.slideshow .big-link) {
         cursor: pointer;
         box-shadow: 0 0 10px var(--white);
         outline: 4px solid var(--black);
@@ -671,6 +657,20 @@ nav .burger.open span:nth-of-type(3) {
         outline: 2px solid black;
         transition: background-color 0.25s ease;
     }
+
+    .slideshow .dot:hover {
+        background-color: var(--blue);
+    }
+    
+    .slideshow .arrow:hover {
+        color: var(--blue);
+    }
+}
+
+@media (hover) and (prefers-reduced-motion: no-preference) {
+    nav .contact:hover {
+        animation: .75s ease 0s infinite bigLinkWiggle;
+    }
 }
 
 @media (min-width: 650px) {
@@ -706,22 +706,16 @@ nav .burger.open span:nth-of-type(3) {
 }
 
 /* NavBar becoming flex container instead of burger menu */
-@media (min-width: 950px) {
-    nav {
-        grid-template-columns: 33% 1fr;
-        max-height: unset;
-        gap: 5rem;
-    }
-
+@media (min-width: 1100px) {
     nav ul {
         display: flex;
         width: 95%;
-        place-self: center end;
-        justify-content: space-between;
+        flex-grow: 2;
+        justify-content: end;
         align-items: center;
         position: relative;
         padding: 1rem;
-        grid-column: 2;
+        gap: 5rem;
         font-size: 1.3rem;
     }
 
@@ -746,5 +740,11 @@ nav .burger.open span:nth-of-type(3) {
     nav a.external::after {
         padding: unset;
         content: none;
+    }
+}
+
+@media (min-width: 1500px) {
+    nav ul {
+        gap: 8rem;
     }
 }

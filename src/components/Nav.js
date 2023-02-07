@@ -1,5 +1,5 @@
 import '../styles/style.css';
-import LoadSection from '../LoadSection';
+//import LoadSection from '../LoadSection';
 
 //Create the nav list i.e About / Projects / Github / etc
 function CreateList() {
@@ -10,12 +10,12 @@ function CreateList() {
     about.textContent = 'About';
     
     const projects = document.createElement('li');
-    projects.classList.add('internal-link');
+    projects.classList.add('internal-link','projects');
     projects.textContent = 'Projects';
 
     const github = document.createElement('li');
     const githubLink = document.createElement('a');
-    githubLink.className = 'external';
+    githubLink.className = 'external-link';
     githubLink.textContent = 'Github';
     githubLink.href = 'https://github.com/mckensis';
     githubLink.target = '_blank';
@@ -23,7 +23,7 @@ function CreateList() {
     
     const cv = document.createElement('li');
     const cvLink = document.createElement('a');
-    cvLink.className = 'external';
+    cvLink.className = 'external-link';
     cvLink.textContent = 'View CV';
     cvLink.href = '#';
     cvLink.target = '_blank';
@@ -32,26 +32,11 @@ function CreateList() {
     const contact = document.createElement('li');
     const contactLink = document.createElement('a');
     contactLink.href = 'mailto:adn.mck@gmail.com?subject=Hi Aidan';
-    contactLink.classList.add('contact','big-link','external');
+    contactLink.classList.add('contact','big-link','external-link');
     contactLink.textContent = 'Contact';
     contact.append(contactLink);
 
     list.append(about, projects, github, cv, contact);
-
-    const internalLinks = [about, projects];
-
-    internalLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            link.classList.add('active');
-            internalLinks.forEach(link => {
-                    if (link !== e.target) {
-                        link.classList.remove('active');
-                    }
-                });
-
-                LoadSection(link.textContent);
-            });
-        });
 
     return list;
 }
@@ -70,34 +55,17 @@ function CreateHamburger() {
     return burger;
 }
 
-//Toggle the nav menu when hamburger is clicked
-function toggleNav(list) {
-    this.classList.toggle('open');
-    list.classList.toggle('open');
-}
-
 function Nav() {
     const nav = document.createElement('nav');
     
     const home = document.createElement('a');
-    home.className = 'home';
+    home.classList.add('home','internal-link');
     home.textContent = 'am.';
 
     const hamburger = CreateHamburger();
     const list = CreateList();
 
-    hamburger.addEventListener('click', toggleNav.bind(hamburger, list));
-
     nav.append(home, hamburger, list);
-
-    //Hides the nav menu if it's open and the user clicks outside of it
-    document.addEventListener('click', (e) => {
-        if (e.target !== document.querySelector('nav ul li')
-            && e.target !== document.querySelector('.burger')) {
-                document.querySelector('nav ul').classList.remove('open');
-                document.querySelector('.burger').classList.remove('open');
-        };
-    });
 
     return nav;
 }

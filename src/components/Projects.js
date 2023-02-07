@@ -5,6 +5,21 @@ import viewGithub from '../images/icons/github.png';
 import viewScreenshots from '../images/icons/slideshow-50.png';
 import GetScreenshots from '../GetScreenshots';
 
+//Shows the slideshow overlay
+function viewSlideshow() {
+    const slideshow = this.querySelector('.slideshow');
+    slideshow.style.display = 'grid';
+    document.body.style.overflow = 'hidden';
+
+    const close = this.querySelector('.slideshow-close');
+
+    close.addEventListener('click', () => {
+        document.body.style.overflow = 'unset';
+        slideshow.style.display = 'none';
+    });
+}
+
+//Returns an array containing the projects I want to display on the page
 function GetProjects() {
     const battleship = {
         title: 'Battleship',
@@ -56,6 +71,8 @@ function GetProjects() {
     return [ battleship, weather, todo ];
 }
 
+//Creates a slideshow for each project
+//TO-DO: only create one slideshow, and send the images to it when viewing
 function CreateSlideshow(images) {
     const slideshow = document.createElement('section');
     slideshow.className = 'slideshow';
@@ -102,6 +119,7 @@ function CreateSlideshow(images) {
     return slideshow;
 }
 
+//Creates the tags i.e. 'HTML' 'API' etc.
 function CreateTags(tags) {
     const list = document.createElement('ul');
     list.classList.add('tags');
@@ -115,6 +133,7 @@ function CreateTags(tags) {
     return list;
 }
 
+//Creates the image links i.e. Live / Github / Slideshow
 function CreateLinks(links) {
     const BASE_GITHUB_URL = 'https://github.com/mckensis/';
 
@@ -153,6 +172,7 @@ function CreateLinks(links) {
     return section;
 }
 
+//Details section
 function CreateDetailsSection(details) {
     const section = document.createElement('section');
     section.classList.add('details');
@@ -173,6 +193,7 @@ function CreateDetailsSection(details) {
     return section;
 }
 
+//Development Process section
 function CreateDevelopmentSection(info) {
     const section = document.createElement('section');
     section.classList.add('development');
@@ -187,19 +208,7 @@ function CreateDevelopmentSection(info) {
     return section;
 }
 
-function viewSlideshow() {
-    const slideshow = this.querySelector('.slideshow');
-    slideshow.style.display = 'grid';
-    document.body.style.overflow = 'hidden';
-
-    const close = this.querySelector('.slideshow-close');
-
-    close.addEventListener('click', () => {
-        document.body.style.overflow = 'unset';
-        slideshow.style.display = 'none';
-    });
-}
-
+//General layout for the project
 function CreateProject(project) {
     const article = document.createElement('article');
     article.className = 'individual-project';
@@ -223,6 +232,7 @@ function CreateProject(project) {
     return article;
 }
 
+//The Projects parent section
 function Projects() {
     const projects = document.createElement('section');
     projects.className = 'projects';

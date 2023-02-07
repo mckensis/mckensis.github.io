@@ -2,7 +2,7 @@ import Nav from './components/Nav';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
-import LoadSection from './LoadSection';
+import Listeners from './EventListeners';
 
 function LoadPage() {
 
@@ -21,31 +21,7 @@ function LoadPage() {
 
     header.append(Nav());
     main.append(Hero());
-
-    const links = document.querySelectorAll('nav li a');
-    /*
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            if (!link.parentElement.className.contains('external')) {
-                link.classList.add('active');
-                links.forEach(link => {
-                    if (link !== e.target) {
-                        link.classList.remove('active');
-                    }
-                });
-
-                LoadSection(link.textContent);
-            }
-        });
-    });*/
-
-    const home = document.querySelector('nav a.home');
-    home.addEventListener('click', () => {
-        LoadSection('Home');
-        links.forEach(link => {
-            link.classList.remove('active');
-        });
-    });
+    Listeners();
 }
 
 export default LoadPage;
