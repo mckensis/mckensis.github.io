@@ -2,7 +2,6 @@ import '../styles/style.css';
 import Slideshow from '../functions/Slideshow';
 import GetScreenshots from '../functions/GetScreenshots';
 import GetProjects from '../functions/GetProjects';
-import Animate from '../functions/Animate';
 
 //Shows the slideshow overlay
 function viewSlideshow() {
@@ -204,8 +203,6 @@ function CreateProject(project) {
         const slideshow = CreateSlideshow(project.images);
         article.append(slideshow);
     }
-
-    Animate(article);
 
     return article;
 }
