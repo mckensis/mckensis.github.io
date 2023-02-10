@@ -40,7 +40,7 @@ function GetProjects() {
             `Change the priority of a task`,
             `Mark a task as complete`,
         ],
-        development: `I created this CRUD-style project using 'localstorage' to store the user's tasks and lists that they have created, as well as any tasks that have been completed.`,
+        development: `I created this CRUD-style project using 'localStorage' to store the user's tasks and lists that they have created, as well as any tasks that have been completed.`,
         live: 'to-do-list',
         code: 'to-do-list',
         tags: [ 'CRUD', 'LocalStorage' ],
