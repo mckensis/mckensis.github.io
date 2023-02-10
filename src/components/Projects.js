@@ -1,10 +1,8 @@
 import '../styles/style.css';
 import Slideshow from '../functions/Slideshow';
-import viewLive from '../images/icons/live.png';
-import viewGithub from '../images/icons/github.png';
-import viewScreenshots from '../images/icons/slideshow.png';
 import GetScreenshots from '../functions/GetScreenshots';
 import GetProjects from '../functions/GetProjects';
+import Animate from '../functions/Animate';
 
 //Shows the slideshow overlay
 function viewSlideshow() {
@@ -206,7 +204,9 @@ function CreateProject(project) {
         const slideshow = CreateSlideshow(project.images);
         article.append(slideshow);
     }
-    
+
+    Animate(article);
+
     return article;
 }
 
