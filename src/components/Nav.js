@@ -1,5 +1,5 @@
 import '../styles/style.css';
-import NavListeners from '../functions/ToggleNav';
+import { NavListeners } from '../functions/ToggleNav';
 
 //Create the nav list i.e About / Projects / Github / etc
 function CreateList() {

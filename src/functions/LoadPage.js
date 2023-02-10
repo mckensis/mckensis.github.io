@@ -1,6 +1,6 @@
 import Nav from '../components/Nav';
 import Hero from '../components/Hero';
-import Listeners from './EventListeners';
+import Listener from './EventListeners';
 import Projects from '../components/Projects';
 
 function LoadPage() {
@@ -20,7 +20,7 @@ function LoadPage() {
 
     header.append(Nav());
     main.append(Projects());
-    Listeners();
+    Listener();
 }
 
 export default LoadPage;
