@@ -49,6 +49,12 @@
 
 /* Custom variables */
 :root {
+
+    --palette-darkest: #222831;
+    --palette-dark: #393E46;
+    --palette-light: #EEEEEE;
+    --palette-color: #FFD369;
+
     --primary-text-color: #7180AC;
     --secondary-text-color: #F5F1ED;
 
@@ -76,12 +82,12 @@ html {
 body {
     display: grid;
     grid-template-rows: max-content 1fr;
-    color: var(--white);
+    color: var(--palette-light);
 }
 
 header {
     font-size: 1.5rem;
-    background-color: var(--mid-blue);
+    background-color: var(--palette-dark);
     position: sticky;
     top: 0;
 }
@@ -104,12 +110,12 @@ button {
 }
 
 hr {
-    width: 60%;
-    max-width: 18rem;
+    width: 100%;
+    max-width: 20rem;
     place-self: center;
-    height: 0.5rem;
+    height: 0.25rem;
     border-radius: 2rem;
-    background-color: var(--white);
+    background-color: var(--palette-color);
     outline: none;
     border: none;
 }
@@ -135,12 +141,12 @@ button:active {
     font-weight: 800;
     font-size: 1.5rem;
     letter-spacing: 0.25rem;
-    color: var(--darkblue);
-    background-color: var(--white);
+    color: var(--palette-dark);
+    background-color: var(--palette-color);
     outline: none;
     border: none;
     text-decoration: none;
-    box-shadow: 0 0 10px var(--darkblue);
+    /*box-shadow: 0 0 10px var(--darkblue);*/
     border-radius: 1.5rem;
 }
 
@@ -162,7 +168,7 @@ nav ul {
     top: 0rem;
     font-size: 2rem;
     padding: 5rem 0 2.5rem 0;
-    background-color: var(--mid-blue);
+    background-color: var(--palette-dark);
     list-style: none;
     overflow: hidden;
 }
@@ -174,12 +180,12 @@ nav ul.open {
     place-items: center;
     row-gap: 2rem;
     width: 100%;
-    border-bottom: 3px solid var(--black);
-    box-shadow: 0 3px 10px var(--black);
+    border-bottom: 3px solid var(--palette-darkest);
+    /*box-shadow: 0 3px 10px var(--black);*/
 }
 
 nav a {
-    color: var(--white);
+    color: var(--palette-light);
     text-decoration: none;
 }
 
@@ -188,27 +194,29 @@ nav ul li {
     text-transform: uppercase;
     font-weight: 200;
     letter-spacing: 0.25rem;
-    color: var(--white);
+    color: var(--palette-light);
 }
 
 nav a.home {
     z-index: 1;
     font-weight: 400;
     font-size: 4rem;
-    line-height: 5rem;
+    line-height: 6rem;
     text-decoration: none;
     place-self: center start;
     padding-left: 1rem;
     font-family: 'Charm';
     height: 100%;
     position: relative;
+    top: -.35rem;
 }
 
 .internal-link.active {
     font-weight: 800;
+    transform: scale(1.05);
     text-decoration-line: underline;
     text-decoration-thickness: 0.6rem;
-    text-decoration-color: var(--blue);
+    text-decoration-color: var(--palette-color);
 }
 
 nav a.big-link {
@@ -230,7 +238,7 @@ nav .burger {
 nav .burger span {
     width: 40px;
     height: 3px;
-    background-color: var(--white);
+    background-color: var(--palette-light);
     border-radius: 2rem;
     pointer-events: none;
 }
@@ -274,7 +282,6 @@ nav .burger.open span:nth-of-type(3) {
 
 .hero p {
     font-size: 2.5rem;
-    color: var(--blue);
 }
 
 .hero img.portrait {
@@ -282,7 +289,7 @@ nav .burger.open span:nth-of-type(3) {
     max-width: 300px;
     place-self: center;
     padding: 0.25rem;
-    border: 0.5rem solid var(--white);
+    border: 0.5rem solid var(--palette-light);
     border-radius: 50%;
 }
 
@@ -307,14 +314,14 @@ nav .burger.open span:nth-of-type(3) {
     grid-auto-rows: max-content;
     place-self: center;
     row-gap: 1rem;
-    border: 3px solid var(--white);
+    border: 3px solid var(--palette-color);
     border-radius: 1rem;
-    box-shadow: 0px 0px 3px var(--white);
+    /*box-shadow: 0px 0px 3px var(--white);*/
     padding: 1rem 1rem;
 }
 
 .individual-project h2 {
-    text-shadow: 3px 3px var(--black);
+    /*text-shadow: 3px 3px var(--black);*/
     text-align: center;
     font-size: 2.3rem;
     font-weight: 800;
@@ -327,7 +334,7 @@ nav .burger.open span:nth-of-type(3) {
     font-weight: 600;
     letter-spacing: 0.25rem;
     text-transform: uppercase;
-    border-bottom: 3px solid var(--blue);
+    border-bottom: 3px solid var(--palette-color);
 }
 
 .individual-project .details,
@@ -343,7 +350,7 @@ nav .burger.open span:nth-of-type(3) {
 
 .individual-project .details li::before {
     content: "\2e3A";
-    color: var(--blue);
+    color: var(--palette-light);
     padding-right: 1rem;
     font-weight: bold;
 }
@@ -391,12 +398,11 @@ nav .burger.open span:nth-of-type(3) {
 .individual-project ul.tags li {
     padding: 0.5rem 0.75rem;
     text-align: center;
-    background-color: var(--darkblue);
     border-radius: 3rem;
     font-weight: 400;
     letter-spacing: 0.75px;
-    border: 1px solid var(--black);
-    box-shadow: 0 0 3px var(--black);
+    outline: 1px solid var(--palette-color);
+    /*box-shadow: 0 0 3px var(--black);*/
 }
 
 .individual-project .slideshow {
@@ -433,12 +439,12 @@ nav .burger.open span:nth-of-type(3) {
     place-self: center;
     max-width: 500px;
     border-radius: 2rem;
-    border: 3px solid var(--white);
+    border: 3px solid var(--palette-light);
     padding: 0.5rem;
 }
 
 .slideshow .dot.active {
-    background-color: var(--darkblue);
+    background-color: var(--palette-darkest);
 }
 
 .slideshow .slide {
@@ -458,7 +464,7 @@ nav .burger.open span:nth-of-type(3) {
     height: 1.25rem;
     width: 1.25rem;
     border-radius: 50%;
-    background-color: var(--white);
+    background-color: var(--palette-light);
     cursor: pointer;
 }
 
@@ -470,7 +476,7 @@ nav .burger.open span:nth-of-type(3) {
 
 /* Fixed position gradient background */
 .bg {
-    background: linear-gradient(var(--mid-blue) 15%, var(--black));
+    background: linear-gradient(var(--palette-dark) 15%, var(--palette-darkest));
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
@@ -491,7 +497,7 @@ nav .burger.open span:nth-of-type(3) {
 
     a.home:hover {
         transition: color 0.5s ease;
-        color: var(--blue);
+        color: var(--palette-color);
     }
 
     a:hover,
@@ -510,7 +516,7 @@ nav .burger.open span:nth-of-type(3) {
     .internal-link:hover:not(.active):not(.home):not(.big-link),
     a:hover:not(a.home):not(a.big-link) {
         transition: text-decoration 0.5s linear;
-        text-decoration: 0.6rem underline var(--blue);
+        text-decoration: 0.6rem underline var(--palette-color);
     }
     
     .hero button:hover {
@@ -524,7 +530,7 @@ nav .burger.open span:nth-of-type(3) {
     
     .big-link:hover:not(.slideshow .big-link) {
         cursor: pointer;
-        box-shadow: 0 0 10px var(--white);
+        /*box-shadow: 0 0 10px var(--white);*/
         outline: 4px solid var(--black);
         transition: box-shadow 0.25s, transform 0.5s;
         transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -533,7 +539,7 @@ nav .burger.open span:nth-of-type(3) {
         
     .burger:hover span {
         transition: transform 0.25s ease, background-color 0.5s ease;
-        background-color: var(--blue);
+        background-color: var(--palette-color);
     }
     
     .individual-project:hover {
@@ -553,20 +559,13 @@ nav .burger.open span:nth-of-type(3) {
     .projects .tags li {
         transition: background-color 0.25s ease;
     }
-    
-    .projects .tags li:hover {
-        box-shadow: 0 0 10px black;
-        background-color: var(--mid-blue);
-        outline: 2px solid black;
-        transition: background-color 0.25s ease;
-    }
 
     .slideshow .dot:hover {
-        background-color: var(--blue);
+        background-color: var(--palette-color);
     }
     
     .slideshow .arrow:hover {
-        color: var(--blue);
+        color: var(--palette-color);
     }
 }
 
@@ -622,21 +621,47 @@ nav .burger.open span:nth-of-type(3) {
         }
     }
 
+    @keyframes scaleUp {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+        75% {
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes fromBottom {
+        0% {
+            transform: translateY(1rem);
+            opacity: 0;
+        }
+        75% {
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
     .hero img.portrait {
-        animation: 0.25s ease-in 0s 1 slideInFromTop;
+        animation: 0.25s ease 0s 1 scaleUp;
     }
 
     .hero h1,
     .hero p {
-        animation: 0.5s ease-in 0s 1 slideInFromTop;
+        animation: 0.3s ease-in 0s 1 fromBottom;
     }
     
     .hero button.big-link {
-        animation: 1s ease-in 0s 1 slideInFromTop;
+        animation: 0.5s ease-in 0s 1 fromBottom;
     }
 
     .hero a.big-link {
-        animation: 1.25s ease-in 0s 1 slideInFromTop;
+        animation: 0.55s ease-in 0s 1 fromBottom;
     }
 
     .individual-project:nth-of-type(odd) {

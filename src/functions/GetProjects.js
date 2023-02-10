@@ -11,7 +11,7 @@ function GetProjects() {
         development: 'I wrote unit tests with the Jest framework during development of this project. I purposefully caused each newly written test to fail and then built the functionality to allow the test to pass. I repeated this until the project was complete.',
         live: 'battleship',
         code: 'battleship',
-        tags: [ 'HTML', 'CSS', 'JavaScript', 'Webpack', 'Jest', 'TDD' ],
+        tags: [ 'Jest', 'Test-Driven Development' ],
         images: [],
     };
 
@@ -26,7 +26,7 @@ function GetProjects() {
         development: `I used async and await along with multiple APIs from OpenWeather such as 'Geocoding', 'CurrentWeather', and '3 Hour / 5 Day Forecast'.`,
         live: 'weather-forecast',
         code: 'weather-forecast',
-        tags: [ 'HTML', 'CSS', 'JavaScript', 'Webpack', 'API', 'Async / Await' ],
+        tags: [ 'OpenWeather API', 'Async / Await' ],
         images: [],
     };
 
@@ -40,10 +40,10 @@ function GetProjects() {
             `Change the priority of a task`,
             `Mark a task as complete`,
         ],
-        development: `I used localstorage in this project to keep track of a user's tasks and lists that they have created, as well as any tasks that have been completed.`,
+        development: `I created this CRUD-style project using 'localstorage' to store the user's tasks and lists that they have created, as well as any tasks that have been completed.`,
         live: 'to-do-list',
         code: 'to-do-list',
-        tags: [ 'HTML', 'CSS', 'JavaScript', 'Webpack', 'LocalStorage' ],
+        tags: [ 'CRUD', 'LocalStorage' ],
         images: [],
     };
 

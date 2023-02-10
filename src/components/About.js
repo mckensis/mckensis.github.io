@@ -13,21 +13,17 @@ function About() {
 
     const two = document.createElement('p');
     two.textContent =
-        `I dabbled with C, Python, SQLite, and Lua during Covid lockdowns when I completed Harvard's CS50 course and part of GD50.`
-    
-    const three = document.createElement('p');
-    three.textContent = 
-    `This made me realise how much passion and energy I have for programming, and I decided to focus on a career change.`;
+        `I dabbled with C, Python, SQLite, and Lua during Covid lockdowns when I completed Harvard's CS50 course which made me realise how much passion and energy I have for programming, and I decided to focus on a career change.`
 
-    const four = document.createElement('p');
-    four.textContent =
+    const three = document.createElement('p');
+    three.textContent =
         `My current goal is to find a role where I can begin my career and continue developing my skillset within a professional environment while doing a job that I am incredibly passionate about.`;
 
-    let sentences = [one, two, three, four];
+    let sentences = [one, two, three];
 
     sentences.forEach(sentence => {
         about.append(sentence);
-        
+        //Append an hr if it's not the last sentence
         if (sentences.indexOf(sentence) !== sentences.length -1) {
             const hr = document.createElement('hr');
             about.append(hr);
