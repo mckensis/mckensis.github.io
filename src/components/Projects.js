@@ -29,17 +29,22 @@ function CreateSlideshow(images) {
     const slideshow = document.createElement('section');
     slideshow.className = 'slideshow';
 
-    const previous = document.createElement('div');
-    previous.classList.add('arrow', 'previous');
+    const container = document.createElement('div');
+    container.classList.add('slide-container');
+
+    const previous = document.createElement('button');
+    previous.classList.add('slideshow-button', 'previous');
     previous.innerHTML = '&lsaquo;';
 
-    const next = document.createElement('div');
-    next.classList.add('arrow', 'next');
+    const next = document.createElement('button');
+    next.classList.add('slideshow-button', 'next');
     next.innerHTML = `&rsaquo;`;
 
     const slide = document.createElement('img');
     slide.className = 'slide';
     slide.src = images[0];
+
+    container.append(previous, slide, next);
 
     const imagesDiv = document.createElement('div');
     imagesDiv.className = 'images';
@@ -66,7 +71,9 @@ function CreateSlideshow(images) {
         dots.children[0].classList.add('active');
     }
 
-    slideshow.append(closeBtn, previous, slide, next, dots, imagesDiv);
+    slideshow.append(closeBtn, container, dots, imagesDiv);
+
+    //slideshow.append(closeBtn, previous, slide, next, dots, imagesDiv);
 
     return slideshow;
 }
@@ -88,59 +95,33 @@ function CreateTags(tags) {
 //Creates the image links i.e. Live / Github / Slideshow
 function CreateLinks(links) {
     const BASE_GITHUB_URL = 'https://github.com/mckensis/';
-
-    const section = document.createElement('section');
-    section.className = 'project-links';
-
-    const heading = document.createElement('h4');
-    heading.textContent = 'View';
-
+    
     const list = document.createElement('ul');
+    list.className = 'project-links';
 
-    const one = document.createElement('li');
+    const listLive = document.createElement('li');
     const live = document.createElement('a');
     live.classList.add('big-link');
     live.textContent = 'Live';
 
-    const two = document.createElement('li');
+    const listGithub = document.createElement('li');
     const github = document.createElement('a');
     github.classList.add('big-link');
     github.textContent = 'GitHub';
     
-    const three = document.createElement('li');
-    const images = document.createElement('a');
-    images.classList.add('big-link');
-    images.textContent = 'Slideshow';
+    const listScreenshots = document.createElement('li');
+    const screenshots = document.createElement('a');
+    screenshots.classList.add('big-link');
+    screenshots.textContent = 'Screenshots';
 
-    one.append(live);
-    two.append(github);
-    three.append(images);
-    list.append(one, two, three);
+    listLive.append(live);
+    listGithub.append(github);
+    listScreenshots.append(screenshots);
+    list.append(listLive, listGithub, listScreenshots);
 
-    //const liveLink = document.createElement('a');    
-    //liveLink.href = links.live;
-    //liveLink.target = '_blank';
-    //liveLink.title = 'View project live';
-    //const codeLink = document.createElement('a');
-    //codeLink.href = BASE_GITHUB_URL + links.github;
-    //codeLink.target = '_blank';
-    //codeLink.title = 'View on GitHub';
-    //const live = document.createElement('img');
-    //live.src = viewLive;
-    //const code = document.createElement('img');
-    //code.src = viewGithub;
-    //const viewImages = document.createElement('img');
-    //viewImages.src = viewScreenshots;
-    //viewImages.alt = 'Screenshots link';
-    //viewImages.title = 'View Project Screenshots';
-    //liveLink.append(live);
-    //codeLink.append(code);
+    listScreenshots.addEventListener('click', viewSlideshow.bind(links.article));
 
-    images.addEventListener('click', viewSlideshow.bind(links.article));
-
-    section.append(list);
-
-    return section;
+    return list;
 }
 
 //Details section
@@ -203,7 +184,6 @@ function CreateProject(project) {
         const slideshow = CreateSlideshow(project.images);
         article.append(slideshow);
     }
-
     return article;
 }
 
@@ -217,9 +197,15 @@ function Projects() {
 
     list.forEach(project => {
         project.images = GetScreenshots(project.alias, require.context('../images/screenshots/', false, /\.jpg$/));
-        let parent = CreateProject(project);
+        const parent = CreateProject(project);
         projects.append(parent);
-        let slideshow = parent.querySelector('.slideshow')
+        
+        if (list.indexOf(project) !== list.length -1) {
+            const hr = document.createElement('hr');
+            projects.append(hr);
+        };
+        
+        const slideshow = parent.querySelector('.slideshow')
         parents.push(slideshow);
     });
 

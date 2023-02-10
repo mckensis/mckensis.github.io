@@ -41,9 +41,9 @@ function Slideshow(parents) {
 
     parentsArray.forEach(parent => {
         let index = 0;
-        const arrows = parent.querySelectorAll('.arrow');
-        const previous = parent.querySelector('.arrow.previous');
-        const next = parent.querySelector('.arrow.next');
+        const arrows = parent.querySelectorAll('.slideshow-button');
+        const previous = parent.querySelector('.slideshow-button.previous');
+        const next = parent.querySelector('.slideshow-button.next');
         const display = parent.querySelector('.slide');
         const dots = Array.from(parent.querySelector('.dots').children);
         const images = Array.from(parent.querySelector('.images').children);
