@@ -235,23 +235,35 @@ nav .burger span {
     pointer-events: none;
 }
 
+nav .burger span:nth-of-type(odd) {
+    transform-origin: 50% 50%;
+    transition: transform 0.1s ease;
+}
+
+nav .burger span:nth-of-type(even) {
+    transform: scale(1);
+    transition: transform 0.1s ease;
+    transition-delay: 0.1s;
+}
+
 nav .burger.open span:nth-of-type(odd) {
     position: absolute;
     top: 50%;
-    transform-origin: 50% 50%;
 }
 
 nav .burger.open span:nth-of-type(even) {
     opacity: 0;
-    transform: rotate(0deg) scale(0.1, 0.1);
+    transform: scale(0.1);
 }
 
 nav .burger.open span:nth-of-type(1) {
     transform: rotate(45deg);
+    transition: transform 0.1s ease;
 }
 
 nav .burger.open span:nth-of-type(3) {
     transform: rotate(-45deg);
+    transition: transform 0.1s ease;
 }
 
 /* Hero section */
