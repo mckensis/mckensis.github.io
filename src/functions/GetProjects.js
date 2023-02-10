@@ -23,7 +23,7 @@ function GetProjects() {
             `Current weather will display`,
             `Later & Tomorrow will also display`,
         ],
-        development: `I used async and await along with multiple APIs from OpenWeather such as 'Geocoding', 'CurrentWeather', and '3 Hour / 5 Day Forecast'.`,
+        development: `I used async and await to fetch data from OpenWeather's APIs such as 'Geocoding', 'CurrentWeather', and '3 Hour / 5 Day Forecast'. I then extracted and formatted the JSON which I required to create the project.`,
         live: 'weather-forecast',
         code: 'weather-forecast',
         tags: [ 'OpenWeather API', 'Async / Await' ],
