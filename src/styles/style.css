@@ -214,6 +214,7 @@ nav a.home {
 .internal-link.active {
     font-weight: 800;
     transform: scale(1.05);
+    transition: transform 0.5s ease;
     text-decoration-line: underline;
     text-decoration-thickness: 0.6rem;
     text-decoration-color: var(--palette-color);
@@ -306,7 +307,7 @@ nav .burger.open span:nth-of-type(3) {
 
 /* Projects section */
 .projects {
-    row-gap: 2rem;
+    row-gap: 3rem;
 }
 
 .individual-project {
@@ -316,12 +317,25 @@ nav .burger.open span:nth-of-type(3) {
     row-gap: 1rem;
     border: 3px solid var(--palette-color);
     border-radius: 1rem;
-    /*box-shadow: 0px 0px 3px var(--white);*/
-    padding: 1rem 1rem;
+    padding: 2rem;
+}
+
+.individual-project .big-link {
+    height: 2.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+}
+
+.individual-project .project-links ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .individual-project h2 {
-    /*text-shadow: 3px 3px var(--black);*/
     text-align: center;
     font-size: 2.3rem;
     font-weight: 800;
@@ -357,7 +371,6 @@ nav .burger.open span:nth-of-type(3) {
 
 .individual-project .project-links {
     display: grid;
-    place-items: baseline;
     place-content: center;
     gap: 1rem;
     grid-auto-flow: column;
@@ -509,7 +522,8 @@ nav .burger.open span:nth-of-type(3) {
 
     .internal-link,
     a:not(a.home):not(a.big-link) {
-        transition: text-decoration 0.25s linear;
+        transform: scale(1);
+        transition: text-decoration 0.5s linear, transform 0.5s ease;
         text-decoration: 0.6rem underline transparent;
     }
 
@@ -544,16 +558,6 @@ nav .burger.open span:nth-of-type(3) {
     
     .individual-project:hover {
         background-color: rgba(0,0,0,0.25);
-    }
-
-    .project-links img {
-        transition: transform 0.25s ease-in-out;
-    }
-    
-    .project-links img:hover {
-        transition: transform 0.25s ease-in-out;
-        transform: scale(1.1);
-        cursor: pointer;
     }
 
     .projects .tags li {
@@ -697,7 +701,8 @@ nav .burger.open span:nth-of-type(3) {
         }
     }
 
-    nav .contact:hover {
+    nav .contact:hover,
+    .individual-project a:hover {
         animation: .75s ease 0s infinite bigLinkWiggle;
     }
 }
@@ -732,6 +737,37 @@ nav .burger.open span:nth-of-type(3) {
     .hero .big-link {
         margin-top: 2rem;
         grid-column: span 1;
+    }
+}
+
+/* Projects layout change for larger screens */
+@media (min-width: 800px) {
+    .individual-project {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .individual-project h2 {
+        grid-column: 1 / -1;
+    }
+
+    .individual-project h3 {
+        place-self: start;
+    }
+
+    .individual-project .project-links {
+        grid-column: 1 / -1;
+    }
+
+    .individual-project .tags {
+        grid-column: 1 / -1;
+    }
+
+    .individual-project .details,
+    .individual-project .development {
+        display: grid;
+        gap: 1rem;
+        margin: 0;
+        place-content: start;
     }
 }
 

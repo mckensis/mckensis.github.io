@@ -8,7 +8,7 @@ function GetProjects() {
             `Play against an AI player`,
             `Destroy 5 ships to win`,
         ],
-        development: 'I wrote unit tests with the Jest framework during development of this project. I purposefully caused each newly written test to fail and then built the functionality to allow the test to pass. I repeated this until the project was complete.',
+        development: 'I wrote unit tests with the Jest framework during development of this project. I purposefully caused each newly written test to fail and then built the functionality to allow the test to pass. I repeated this process until the project was complete.',
         live: 'battleship',
         code: 'battleship',
         tags: [ 'Jest', 'Test-Driven Development' ],

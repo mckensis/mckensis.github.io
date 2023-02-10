@@ -98,31 +98,50 @@ function CreateLinks(links) {
     const heading = document.createElement('h4');
     heading.textContent = 'View';
 
-    const liveLink = document.createElement('a');    
-    const live = document.createElement('img');
-    liveLink.href = links.live;
-    liveLink.target = '_blank';
-    liveLink.title = 'View project live';
-    live.src = viewLive;
+    const list = document.createElement('ul');
+
+    const one = document.createElement('li');
+    const live = document.createElement('a');
+    live.classList.add('big-link');
+    live.textContent = 'Live';
+
+    const two = document.createElement('li');
+    const github = document.createElement('a');
+    github.classList.add('big-link');
+    github.textContent = 'GitHub';
     
-    const codeLink = document.createElement('a');
-    const code = document.createElement('img');
-    codeLink.href = BASE_GITHUB_URL + links.github;
-    codeLink.target = '_blank';
-    codeLink.title = 'View on GitHub';
-    code.src = viewGithub;
+    const three = document.createElement('li');
+    const images = document.createElement('a');
+    images.classList.add('big-link');
+    images.textContent = 'Slideshow';
 
-    const viewImages = document.createElement('img');
-    viewImages.src = viewScreenshots;
-    viewImages.alt = 'Screenshots link';
-    viewImages.title = 'View Project Screenshots';
+    one.append(live);
+    two.append(github);
+    three.append(images);
+    list.append(one, two, three);
 
-    liveLink.append(live);
-    codeLink.append(code);
+    //const liveLink = document.createElement('a');    
+    //liveLink.href = links.live;
+    //liveLink.target = '_blank';
+    //liveLink.title = 'View project live';
+    //const codeLink = document.createElement('a');
+    //codeLink.href = BASE_GITHUB_URL + links.github;
+    //codeLink.target = '_blank';
+    //codeLink.title = 'View on GitHub';
+    //const live = document.createElement('img');
+    //live.src = viewLive;
+    //const code = document.createElement('img');
+    //code.src = viewGithub;
+    //const viewImages = document.createElement('img');
+    //viewImages.src = viewScreenshots;
+    //viewImages.alt = 'Screenshots link';
+    //viewImages.title = 'View Project Screenshots';
+    //liveLink.append(live);
+    //codeLink.append(code);
 
-    viewImages.addEventListener('click', viewSlideshow.bind(links.article));
+    images.addEventListener('click', viewSlideshow.bind(links.article));
 
-    section.append(heading, liveLink, codeLink, viewImages);
+    section.append(list);
 
     return section;
 }
