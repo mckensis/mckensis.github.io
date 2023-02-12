@@ -17,7 +17,7 @@ function About() {
 
     const three = document.createElement('p');
     three.textContent = 
-        `I have mainly been building and maintaining my projects using JavaScript, npm, Webpack, Git, and Linux. I am currently learning React, and plan to learn more frameworks and languages as I continue my journey as I believe that keeping up to date with new technologies is essential, and learning should never end.`;
+        `I have mainly been building and maintaining my projects using JavaScript, npm, Webpack, Git, and Linux. I'm currently learning React, and plan to learn more frameworks and languages as I continue my journey. I believe that keeping up to date with new technologies is essential and learning should never end.`;
     
     const four = document.createElement('p');
     four.textContent =
