@@ -20,7 +20,7 @@ function LoadPage() {
     body.append(backgroundGradient);
 
     header.append(Nav());
-    main.append(About());
+    main.append(Hero());
     Listener();
 }
 
