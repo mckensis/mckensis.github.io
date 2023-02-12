@@ -113,6 +113,11 @@ hr {
 }
 
 /* Default links */
+a {
+    color: var(--palette-light);
+    text-decoration: none;
+}
+
 a:active,
 button:active {
     opacity: 0.75;
@@ -139,6 +144,10 @@ button:active {
     border: none;
     text-decoration: none;
     border-radius: 1.5rem;
+}
+
+.small-link {
+    font-weight: 600;
 }
 
 .locked {
@@ -177,11 +186,6 @@ nav ul.open {
     z-index: 1;
     width: 100%;
     border-bottom: 3px solid var(--palette-darkest);
-}
-
-nav a {
-    color: var(--palette-light);
-    text-decoration: none;
 }
 
 nav ul li {
@@ -303,12 +307,17 @@ nav .burger.open span:nth-of-type(3) {
 
 /* About section */
 .about {
-    grid-template-rows: repeat(3, max-content);
+    display: grid;
+    grid-auto-rows: max-content;
     row-gap: 2rem;
+    max-width: 800px;
 }
 
 .about p {
-    font-size: 1.8rem;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    background-color: rgba(70,70,70,0.25);
+    font-size: 1.5rem;
     line-height: 4rem;
 }
 
@@ -321,11 +330,11 @@ nav .burger.open span:nth-of-type(3) {
     display: grid;
     grid-auto-rows: max-content;
     place-self: center;
-    row-gap: 1rem;
+    row-gap: 2rem;
     max-width: 800px;
     border-radius: 1rem;
     background-color: rgba(70,70,70,0.25);
-    padding: 2rem;
+    padding: 1.5rem 2rem;
 }
 
 .individual-project h2 {
@@ -530,20 +539,30 @@ nav .burger.open span:nth-of-type(3) {
     }
 
     .internal-link,
-    a:not(a.home):not(a.big-link) {
+    a:not(a.home):not(a.big-link):not(a.small-link) {
         transform: scale(1);
         transition: text-decoration 0.5s linear, transform 0.5s ease;
         text-decoration: 0.6rem underline transparent;
     }
 
     .internal-link:hover:not(.active):not(.home):not(.big-link),
-    a:hover:not(a.home):not(a.big-link) {
+    a:hover:not(a.home):not(a.big-link):not(a.small-link) {
         transition: text-decoration 0.5s linear;
         text-decoration: 0.6rem underline var(--palette-color);
     }
     
     .hero button:hover {
         transform: rotate(-1deg);
+    }
+
+    .small-link {
+        transition: text-decoration 0.25s linear;
+        text-decoration: 0.2rem underline transparent;
+    }
+
+    .small-link:hover {
+        transition: text-decoration 0.25s linear;
+        text-decoration: 0.2rem underline var(--palette-color);
     }
 
     .big-link {

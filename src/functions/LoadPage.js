@@ -1,5 +1,6 @@
 import Nav from '../components/Nav';
 import Hero from '../components/Hero';
+import About from '../components/About';
 import Listener from './EventListeners';
 import Projects from '../components/Projects';
 
@@ -19,7 +20,7 @@ function LoadPage() {
     body.append(backgroundGradient);
 
     header.append(Nav());
-    main.append(Hero());
+    main.append(About());
     Listener();
 }
 

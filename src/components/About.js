@@ -13,7 +13,7 @@ function About() {
 
     const two = document.createElement('p');
     two.textContent =
-        `I dabbled with C, Python, SQLite, and Lua during Covid lockdowns when I completed Harvard's CS50 course which made me realise how much passion and energy I have for programming, and I decided to focus on a career change.`
+        `I dabbled with C, Python, SQLite, and Lua during Covid lockdowns when I completed Harvard's CS50 course which made me realise how much passion and energy I have for programming, and I decided to focus on a career change.`;
 
     const three = document.createElement('p');
     three.textContent =
