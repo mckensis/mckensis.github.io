@@ -891,7 +891,7 @@ nav .burger.open span:nth-of-type(3) {
     }
 
     .individual-project {
-        row-gap: 2rem;
+        row-gap: 1.5rem;
     }
 
     .about {
