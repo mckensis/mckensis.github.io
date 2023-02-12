@@ -93,14 +93,6 @@ button {
     font-family: 'Manrope', sans-serif;
 }
 
-.hero,
-.about,
-.projects {
-    display: grid;
-    grid-auto-rows: max-content;
-    grid-auto-flow: row;
-}
-
 hr {
     width: 100%;
     max-width: 20rem;
@@ -210,7 +202,7 @@ nav a.home {
     top: -.35rem;
 }
 
-.internal-link.active {
+nav .internal-link.active {
     font-weight: 800;
     transform: scale(1.05);
     transition: transform 0.5s ease;
@@ -219,7 +211,7 @@ nav a.home {
     text-decoration-color: var(--palette-color);
 }
 
-nav a.big-link {
+nav .big-link {
     padding: 1rem;
     font-size: 1.5rem;
 }
@@ -276,9 +268,11 @@ nav .burger.open span:nth-of-type(3) {
 
 /* Hero section */
 .hero {
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-auto-flow: row;
     grid-template-rows: repeat(5, max-content);
     row-gap: 1.5rem;
-    padding-bottom: 2rem;
 }
 
 .hero h1 {
@@ -309,6 +303,7 @@ nav .burger.open span:nth-of-type(3) {
 .about {
     display: grid;
     grid-auto-rows: max-content;
+    grid-auto-flow: row;
     row-gap: 2rem;
     max-width: 800px;
 }
@@ -323,6 +318,9 @@ nav .burger.open span:nth-of-type(3) {
 
 /* Projects section */
 .projects {
+    display: grid;
+    grid-auto-rows: max-content;
+    grid-auto-flow: row;
     row-gap: 3rem;
 }
 
