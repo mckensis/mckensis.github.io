@@ -68,6 +68,49 @@ function ScrollToTop() {
     document.documentElement.scrollTop = 0;
 }
 
+function Animate() {
+    const hr = Array.from(document.querySelectorAll('hr'));
+    const projects = Array.from(document.querySelectorAll('.individual-project'));
+
+    const callback = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('individual-project')) {
+                    console.log(entry.target);
+                    entry.target.classList.add('projectAnimate');
+                } else {
+                    entry.target.classList.add("hrAnimate");
+                    observer.unobserve(entry.target);
+                }
+            }
+        })
+    }
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1,
+    }
+
+    const Observer = new IntersectionObserver(callback, options)
+    
+    if (hr) {
+        hr.forEach(line => {
+            if (hr.indexOf(line) % 2 !== 0) {
+                line.classList.add('odd');
+            }
+            Observer.observe(line);
+        });
+    }
+
+    if (projects) {
+        projects.forEach(project => {
+            Observer.observe(project);
+        })
+    }
+
+}
+
 //Handles loading a new internal section to display within main
 function LoadSection(links, target) {
     const main = document.querySelector('main');
@@ -77,6 +120,7 @@ function LoadSection(links, target) {
     ManageActiveClass(links, target);
     DisplayNewSection(main, target.textContent);
     ScrollToTop();
+    Animate();
 }
 
 export default LoadSection;

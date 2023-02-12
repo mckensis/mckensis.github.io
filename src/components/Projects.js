@@ -204,7 +204,7 @@ function Projects() {
             const hr = document.createElement('hr');
             projects.append(hr);
         };
-        
+
         const slideshow = parent.querySelector('.slideshow')
         parents.push(slideshow);
     });

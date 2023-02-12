@@ -12,8 +12,11 @@ function HandleNav(target) {
 
     //Can't scroll the page if the nav is open
     if (navList.classList.contains('open')) {
-        document.body.classList.toggle('locked');
+        document.body.classList.add('locked');
+    } else {
+        document.body.classList.remove('locked');
     }
+
     if (target !== navListItem
     && target !== burgerMenu) {
         HideNav(navList, burgerMenu);

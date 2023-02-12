@@ -95,6 +95,7 @@ button {
 
 hr {
     width: 100%;
+    visibility: hidden;
     max-width: 20rem;
     place-self: center;
     height: 0.25rem;
@@ -326,6 +327,7 @@ nav .burger.open span:nth-of-type(3) {
 
 .individual-project {
     display: grid;
+    visibility: hidden;
     grid-auto-rows: max-content;
     place-self: center;
     row-gap: 2rem;
@@ -625,78 +627,51 @@ nav .burger.open span:nth-of-type(3) {
             transform: translateX(0);
         }
     }
-
-    @keyframes fromBottom {
-        0% {
-            transform: translateY(1rem);
-            opacity: 0;
-        }
-        75% {
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
-
+    
     @keyframes fromLeft {
         0% {
             transform: translateX(-100%);
         }
         100% {
+            visibility: visible;
             transform: translateX(0);
         }
     }
-
+    
     @keyframes fromRight {
         0% {
             transform: translateX(100%);
         }
         100% {
+            visibility: visible;
             transform: translateX(0);
         }
     }
 
     @keyframes scaleUp {
         0% {
-            transform: scale(0.01);
-        }
-        50% {
-            transform: scale(1.1);
+            transform: scale(0);
         }
         100% {
             transform: scale(1);
+            visibility: visible;
         }
-    }
-
-    .animation-scale-project {
-        transform-origin: center;
-        animation-name: scaleProject;
-        animation-delay: 0s;
-        animation-direction: forwards;
-        animation-duration: 0.5s;
-        animation-iteration-count: 1;
-        animation-fill-mode: both;
-        animation-timing-function: ease;
-    }
-
-    .hero img.portrait {
-        animation-name: scaleUp;
-        animation-delay: 0s;
-        animation-fill-mode: backwards;
-        animation-duration: 0.25s;
-        animation-iteration-count: 1;
-        animation-timing-function: ease;
     }
 
     .hero h1,
     .hero p,
+    .hero img.portrait,
     .hero .big-link {
+        visibility: visible;
         animation-name: scaleUp;
         animation-fill-mode: backwards;
         animation-duration: 0.25s;
         animation-iteration-count: 1;
-        animation-timing-function: ease-in;
+        animation-timing-function: cubic-bezier(.74,1.48,.55,1.39);
+    }
+
+    .hero img.portrait {
+        animation-delay: 0s;
     }
 
     .hero h1 {
@@ -724,28 +699,24 @@ nav .burger.open span:nth-of-type(3) {
         animation-timing-function: linear;
     }
 
-    .individual-project {
+    .projectAnimate {
+        visibility: visible;
         animation-name: scaleUp;
-        animation-fill-mode: backwards;
         animation-duration: 0.25s;
         animation-iteration-count: 1;
-        animation-timing-function: ease-in;
+        animation-timing-function: cubic-bezier(.74,1.48,.55,1.39);
     }
 
-    hr:nth-of-type(even) {
-        animation-name: fromRight;
-        animation-fill-mode: backwards;
-        animation-duration: 0.25s;
-        animation-iteration-count: 1;
-        animation-timing-function: ease-in;
-    }
-
-    hr:nth-of-type(odd) {
+    .hrAnimate {
+        visibility: visible;
         animation-name: fromLeft;
-        animation-fill-mode: backwards;
         animation-duration: 0.25s;
         animation-iteration-count: 1;
-        animation-timing-function: ease-in;
+        animation-timing-function: cubic-bezier(.74,1.48,.55,1.39);
+    }
+
+    .hrAnimate.odd {
+        animation-name: fromRight;
     }
 }
 
