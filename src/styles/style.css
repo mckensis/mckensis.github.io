@@ -608,6 +608,14 @@ nav .burger.open span:nth-of-type(3) {
 @media (prefers-reduced-motion: no-preference) {
 
     /* Custom Animations */
+    @-webkit-keyframes mobileNavSlide {
+        0% {
+            -webkit-max-height: 0vh;
+        }
+        100% {
+            -webkit-max-height: 100vh;
+        }
+    }
     @keyframes mobileNavSlide {
         0% {
             max-height: 0vh;
@@ -617,6 +625,16 @@ nav .burger.open span:nth-of-type(3) {
         }
     }
 
+    @-webkit-keyframes desktopNavSlide {
+        0% {
+            -webkit-transform: translateX(-50%);
+            -webkit-opacity: 0;
+        }
+        100% {
+            -webkit-opacity: 1;
+            -webkit-transform: translateX(0);
+        }
+    }
     @keyframes desktopNavSlide {
         0% {
             transform: translateX(-50%);
@@ -628,6 +646,15 @@ nav .burger.open span:nth-of-type(3) {
         }
     }
     
+    @-webkit-keyframes fromLeft {
+        0% {
+            -webkit-transform: translateX(-100%);
+        }
+        100% {
+            -webkit-visibility: visible;
+            -webkit-transform: translateX(0);
+        }
+    }
     @keyframes fromLeft {
         0% {
             transform: translateX(-100%);
@@ -638,6 +665,15 @@ nav .burger.open span:nth-of-type(3) {
         }
     }
     
+    @-webkit-keyframes fromRight {
+        0% {
+            -webkit-transform: translateX(100%);
+        }
+        100% {
+            -webkit-visibility: visible;
+            -webkit-transform: translateX(0);
+        }
+    }
     @keyframes fromRight {
         0% {
             transform: translateX(100%);
@@ -648,6 +684,15 @@ nav .burger.open span:nth-of-type(3) {
         }
     }
 
+    @-webkit-keyframes scaleUp {
+        0% {
+            -webkit-transform: scale(0);
+        }
+        100% {
+            -webkit-transform: scale(1);
+            -webkit-visibility: visible;
+        }
+    }
     @keyframes scaleUp {
         0% {
             transform: scale(0);
@@ -663,44 +708,69 @@ nav .burger.open span:nth-of-type(3) {
     .hero img.portrait,
     .hero .big-link {
         visibility: visible;
+        -webkit-animation-duration: 0.25s;
+        -webkit-animation-fill-mode: backwards;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: cubic-bezier(.74,1.48,.55,1.39);
+        -webkit-animation-name: -webkit-scaleUp;
+        
         animation-name: scaleUp;
         animation-fill-mode: backwards;
         animation-duration: 0.25s;
         animation-iteration-count: 1;
         animation-timing-function: cubic-bezier(.74,1.48,.55,1.39);
+
     }
 
     .hero img.portrait {
+        -webkit-animation-delay: 0s;
         animation-delay: 0s;
     }
 
     .hero h1 {
+        -webkit-animation-delay: 0.1s;
         animation-delay: 0.1s;
     }
     
     .hero p {
+        -webkit-animation-delay: 0.2s;
         animation-delay: 0.2s;
     }
     
     .hero button.big-link {
+        -webkit-animation-delay: 0.3s;
         animation-delay: 0.3s;
     }
 
     .hero a.big-link {
+        -webkit-animation-delay: 0.4s;
         animation-delay: 0.4s;
     }
 
     nav ul.open {
+        -webkit-animation-name: -webkit-mobileNavSlide;
+        -webkit-animation-delay: 0s;
+        -webkit-animation-fill-mode: backwards;
+        -webkit-animation-duration: 0.1s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: linear;
+        
         animation-name: mobileNavSlide;
         animation-delay: 0s;
         animation-fill-mode: backwards;
         animation-duration: 0.1s;
         animation-iteration-count: 1;
         animation-timing-function: linear;
+        
     }
 
     .projectAnimate {
         visibility: visible;
+        -webkit-animation-name: -webkit-scaleUp;
+        -webkit-animation-duration: 0.25s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: cubic-bezier(.74,1.48,.55,1.39);
+        
         animation-name: scaleUp;
         animation-duration: 0.25s;
         animation-iteration-count: 1;
@@ -709,6 +779,11 @@ nav .burger.open span:nth-of-type(3) {
 
     .hrAnimate {
         visibility: visible;
+        -webkit-animation-name: -webkit-fromLeft;
+        -webkit-animation-duration: 0.25s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: cubic-bezier(.74,1.48,.55,1.39);
+        
         animation-name: fromLeft;
         animation-duration: 0.25s;
         animation-iteration-count: 1;
@@ -716,12 +791,30 @@ nav .burger.open span:nth-of-type(3) {
     }
 
     .hrAnimate.odd {
+        -webkit-animation-name: -webkit-fromRight;
         animation-name: fromRight;
     }
 }
 
 /* Big link hover wiggle */
 @media (hover) and (prefers-reduced-motion: no-preference) {
+    @-webkit-keyframes bigLinkWiggle {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+        25% {
+            -webkit-transform: rotate(-1deg);
+        }
+        50% {
+            -webkit-transform: rotate(0deg);
+        }
+        75% {
+            -webkit-transform: rotate(1deg);
+        }
+        100% {
+            -webkit-transform: rotate(0deg);
+        }
+    }
     @keyframes bigLinkWiggle {
         0% {
             transform: rotate(0deg);
@@ -742,7 +835,17 @@ nav .burger.open span:nth-of-type(3) {
 
     nav .contact:hover,
     .individual-project a:hover {
-        animation: .75s ease 0s infinite bigLinkWiggle;
+        -webkit-animation-name: -webkit-bigLinkWiggle;
+        -webkit-animation-duration: .75s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-delay: 0s;
+        -webkit-animation-iteration-count: infinite;
+
+        animation-name: bigLinkWiggle;
+        animation-duration: .75s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
     }
 }
 
@@ -808,6 +911,14 @@ nav .burger.open span:nth-of-type(3) {
 
 @media (min-width: 1100px) and (prefers-reduced-motion: no-preference) {
     nav ul {
+        -webkit-animation-name: desktopNavSlide;
+        -webkit-animation-delay: 0.4s;
+        -webkit-animation-direction: forwards;
+        -webkit-animation-duration: 0.5s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+
         animation-name: desktopNavSlide;
         animation-delay: 0.4s;
         animation-direction: forwards;
