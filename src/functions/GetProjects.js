@@ -43,7 +43,7 @@ function GetProjects() {
         development: `I created this CRUD-style project using 'localStorage' to store the user's tasks and lists that they have created, as well as any tasks that have been completed.`,
         live: 'to-do-list',
         code: 'to-do-list',
-        tags: [ 'CRUD', 'LocalStorage' ],
+        tags: [ 'CRUD', 'Web Storage API', 'LocalStorage' ],
         images: [],
     };
 
