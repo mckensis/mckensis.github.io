@@ -95,7 +95,8 @@ function CreateTags(tags) {
 //Creates the image links i.e. Live / Github / Slideshow
 function CreateLinks(links) {
     const BASE_GITHUB_URL = 'https://github.com/mckensis/';
-    
+    const BASE_LIVE_URL = 'https://mckensis.github.io/';
+
     const list = document.createElement('ul');
     list.className = 'project-links';
 
@@ -103,11 +104,15 @@ function CreateLinks(links) {
     const live = document.createElement('a');
     live.classList.add('big-link');
     live.textContent = 'Live';
+    live.href = `${BASE_LIVE_URL}${links.live}`;
+    live.target = '_blank';
 
     const listGithub = document.createElement('li');
     const github = document.createElement('a');
     github.classList.add('big-link');
     github.textContent = 'GitHub';
+    github.href = `${BASE_GITHUB_URL}${links.github}`;
+    github.target = '_blank';
     
     const listScreenshots = document.createElement('li');
     const screenshots = document.createElement('a');
@@ -169,7 +174,7 @@ function CreateProject(project) {
     const heading = document.createElement('h2');
     heading.textContent = project.title;
     //Links
-    const links = CreateLinks({ live: project.live, github: project.code, article });
+    const links = CreateLinks({ live: project.live, github: project.code });
     //Tags
     const tags = CreateTags(project.tags);
     //Info
