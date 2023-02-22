@@ -631,8 +631,8 @@ nav .burger.open span:nth-of-type(3) {
             -webkit-opacity: 0;
         }
         100% {
-            -webkit-opacity: 1;
             -webkit-transform: translateX(0);
+            -webkit-opacity: 1;
         }
     }
     @keyframes desktopNavSlide {
@@ -641,8 +641,8 @@ nav .burger.open span:nth-of-type(3) {
             opacity: 0;
         }
         100% {
-            opacity: 1;
             transform: translateX(0);
+            opacity: 1;
         }
     }
     
@@ -689,8 +689,8 @@ nav .burger.open span:nth-of-type(3) {
             -webkit-transform: scale(0);
         }
         100% {
-            -webkit-transform: scale(1);
             -webkit-visibility: visible;
+            -webkit-transform: scale(1);
         }
     }
     @keyframes scaleUp {
@@ -698,8 +698,8 @@ nav .burger.open span:nth-of-type(3) {
             transform: scale(0);
         }
         100% {
-            transform: scale(1);
             visibility: visible;
+            transform: scale(1);
         }
     }
 
@@ -708,11 +708,11 @@ nav .burger.open span:nth-of-type(3) {
     .hero img.portrait,
     .hero .big-link {
         visibility: visible;
-        -webkit-animation-duration: 0.25s;
+        -webkit-animation-name: -webkit-scaleUp;
         -webkit-animation-fill-mode: backwards;
+        -webkit-animation-duration: 0.25s;
         -webkit-animation-iteration-count: 1;
         -webkit-animation-timing-function: cubic-bezier(.74,1.48,.55,1.39);
-        -webkit-animation-name: -webkit-scaleUp;
         
         animation-name: scaleUp;
         animation-fill-mode: backwards;
@@ -836,15 +836,15 @@ nav .burger.open span:nth-of-type(3) {
     nav .contact:hover,
     .individual-project a:hover {
         -webkit-animation-name: -webkit-bigLinkWiggle;
+        -webkit-animation-delay: 0s;
         -webkit-animation-duration: .75s;
         -webkit-animation-timing-function: linear;
-        -webkit-animation-delay: 0s;
         -webkit-animation-iteration-count: infinite;
 
         animation-name: bigLinkWiggle;
+        animation-delay: 0s;
         animation-duration: .75s;
         animation-timing-function: linear;
-        animation-delay: 0s;
         animation-iteration-count: infinite;
     }
 }

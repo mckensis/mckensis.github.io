@@ -83,7 +83,7 @@ function Animate() {
                     observer.unobserve(entry.target);
                 }
             }
-        })
+        });
     }
 
     const options = {
@@ -106,9 +106,8 @@ function Animate() {
     if (projects) {
         projects.forEach(project => {
             Observer.observe(project);
-        })
+        });
     }
-
 }
 
 //Handles loading a new internal section to display within main
