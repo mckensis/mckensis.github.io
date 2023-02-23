@@ -39,15 +39,17 @@ function GetProjects() {
             `Add a new list or task`,
             `Change the priority of a task`,
             `Mark a task as complete`,
+            `Delete a task`,
+            `Delete a list`,
         ],
-        development: `I created this CRUD-style project using 'localStorage' to store the user's tasks and lists that they have created, as well as any tasks that have been completed.`,
+        development: `I created this CRUD style project using localStorage to store the user's lists and tasks, and task properties such as completion and priority.`,
         live: 'to-do-list',
         code: 'to-do-list',
         tags: [ 'CRUD', 'Web Storage API', 'LocalStorage' ],
         images: [],
     };
 
-    return [ battleship, weather, todo ];
+    return [ todo, battleship, weather ];
 }
 
 export default GetProjects;

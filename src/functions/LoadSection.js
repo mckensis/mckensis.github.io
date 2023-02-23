@@ -76,7 +76,6 @@ function Animate() {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 if (entry.target.classList.contains('individual-project')) {
-                    console.log(entry.target);
                     entry.target.classList.add('projectAnimate');
                 } else {
                     entry.target.classList.add("hrAnimate");

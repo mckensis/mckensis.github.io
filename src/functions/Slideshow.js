@@ -1,5 +1,4 @@
 function toggleActive(dots, index) {
-
     dots.forEach(dot => {
         if (dots.indexOf(dot) !== index) {
             dot.classList.remove('active');
@@ -30,7 +29,6 @@ function updateArrows(arrows, images, index) {
 };
 
 function Slideshow(parents) {
-
     let parentsArray = parents;
 
     for (let i = 0; i < parentsArray.length; i++) {

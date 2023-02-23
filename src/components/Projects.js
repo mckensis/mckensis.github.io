@@ -5,6 +5,7 @@ import GetProjects from '../functions/GetProjects';
 
 //Shows the slideshow overlay
 function viewSlideshow() {
+    console.log(this);
     const slideshow = this.querySelector('.slideshow');
     
     //If the project doesn't have a slideshow, then just return
@@ -72,8 +73,6 @@ function CreateSlideshow(images) {
     }
 
     slideshow.append(closeBtn, container, dots, imagesDiv);
-
-    //slideshow.append(closeBtn, previous, slide, next, dots, imagesDiv);
 
     return slideshow;
 }
@@ -169,12 +168,12 @@ function CreateDevelopmentSection(info) {
 function CreateProject(project) {
     const article = document.createElement('article');
     article.className = 'individual-project';
-    
+
     //Heading
     const heading = document.createElement('h2');
     heading.textContent = project.title;
     //Links
-    const links = CreateLinks({ live: project.live, github: project.code });
+    const links = CreateLinks({ live: project.live, github: project.code, article });
     //Tags
     const tags = CreateTags(project.tags);
     //Info
@@ -213,6 +212,8 @@ function Projects() {
         const slideshow = parent.querySelector('.slideshow')
         parents.push(slideshow);
     });
+
+    console.log(parents);
 
     Slideshow(parents);
 
