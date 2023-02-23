@@ -42,13 +42,14 @@ function GetProjects() {
             `Delete a task`,
             `Delete a list`,
         ],
-        development: `I created this CRUD style project using localStorage to store the user's lists and tasks, and task properties such as completion and priority.`,
+        development: `I created this CRUD style project using localStorage to store the user's data between sessions. All lists, tasks, and task properties such as completion and priority will be saved.`,
         live: 'to-do-list',
         code: 'to-do-list',
         tags: [ 'CRUD', 'Web Storage API', 'LocalStorage' ],
         images: [],
     };
 
+    //This is the order the projects will display on the page
     return [ todo, battleship, weather ];
 }
 

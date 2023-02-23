@@ -497,8 +497,8 @@ nav .burger.open span:nth-of-type(3) {
 
 .slideshow img {
     object-fit: cover;
-    width: 80vw;
-    max-width: 700px;
+    max-width: 80vw;
+    max-height: 80vh;
     place-self: center;
     border-radius: 2rem;
     border: 3px solid var(--palette-light);
