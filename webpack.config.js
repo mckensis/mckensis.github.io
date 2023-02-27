@@ -29,7 +29,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             favicon: "./src/images/icons/favicon.ico",
-            title: 'Aidan Mckenzie | Portfolio'
+            title: 'Aidan Mckenzie | Portfolio',
         }),
     ],
 };
