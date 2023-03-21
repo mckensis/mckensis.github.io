@@ -25,7 +25,7 @@ function CreateList() {
     const cvLink = document.createElement('a');
     cvLink.className = 'external-link';
     cvLink.textContent = 'View CV';
-    cvLink.href = './CV2023.pdf';
+    cvLink.href = 'https://drive.google.com/file/d/10cji2FnetCaC36qGY53ppWjm2g2kVGHl/view';
     cvLink.target = '_blank';
     cv.append(cvLink);
 
