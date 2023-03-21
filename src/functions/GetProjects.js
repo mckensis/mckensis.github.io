@@ -49,8 +49,28 @@ function GetProjects() {
         images: [],
     };
 
+    const bothyCamp = {
+        title: 'Bothy Camp',
+        alias: 'bothy-camp',
+        info: [
+            `Login / Register functionality`,
+            `View all bothies`,
+            `Select a bothy from the list`,
+            `Select a bothy from the map`,
+            `Create a bothy`,
+            `Review a bothy`,
+            `Edit a bothy`,
+            `Delete a bothy`,
+        ],
+        development: `I developed this MERN project while learning about MongoDB, Express, Node, and RESTful APIs. I utilised EJS for constructing the webpages, and it has CRUD functionality.`,
+        live: 'bothycamp.fly.dev',
+        code: 'bothy-camp',
+        tags: [ 'MERN', 'CRUD', 'RESTful API', 'Express', 'MongoDB', 'EJS', 'Node' ],
+        images: [],
+    };
+
     //This is the order the projects will display on the page
-    return [ todo, battleship, weather ];
+    return [ bothyCamp, todo, battleship, weather ];
 }
 
 export default GetProjects;

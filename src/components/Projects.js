@@ -93,6 +93,7 @@ function CreateTags(tags) {
 
 //Creates the image links i.e. Live / Github / Slideshow
 function CreateLinks(links) {
+
     const BASE_GITHUB_URL = 'https://github.com/mckensis/';
     const BASE_LIVE_URL = 'https://mckensis.github.io/';
 
@@ -103,7 +104,14 @@ function CreateLinks(links) {
     const live = document.createElement('a');
     live.classList.add('big-link');
     live.textContent = 'Live';
-    live.href = `${BASE_LIVE_URL}${links.live}`;
+    
+    if (links.live.includes('.fly.dev')) {
+        console.log(links);
+        live.href = `https://${links.live}`;
+    } else {
+        live.href = `${BASE_LIVE_URL}${links.live}`;
+    }
+
     live.target = '_blank';
 
     const listGithub = document.createElement('li');
