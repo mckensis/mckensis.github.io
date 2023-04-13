@@ -25,7 +25,7 @@ function CreateList() {
     const cvLink = document.createElement('a');
     cvLink.className = 'external-link';
     cvLink.textContent = 'View CV';
-    cvLink.href = 'https://drive.google.com/file/d/1JCzLzfiEreyVZX6EM1Y72mg7gUd3wYD3/view?usp=sharing';
+    cvLink.href = 'https://drive.google.com/file/d/1azjZNp53PSPuY4H9ESdBEazrSbU4XA3g/view?usp=sharing';
     cvLink.target = '_blank';
     cv.append(cvLink);
 
