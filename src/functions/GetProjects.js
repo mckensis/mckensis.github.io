@@ -69,8 +69,24 @@ function GetProjects() {
         images: [],
     };
 
+    const cvProject = {
+        title: 'CV Building Project',
+        alias: 'cv-project',
+        info: [
+            `Build a CV using my template`,
+            `Remove irrelevant sections`,
+            `Add relevant information`,
+            `Print or Save as PDF`,
+        ],
+        development: `I developed this React project with CRUD operations which heavily utilises React Functional Components, and hooks such as UseState, UseEffect, and UseRef. I also implemented functionality to print the document or save it as a PDF locally.`,
+        live: 'cv-project',
+        code: 'cv-project',
+        tags: [ 'React', 'CRUD', 'LocalStorage' ],
+        images: [],
+    };
+
     //This is the order the projects will display on the page
-    return [ bothyCamp, todo, battleship, weather ];
+    return [ cvProject, bothyCamp, todo, battleship, weather ];
 }
 
 export default GetProjects;

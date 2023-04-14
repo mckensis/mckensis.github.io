@@ -712,13 +712,11 @@ nav .burger.open span:nth-of-type(3) {
         -webkit-animation-fill-mode: backwards;
         -webkit-animation-duration: 0.25s;
         -webkit-animation-iteration-count: 1;
-        -webkit-animation-timing-function: cubic-bezier(.74,1.48,.55,1.39);
         
         animation-name: scaleUp;
         animation-fill-mode: backwards;
         animation-duration: 0.25s;
         animation-iteration-count: 1;
-        animation-timing-function: cubic-bezier(.74,1.48,.55,1.39);
 
     }
 

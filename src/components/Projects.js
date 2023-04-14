@@ -106,7 +106,6 @@ function CreateLinks(links) {
     live.textContent = 'Live';
     
     if (links.live.includes('.fly.dev')) {
-        console.log(links);
         live.href = `https://${links.live}`;
     } else {
         live.href = `${BASE_LIVE_URL}${links.live}`;
