@@ -12,23 +12,8 @@ function updateDisplay(display, image) {
     display.src = image.src;
 };
 
-function updateArrows(arrows, images, index) {
-    let previous = arrows[0];
-    let next = arrows[1];
-
-    if (index === images.length -1) {
-        previous.style.display = 'block';
-        next.style.display = 'none';
-    } else if (index === 0) {
-        previous.style.display = 'none';
-        next.style.display = 'block';
-    } else {
-        previous.style.display = 'block';
-        next.style.display = 'block';
-    }
-};
-
 function Slideshow(parents) {
+
     let parentsArray = parents;
 
     for (let i = 0; i < parentsArray.length; i++) {
@@ -45,33 +30,33 @@ function Slideshow(parents) {
         const display = parent.querySelector('.slide');
         const dots = Array.from(parent.querySelector('.dots').children);
         const images = Array.from(parent.querySelector('.images').children);
-        
-        //Hide the previous arrow on initial slideshow load
-        previous.style.display = 'none';
-        
+
         dots.forEach(dot => {
             dot.addEventListener('click', () => {
-                updateArrows(arrows, images, dots.indexOf(dot));
                 toggleActive(dots, dots.indexOf(dot));
                 updateDisplay(display, images[dots.indexOf(dot)]);
             });
         });
 
         next.addEventListener('click', () => {
-            if (index !== images.length -1) {
+            if (index === images.length -1) {
+                index = 0;
+            } else {
                 index++;
             }
+
             toggleActive(dots, index);
-            updateArrows(arrows, images, index);
             updateDisplay(display, images[index]);
         });
 
         previous.addEventListener('click', () => {
-            if (index !== 0) {
+            if (index === 0) {
+                index = images.length - 1
+            } else {
                 index--;
             }
+            
             toggleActive(dots, index);
-            updateArrows(arrows, images, index);
             updateDisplay(display, images[index]);
         });
     });

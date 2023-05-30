@@ -5,7 +5,6 @@ import GetProjects from '../functions/GetProjects';
 
 //Shows the slideshow overlay
 function viewSlideshow() {
-    console.log(this);
     const slideshow = this.querySelector('.slideshow');
     
     //If the project doesn't have a slideshow, then just return
@@ -217,10 +216,8 @@ function Projects() {
         };
 
         const slideshow = parent.querySelector('.slideshow')
-        parents.push(slideshow);
+        if (slideshow) parents.push(slideshow);
     });
-
-    console.log(parents);
 
     Slideshow(parents);
 

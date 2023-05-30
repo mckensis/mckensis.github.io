@@ -2,11 +2,14 @@ import '../styles/style.css';
 import Portrait from '../images/portrait.jpg';
 import Mail from '../images/icons/email.png';
 
+// Swaps the word on hero page
 function swapWord() {
     let count = 0;
     const words = ['creative', 'patient', 'personable', 'positive', 'reliable', 'passionate'];
     setInterval(() => {
-        document.querySelector("#swapping > span").textContent = words[count];
+        const element = document.querySelector("#swapping > span")
+        if (!element) return;
+        element.textContent = words[count];
         count < words.length - 1 ? count = count + 1 : count = 0;
     }, 1500);
 }

@@ -1,58 +1,84 @@
-/* Manrope - Google Fonts */
+/* Removed Manrope - Google Fonts */
+
+/* Mulish - Google Fonts */
 @font-face {
-    font-family: 'ManropeExtraLight';
-    src: url('../fonts/manrope/manrope-extralight-webfont.woff2') format('woff2'),
-         url('../fonts/manrope/manrope-extralight-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Mulish';
+    src: url('../fonts/mulish/mulish-extralight-webfont.woff2') format('woff2'),
+         url('../fonts/mulish/mulish-extralight-webfont.woff') format('woff');
+    font-weight: 200;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'ManropeLight';
-    src: url('../fonts/manrope/manrope-light-webfont.woff2') format('woff2'),
-         url('../fonts/manrope/manrope-light-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Mulish';
+    src: url('../fonts/mulish/mulish-light-webfont.woff2') format('woff2'),
+         url('../fonts/mulish/mulish-light-webfont.woff') format('woff');
+    font-weight: 300;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'ManropeMedium';
-    src: url('../fonts/manrope/manrope-medium-webfont.woff2') format('woff2'),
-         url('../fonts/manrope/manrope-medium-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Mulish';
+    src: url('../fonts/mulish/mulish-regular-webfont.woff2') format('woff2'),
+         url('../fonts/mulish/mulish-regular-webfont.woff') format('woff');
+    font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Manrope';
-    src: url('../fonts/manrope/manrope-regular-webfont.woff2') format('woff2'),
-         url('../fonts/manrope/manrope-regular-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Mulish';
+    src: url('../fonts/mulish/mulish-medium-webfont.woff2') format('woff2'),
+         url('../fonts/mulish/mulish-medium-webfont.woff') format('woff');
+    font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'ManropeSemiBold';
-    src: url('../fonts/manrope/manrope-semibold-webfont.woff2') format('woff2'),
-         url('../fonts/manrope/manrope-semibold-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Mulish';
+    src: url('../fonts/mulish/mulish-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/mulish/mulish-semibold-webfont.woff') format('woff');
+    font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'ManropeBold';
-    src: url('../fonts/manrope/manrope-bold-webfont.woff2') format('woff2'),
-         url('../fonts/manrope/manrope-bold-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Mulish';
+    src: url('../fonts/mulish/mulish-bold-webfont.woff2') format('woff2'),
+         url('../fonts/mulish/mulish-bold-webfont.woff') format('woff');
+    font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'ManropeExtraBold';
-    src: url('../fonts/manrope/manrope-extrabold-webfont.woff2') format('woff2'),
-         url('../fonts/manrope/manrope-extrabold-webfont.woff') format('woff');
-    font-weight: normal;
+    font-family: 'Mulish';
+    src: url('../fonts/mulish/mulish-extrabold-webfont.woff2') format('woff2'),
+         url('../fonts/mulish/mulish-extrabold-webfont.woff') format('woff');
+    font-weight: 800;
     font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../fonts/mulish/mulish-black-webfont.woff2') format('woff2'),
+         url('../fonts/mulish/mulish-black-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../fonts/mulish/mulish-italic-webfont.woff2') format('woff2'),
+         url('../fonts/mulish/mulish-italic-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
 }
 
 /* Charm - Google Fonts */
@@ -82,14 +108,14 @@
 }
 
 html {
-    font-family: 'Manrope', sans-serif;
     background-color: var(--black);
 }
 
 body {
     display: flex;
-    flex-grow: 1;
+    min-height: 100vh;
     flex-direction: column;
+    font-family: Mulish;
     color: var(--palette-light);
 }
 
@@ -107,7 +133,7 @@ main {
 }
 
 button {
-    font-family: 'Manrope', sans-serif;
+    font-family: Mulish;
 }
 
 hr {
@@ -145,7 +171,8 @@ button:active {
     gap: 1rem;
     height: 5rem;
     padding: 1rem 0;
-    font-family: 'ManropeExtraBold', sans-serif;
+    font-family: Mulish;
+    font-weight: 800;
     font-size: 1.5rem;
     letter-spacing: 0.25rem;
     color: var(--palette-dark);
@@ -157,7 +184,8 @@ button:active {
 }
 
 .small-link {
-    font-family: 'ManropeSemiBold', sans-serif;
+    font-family: Mulish;
+    font-weight: 600;
 }
 
 .locked {
@@ -206,27 +234,29 @@ nav ul.open {
 nav ul li {
     padding: 0.25rem 0;
     text-transform: uppercase;
-    font-family: 'ManropeLight', sans-serif;
+    font-family: Mulish;
+    font-weight: 300;
     letter-spacing: 0.25rem;
     color: var(--palette-light);
 }
 
 nav a.home {
     z-index: 2;
-    font-weight: 400;
+    font-family: 'Charm';
     font-size: 4rem;
+    font-weight: 400;
     line-height: 6rem;
     text-decoration: none;
     place-self: center start;
     padding-left: 1rem;
-    font-family: 'Charm';
     height: 100%;
     position: relative;
     top: -.35rem;
 }
 
 nav .internal-link.active {
-    font-family: 'ManropeExtraBold', sans-serif;
+    font-family: Mulish;
+    font-weight: 800;
     transform: scale(1.05);
     transition: transform 0.5s ease;
     text-decoration-line: underline;
@@ -362,14 +392,16 @@ nav .burger.open span:nth-of-type(3) {
 .individual-project h2 {
     text-align: center;
     font-size: 2.3rem;
-    font-family: 'ManropeExtraBold', sans-serif;
+    font-family: Mulish;
+    font-weight: 800;
     letter-spacing: 0.25rem;
     text-transform: uppercase;
 }
 
 .individual-project h3 {
     font-size: 1.3rem;
-    font-family: 'ManropeSemiBold', sans-serif;
+    font-family: Mulish;
+    font-weight: 600;
     letter-spacing: 0.25rem;
     text-transform: uppercase;
     border-bottom: 3px solid var(--palette-color);
@@ -409,7 +441,7 @@ nav .burger.open span:nth-of-type(3) {
     padding: 0.5rem 0.75rem;
     text-align: center;
     border-radius: 3rem;
-    font-family: 'Manrope', sans-serif;
+    font-family: Mulish;
     letter-spacing: 0.75px;
     border: 1px solid var(--palette-color);
 }
@@ -429,7 +461,8 @@ nav .burger.open span:nth-of-type(3) {
     content: "\00ba";
     color: var(--palette-color);
     padding-right: 1rem;
-    font-family: 'ManropeSemiBold', sans-serif;
+    font-family: Mulish;
+    font-weight: 600;
 }
 
 .individual-project .details li,
@@ -873,9 +906,10 @@ nav .burger.open span:nth-of-type(3) {
 @media (min-width: 850px) {
     .hero {
         grid-template-columns: 1fr 1fr;
-        row-gap: 0;
+        row-gap: 1rem;
         column-gap: 2rem;
         width: 800px;
+        align-items: center;
         place-content: center;
     }
     .hero img.portrait {
@@ -897,7 +931,7 @@ nav .burger.open span:nth-of-type(3) {
         max-width: 1000px;
     }
     .hero .big-link {
-        margin-top: 2rem;
+        margin-top: 1rem;
         grid-column: span 1;
     }
 }
@@ -964,7 +998,8 @@ nav .burger.open span:nth-of-type(3) {
     }
 
     nav ul li {
-        font-family: 'ManropeSemiBold', sans-serif;
+        font-family: Mulish;
+        font-weight: 600;
     }
 
     nav ul :last-child {
