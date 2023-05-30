@@ -17,26 +17,18 @@ function CreateList() {
     const githubLink = document.createElement('a');
     githubLink.className = 'external-link';
     githubLink.textContent = 'Github';
-    githubLink.href = 'https://github.com/mckensis';
+    githubLink.href = 'https://www.github.com/mckensis/';
     githubLink.target = '_blank';
     github.append(githubLink);
     
-    const cv = document.createElement('li');
-    const cvLink = document.createElement('a');
-    cvLink.className = 'external-link';
-    cvLink.textContent = 'View CV';
-    cvLink.href = 'https://drive.google.com/file/d/1azjZNp53PSPuY4H9ESdBEazrSbU4XA3g/view?usp=sharing';
-    cvLink.target = '_blank';
-    cv.append(cvLink);
-
     const contact = document.createElement('li');
     const contactLink = document.createElement('a');
-    contactLink.href = 'mailto:adn.mck@gmail.com?subject=Hi Aidan';
+    contactLink.href = 'mailto:adn.mck@gmail.com?subject=Hi';
     contactLink.classList.add('contact','big-link','external-link');
     contactLink.textContent = 'Contact';
     contact.append(contactLink);
 
-    list.append(about, projects, github, cv, contact);
+    list.append(about, projects, github, contact);
 
     return list;
 }

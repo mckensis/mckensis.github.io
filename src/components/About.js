@@ -9,21 +9,17 @@ function About() {
 
     const one = document.createElement('p');
     one.textContent =
-        `I'm a self-taught developer who has been fully focusing my time and energy on learning web development since the beginning of 2022.`;
+        `I'm a self-taught developer who has been fully focusing my time and energy on learning web development since the beginning of 2022 when I decided to work towards a career change into software development. I've always been passionate about computers and technology, and this passion and interest has continued to grow as time has passed.`;
 
     const two = document.createElement('p');
-    two.textContent =
-        `I dabbled with C, Python, SQLite, and Lua during Covid lockdowns when I completed Harvard's CS50 course which made me realise how much passion and energy I have for programming, and I decided to focus on a career change.`;
-
-    const three = document.createElement('p');
-    three.textContent = 
-        `I have mainly been building and maintaining my projects using JavaScript, npm, Webpack, Git, and Linux. I'm currently learning React, and plan to learn more frameworks and languages as I continue my journey. I believe that keeping up to date with new technologies is essential and learning should never end.`;
+    two.textContent = 
+        `I began my journey into web development via The Odin Project's curriculum. I spent a year creating projects with vanilla JavaScript, Webpack, and Git. I then moved on to learn React, and have been doing so for the past 6 months. I believe that keeping up to date with new technologies is essential in this industry, and learning is not something that should ever be considered complete.`;
     
-    const four = document.createElement('p');
-    four.textContent =
+    const three = document.createElement('p');
+    three.textContent =
         `My current goal is to find a role where I can begin my career and continue developing my skillset within a professional environment while doing a job that I am incredibly passionate about.`;
     
-    let sentences = [one, two, three, four];
+    let sentences = [one, two, three];
 
     sentences.forEach(sentence => {
         about.append(sentence);

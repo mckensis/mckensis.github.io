@@ -147,9 +147,14 @@ button:active {
     overflow: hidden;
 }
 
+#swapping > span {
+    color: var(--palette-color);
+}
+
 /* NavBar */
 nav {
     display: flex;
+    flex-grow: 1;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -848,12 +853,13 @@ nav .burger.open span:nth-of-type(3) {
 }
 
 /* Hero layout change for larger screens */
-@media (min-width: 650px) {
+@media (min-width: 850px) {
     .hero {
         grid-template-columns: 1fr 1fr;
         row-gap: 0;
         column-gap: 2rem;
         height: 80vh;
+        width: 800px;
         place-content: center;
     }
     .hero img.portrait {

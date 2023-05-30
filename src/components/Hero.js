@@ -2,6 +2,15 @@ import '../styles/style.css';
 import Portrait from '../images/portrait.jpg';
 import Mail from '../images/icons/email.png';
 
+function swapWord() {
+    let count = 0;
+    const words = ['creative', 'patient', 'personable', 'positive', 'reliable', 'passionate'];
+    setInterval(() => {
+        document.querySelector("#swapping > span").textContent = words[count];
+        count < words.length - 1 ? count = count + 1 : count = 0;
+    }, 1500);
+}
+
 function Hero() {
     const hero = document.createElement('section');
     hero.className = 'hero';
@@ -17,7 +26,8 @@ function Hero() {
     span.textContent = `I'm Aidan`;
 
     const para = document.createElement('p');
-    para.textContent = 'Front-end developer from Glasgow, Scotland';
+    para.innerHTML = `A <span>passionate</span> web developer from Glasgow`;
+    para.id = 'swapping';
 
     const projects = document.createElement('button');
     projects.textContent = 'View My Projects';
@@ -31,12 +41,14 @@ function Hero() {
     contact.textContent = 'Contact Me';
     contact.classList.add('big-link', 'hero-contact');
     contact.href = 'mailto:adn.mck@gmail.com?subject=Hi Aidan';
-    
+
     header.append(span);
     contact.append(mailIcon);
     hero.append(portrait, header, para, projects, contact);
 
     return hero;
 }
+
+swapWord();
 
 export default Hero;
