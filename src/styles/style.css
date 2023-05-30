@@ -60,20 +60,20 @@
 
 /* Default styles */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     font-family: 'Manrope', sans-serif;
-    height: 100vh;
     background-color: var(--black);
 }
 
 body {
-    display: grid;
-    grid-template-rows: max-content 1fr;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
     color: var(--palette-light);
 }
 
@@ -85,6 +85,7 @@ header {
 }
 
 main {
+    flex-grow: 1;
     display: grid;
     margin: 1rem;
 }
@@ -858,7 +859,6 @@ nav .burger.open span:nth-of-type(3) {
         grid-template-columns: 1fr 1fr;
         row-gap: 0;
         column-gap: 2rem;
-        height: 80vh;
         width: 800px;
         place-content: center;
     }
