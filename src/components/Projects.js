@@ -144,7 +144,7 @@ function CreateDetailsSection(details) {
 
     const list = document.createElement('ul');
 
-    details.forEach(piece => {
+    details?.forEach(piece => {
         const item = document.createElement('li');
         item.textContent = piece;
         list.append(item);
@@ -183,11 +183,11 @@ function CreateProject(project) {
     //Tags
     const tags = CreateTags(project.tags);
     //Info
-    const info = CreateDetailsSection(project.info);
+    // const info = CreateDetailsSection(project.info);
     //Development
     const development = CreateDevelopmentSection(project.development);
     
-    article.append(heading, links, tags, info, development);
+    article.append(heading, links, tags, development);
     
     //Slideshow if there are images present
     if (project.images.length > 0) {

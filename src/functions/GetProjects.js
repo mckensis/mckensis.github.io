@@ -3,15 +3,10 @@ function GetProjects() {
     const battleship = {
         title: 'Battleship',
         alias: 'battleship',
-        info: [
-            `Classic Battleship game`, 
-            `Play against an AI player`,
-            `Destroy 5 ships to win`,
-        ],
-        development: 'I wrote unit tests with the Jest framework during development of this project. I purposefully caused each newly written test to fail and then built the functionality to allow the test to pass. I repeated this process until the project was complete.',
+        development: 'I developed this web version of the classic Battleship game while learning the Jest testing framework. I coded the project following Test-Driven Development practices, where I purposefully caused each newly written test to fail and then built the functionality to allow the test to pass. I repeated this process until the project was complete.',
         live: 'battleship',
         code: 'battleship',
-        tags: [ 'Jest', 'Test-Driven Development' ],
+        tags: [ 'Jest', 'Test-Driven Development', 'Javascript', 'Git' ],
         images: [],
     };
 
@@ -26,51 +21,32 @@ function GetProjects() {
         development: `I used async and await to fetch data from OpenWeather's APIs such as 'Geocoding', 'CurrentWeather', and '3 Hour / 5 Day Forecast'. I then extracted and formatted the JSON which I required to create the project.`,
         live: 'weather-forecast',
         code: 'weather-forecast',
-        tags: [ 'OpenWeather API', 'Async / Await' ],
+        tags: [ 'OpenWeather API', 'Async / Await', 'Git' ],
         images: [],
     };
 
     const todo = {
         title: 'To-Do List',
         alias: 'to-do-list',
-        info: [
-            `View lists on the left`,
-            `View tasks on the right`,
-            `Add a new list or task`,
-            `Change the priority of a task`,
-            `Mark a task as complete`,
-            `Delete a task`,
-            `Delete a list`,
-        ],
-        development: `I created this CRUD style project using localStorage to store the user's data between sessions. All lists, tasks, and task properties such as completion and priority will be saved.`,
-        live: 'to-do-list',
-        code: 'to-do-list',
-        tags: [ 'CRUD', 'Web Storage API', 'LocalStorage' ],
+        development: `I created this To-Do List project in order to keep track of important tasks easily. I originally coded this CRUD style project in 2022 with vanilla Javascript and utilised localStorage to store the user's data between sessions. I have since converted the project into a React app and added Firebase support. This allowed me to implement user Auth and storage of data on Firestore rather than localStorage.`,
+        live: 'to-do-list-react',
+        code: 'to-do-list-react',
+        tags: ['React', 'Firebase', 'Auth', 'Firestore', 'CRUD', 'Git' ],
         images: [],
     };
 
     const bothyCamp = {
         title: 'Bothy Camp',
         alias: 'bothy-camp',
-        info: [
-            `Login / Register functionality`,
-            `View all bothies`,
-            `Select a bothy from the list`,
-            `Select a bothy from the map`,
-            `Create a bothy`,
-            `Review a bothy`,
-            `Edit a bothy`,
-            `Delete a bothy`,
-        ],
-        development: `I developed this MERN project while learning about MongoDB, Express, Node, and RESTful APIs. I utilised EJS for constructing the webpages, and it has CRUD functionality.`,
+        development: `I programmed this project while learning about the MERN stack and RESTful APIs. The purpose of the project is to display all bothies across Scotland, view reviews of those bothies, and allow a user to review or add a bothy to the database. I utilised EJS for constructing the templates and pages, and programmed CRUD functionality for the project to allow creation of users, bothies, and reviews. I used Mongo Atlas to connect the project to a database to store all data such as users, reviews, and bothies.`,
         live: 'bothycamp.fly.dev',
         code: 'bothy-camp',
-        tags: [ 'MERN', 'CRUD', 'RESTful API', 'Express', 'MongoDB', 'EJS', 'Node' ],
+        tags: [ 'MERN', 'CRUD', 'RESTful API', 'EJS', 'Node', 'Git' ],
         images: [],
     };
 
     const cvProject = {
-        title: 'CV Building Project',
+        title: 'CV Project',
         alias: 'cv-project',
         info: [
             `Build a CV using my template`,
@@ -81,12 +57,27 @@ function GetProjects() {
         development: `I developed this React project with CRUD operations which heavily utilises React Functional Components, and hooks such as UseState, UseEffect, and UseRef. I also implemented functionality to print the document or save it as a PDF locally.`,
         live: 'cv-project',
         code: 'cv-project',
-        tags: [ 'React', 'CRUD', 'LocalStorage' ],
+        tags: [ 'React', 'CRUD', 'LocalStorage', 'Git' ],
         images: [],
     };
 
+    const shop = {
+        title: 'Shopping Cart',
+        alias: 'shopping-cart',
+        info: [
+            `Multipage shop site`,
+            `Homepage, store, and contact pages`,
+            `Add to basket functionality`
+        ],
+        development: `I developed this multipage project in React as a mock-up of a functional shop website. I implemented Client-Side Routing to allow users to visit the different pages of the project. I wrote the code with modern React Hooks and programmed a shopping cart to enable the user to add and remove products from the shop.`,
+        live: 'shopping-cart',
+        code: 'shopping-cart',
+        tags: [ 'React', 'Hash Router', 'Client-Side Routing', 'Git' ],
+        images: [],
+    };
+    
     //This is the order the projects will display on the page
-    return [ cvProject, bothyCamp, todo, battleship, weather ];
+    return [ cvProject, shop, todo, bothyCamp, battleship ];
 }
 
 export default GetProjects;
