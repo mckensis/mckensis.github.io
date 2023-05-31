@@ -77,7 +77,7 @@ function GetProjects() {
     };
     
     //This is the order the projects will display on the page
-    return [ cvProject, shop, todo, bothyCamp, battleship ];
+    return [ cvProject, shop, todo, bothyCamp ];
 }
 
 export default GetProjects;

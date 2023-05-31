@@ -3,15 +3,6 @@
 /* Mulish - Google Fonts */
 @font-face {
     font-family: 'Mulish';
-    src: url('../fonts/mulish/mulish-extralight-webfont.woff2') format('woff2'),
-         url('../fonts/mulish/mulish-extralight-webfont.woff') format('woff');
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Mulish';
     src: url('../fonts/mulish/mulish-light-webfont.woff2') format('woff2'),
          url('../fonts/mulish/mulish-light-webfont.woff') format('woff');
     font-weight: 300;
@@ -30,15 +21,6 @@
 
 @font-face {
     font-family: 'Mulish';
-    src: url('../fonts/mulish/mulish-medium-webfont.woff2') format('woff2'),
-         url('../fonts/mulish/mulish-medium-webfont.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Mulish';
     src: url('../fonts/mulish/mulish-semibold-webfont.woff2') format('woff2'),
          url('../fonts/mulish/mulish-semibold-webfont.woff') format('woff');
     font-weight: 600;
@@ -48,27 +30,9 @@
 
 @font-face {
     font-family: 'Mulish';
-    src: url('../fonts/mulish/mulish-bold-webfont.woff2') format('woff2'),
-         url('../fonts/mulish/mulish-bold-webfont.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Mulish';
     src: url('../fonts/mulish/mulish-extrabold-webfont.woff2') format('woff2'),
          url('../fonts/mulish/mulish-extrabold-webfont.woff') format('woff');
     font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Mulish';
-    src: url('../fonts/mulish/mulish-black-webfont.woff2') format('woff2'),
-         url('../fonts/mulish/mulish-black-webfont.woff') format('woff');
-    font-weight: 900;
     font-style: normal;
     font-display: swap;
 }

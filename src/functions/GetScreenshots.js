@@ -2,6 +2,8 @@
 function GetScreenshots(project, context) {
     let images = [];
 
+    console.log(project, context);
+
     //For each item in the images/screenshots folder
     //If the image name matches the project variable,
     //Add it to the images array
@@ -11,6 +13,8 @@ function GetScreenshots(project, context) {
             images.push(temp);
         }
     });
+
+    console.log(images);
     return images;
 }
 
