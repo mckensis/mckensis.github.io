@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Portrait from "../assets/images/portrait.jpg";
 import Mail from "../assets/icons/email.png";
-import Arrow from "../assets/icons/arrow-24.png";
+import Arrow from "../assets/icons/arrow.png";
 import { animated, useSpring, useInView } from "@react-spring/web";
 
 const Hero = () => {
