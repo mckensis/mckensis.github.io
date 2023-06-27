@@ -7,7 +7,6 @@
        url('assets/fonts/mulish/mulish-light-webfont.woff') format('woff');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
@@ -16,7 +15,6 @@
        url('assets/fonts/mulish/mulish-regular-webfont.woff') format('woff');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
@@ -25,7 +23,6 @@
        url('assets/fonts/mulish/mulish-semibold-webfont.woff') format('woff');
   font-weight: 600;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
@@ -34,7 +31,6 @@
        url('assets/fonts/mulish/mulish-extrabold-webfont.woff') format('woff');
   font-weight: 800;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
@@ -50,7 +46,6 @@
   font-family: 'Charm';
   src: url('assets/fonts/charm/Charm-Regular.woff') format('woff'),
        url('assets/fonts/charm/Charm-Regular.woff2') format('woff2');
-  font-display: swap;
 }
 
 
@@ -376,7 +371,7 @@ button:active {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  column-gap: 2rem;
 }
 
 .button-container {
@@ -388,6 +383,7 @@ button:active {
 
 img.portrait {
   width: 50%;
+  min-height: 300px;
   max-width: 300px;
   place-self: center;
   padding: 0.25rem;
@@ -851,10 +847,9 @@ textarea {
     align-items: center;
     position: relative;
     padding: unset;
-    gap: 3rem;
+    column-gap: 3rem;
     font-size: 1.1rem;
     margin-left: auto;
-    transition: gap 5s ease;
   }
 
   nav ul li {
@@ -868,7 +863,7 @@ textarea {
 
 @media (min-width: 1100px) {
   nav ul {
-    gap: 5rem;
+    column-gap: 5rem;
     font-size: 1.2rem;
   }
 }

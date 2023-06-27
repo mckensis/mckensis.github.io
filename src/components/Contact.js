@@ -1,11 +1,22 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { animated } from "@react-spring/web";
 import emailjs from "@emailjs/browser"
+import { useArticleSpring, useHeadingSpring, useSubtitleSpring } from "../hooks/useSpringHooks";
 
 const Contact = () => {
 
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [successful, setSuccessful] = useState(null);
+
+  const headingRef = useRef();
+  const headingSpring = useHeadingSpring(headingRef);
+
+  const subtitleRef = useRef();
+  const subtitleSpring = useSubtitleSpring(subtitleRef);
+
+  const articleRef = useRef();
+  const articleSpring = useArticleSpring(articleRef);
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -43,9 +54,10 @@ const Contact = () => {
 
   return (
     <section id="contact">
-      <h2>Get In Touch</h2>
-      <p className="subtitle">Please feel free to get in touch if there's anything we can do for each other!</p>
-      <article className="form background-style">
+      <animated.h2 ref={ headingRef } style={ headingSpring }>Get In Touch</animated.h2>
+      <animated.p className="subtitle" ref={ subtitleRef } style={ subtitleSpring }>Please feel free to get in touch if there's anything we can do for each other!</animated.p>
+      
+      <animated.article className="form background-style" ref={ articleRef } style={ articleSpring }>
         <h5>Fill out this form...</h5>
         <form onSubmit={sendEmail}>
           <label htmlFor="name">Name
@@ -75,7 +87,7 @@ const Contact = () => {
           <h5>Or On Your Own Terms...</h5>
 
           <a href="mailto:adn.mck@gmail.com" className="big-link">Send an email</a>
-      </article>
+      </animated.article>
     </section>
   )
 }

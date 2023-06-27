@@ -1,31 +1,43 @@
+import { useRef } from "react";
 import GetProjects from "../functions/GetProjects";
+import { useSubtitleSpring, useHeadingSpring, useArticleSpring } from "../hooks/useSpringHooks";
+import { animated } from "@react-spring/web";
 
 const Projects = () => {
   const projects = GetProjects();
+  
+  const subtitleRef = useRef();
+  const subtitleSpring = useSubtitleSpring(subtitleRef);
+
+  const headingRef = useRef();
+  const headingSpring = useHeadingSpring(headingRef);
 
   return (
     <section id="projects">
-      <h2>My Projects</h2>
-      <p className="subtitle">Below are a select few of my projects to showcase the skills I possess.</p>
+      <animated.h2 ref={ headingRef } style={ headingSpring }>My Projects</animated.h2>
+      <animated.p className="subtitle" ref={ subtitleRef } style={ subtitleSpring }>Below are a select few of my projects to showcase the skills I possess.</animated.p>
       <article>
-
-      {projects.map(project => (
-        <Project key={project.alias} project={project} />
+        {projects.map(project => (
+          <Project key={project.alias} project={project} />
         ))}
-        </article>
+      </article>
     </section>
   )
 }
 
 const Project = ({ project }) => {
+
+  const articleRef = useRef();
+  const articleSpring = useArticleSpring(articleRef);
+
   return (
-    <article className="individual-project background-style">
+    <animated.article className="individual-project background-style" ref={ articleRef } style={ articleSpring }>
       <h3>{project.title}</h3>
       <ProjectTags tags={project.tags} />
       <ProjectImage filename={project.alias} />
       <ProjectLinks project={project} />
       <ProjectDevelopment development={project.development} />
-    </article>
+    </animated.article>
   )
 }
 
