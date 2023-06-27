@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import Burger from "./Burger";
 import List from "./List";
 
 
-const Header = () => {
-
-  const [open, setOpen] = useState(false);
+const Header = ({ open, setOpen }) => {
 
   // Toggle nav between open & closed
   const toggleNav = (e) => {
@@ -13,21 +11,18 @@ const Header = () => {
 
     if (!open) {
       document.body.style.overflow = "hidden";
-      document.body.style.paddingRight = "15px";
     }
     if (open) {
       document.body.style.overflow = "auto";
-      document.body.style.paddingRight = "unset";
     }
   }
 
   // Handle closing the nav
-  const closeNav = () => {
+  const closeNav = useCallback(() => {
     document.body.style.overflow = "auto";
-    document.body.style.paddingRight = "unset";
     setOpen(false);
     return;
-  }
+  }, [setOpen]);
 
   // Close the nav when open and user clicks outside nav area
   useEffect(() => {
@@ -38,7 +33,7 @@ const Header = () => {
       if (e.target.classList.contains("overlay")) closeNav();
       return;
     })
-  }, [open]);
+  }, [open, closeNav]);
 
   return (
     <header>
@@ -47,7 +42,6 @@ const Header = () => {
         <Burger open={open} toggleNav={toggleNav} />
         <List open={open} closeNav={closeNav} />
       </nav>
-      {open && <div className="overlay"></div>}
     </header>
   )
 }

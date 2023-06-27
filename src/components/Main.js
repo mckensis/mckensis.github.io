@@ -4,7 +4,8 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import Contact from "./Contact";
 
-const Main = () => {
+const Main = ({ open }) => {
+
   return (
     <main>
       <Hero />
@@ -12,6 +13,7 @@ const Main = () => {
       <Projects />
       <Skills />
       <Contact />
+      {open && <div className="overlay"></div>}
     </main>
   )
 }

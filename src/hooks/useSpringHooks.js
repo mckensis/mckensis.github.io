@@ -1,8 +1,6 @@
 import { useSpring } from "@react-spring/web";
 import useIntersectionObserver from "./useIntersectionObserver";
 
-
-
 // For subtitle below each section heading
 export const useSubtitleSpring = (ref) => {
 
@@ -13,11 +11,9 @@ export const useSubtitleSpring = (ref) => {
   return useSpring({
     from: {
       opacity: 0,
-      letterSpacing: "5px",
     },
     to: {
       opacity: dataRef?.isIntersecting ? 1 : 0,
-      letterSpacing: dataRef?.isIntersecting ? "2px" : "5px",
     },
     delay: 200,
     config: {
@@ -47,8 +43,8 @@ export const useHeadingSpring = (ref) => {
     delay: 50,
     config: {
       mass: 1,
-      tension: 300,
-      friction: 12,
+      tension: 100,
+      friction: 10,
     }
   });
 }

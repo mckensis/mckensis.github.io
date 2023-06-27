@@ -13,11 +13,11 @@ const About = () => {
   const articleRef = useRef();
   const articleSpring = useArticleSpring(articleRef);
  
-  const subtitleRef = useRef()
+  const subtitleRef = useRef();
   const subtitleSpring = useSubtitleSpring(subtitleRef);
 
   return (
-    <animated.section id="about" ref={ aboutRef } style={ aboutSpring } >
+    <section id="about">
       <animated.h2 ref={ headingRef } style={ headingSpring }>About Me</animated.h2>
       <animated.p className="subtitle" ref={ subtitleRef } style={ subtitleSpring } >A wee bit about me.</animated.p>
         <animated.article className="background-style" ref={ articleRef } style={ articleSpring }>
@@ -27,7 +27,7 @@ const About = () => {
           <hr />
           <p>My current goal is to find a role where I can begin my career and continue developing my skillset within a professional environment while doing a job that I am incredibly passionate about.</p>
         </animated.article>
-    </animated.section>
+    </section>
   )
 }
 

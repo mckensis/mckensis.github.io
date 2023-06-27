@@ -71,6 +71,10 @@
   scroll-margin-top: 7rem;
 }
 
+html {
+  background-color: var(--palette-darkest);
+}
+
 body {
   background: linear-gradient(var(--palette-dark) 15%, var(--palette-darkest));
   background-repeat: no-repeat;
@@ -87,7 +91,7 @@ body {
 }
 
 header {
-  z-index: 5;
+  z-index: 20;
   position: sticky;
   top: 0;
   font-size: 1.5rem;
@@ -102,9 +106,9 @@ nav {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: space-between;
-  width: 97vw;
   height: 6rem;
   max-height: 6rem;
+  padding: 0 1rem;
 }
 
 nav ul {
@@ -115,6 +119,7 @@ nav ul {
   padding: 5rem 0 2.5rem 0;
   background-color: var(--palette-dark);
   list-style: none;
+  z-index: 20;
 }
 
 nav ul.open {
@@ -122,10 +127,9 @@ nav ul.open {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-self: center;
   row-gap: 2rem;
-  z-index: 1;
-  width: 100vw;
+  width: calc(100vw + 1rem);
+  left: -1rem;
   border-bottom: 1px solid var(--palette-darkest);
 }
 
@@ -143,28 +147,24 @@ nav a:not(nav a.home) {
 }
 
 nav a.home {
-  z-index: 2;
+  display: flex;
+  align-items: center;
+  z-index: 30;
   font-family: 'Charm';
   font-size: 4rem;
   font-weight: 400;
-  line-height: 6rem;
+  line-height: 4rem;
   text-decoration: none;
-  place-self: center start;
-  padding-left: 1rem;
-  height: 100%;
-  position: relative;
-  top: -.35rem;
 }
 
 nav .burger {
   display: grid;
   grid-auto-flow: row;
-  z-index: 2;
+  z-index: 30;
   gap: 5px;
-  place-self: center end;
   border: none;
-  background-color: transparent;
-  padding: 1rem;
+  background: none;
+  padding: .75rem 0;
 }
 
 nav .burger span {
@@ -394,7 +394,7 @@ img.portrait {
 }
 
 #swapping {
-  z-index: 1;
+  z-index: -1;
   margin-top: 2rem;
   position: relative;
   flex-wrap: wrap;
@@ -406,24 +406,22 @@ span.swap {
   z-index: 1;
   position: absolute;
   font-size: 2.1rem;
-  top: -2rem;
-  left: 20%;
-  transform: translateX(-50%);
+  top: -2.25rem;
+  left: 4.5rem;
   color: var(--palette-color);
-  transform: translateX(-50%) rotate(-5deg) rotateX(0deg);
+  transform: rotate(-5deg) rotateX(0deg);
   transition: transform .25s ease;
 }
 
 span.swap.loading {
-  transform: translateX(-50%) rotate(-5deg) rotateX(360deg);
+  z-index: 1;
+  transform: rotate(-5deg) rotateX(360deg);
   transition: transform .25s ease;
 }
 
 #arrow {
   display: inline-block;
-  transform: rotate(120deg) scale(.9) rotateX(180deg);
-  color: var(--palette-color);
-  z-index: 20;
+  transform: scale(.8);
 }
 
 /* About section */
@@ -462,10 +460,9 @@ span.swap.loading {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-wrap: nowrap;
   row-gap: 1.5rem;
   padding: 2rem;
-  flex: 1 1 calc(100% / 2);
-  min-width: 400px;
   align-items: center;
 }
 
@@ -663,9 +660,10 @@ textarea {
 
 .overlay {
   position: fixed;
-  z-index: 0;
-  height: 100vh;
-  width: 100vw;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
   background-color: rgba(0,0,0,0.5);
 }
 
@@ -822,24 +820,6 @@ textarea {
 
   nav ul.open {
     animation-name: openNav;
-    animation-duration: .25s;
-  }
-
-  @keyframes pop {
-    0% {
-      opacity: 0;
-      transform: scale(0.1);
-    }
-
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-
-  .individual-project {
-    animation-name: pop;
     animation-duration: .25s;
   }
 }

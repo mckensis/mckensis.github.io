@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Portrait from "../assets/images/portrait.jpg";
 import Mail from "../assets/icons/email.png";
+import Arrow from "../assets/icons/arrow-24.png";
 import { animated, useSpring, useInView } from "@react-spring/web";
 
 const Hero = () => {
@@ -35,7 +36,7 @@ const Hero = () => {
   const heroProps = useSpring({
     from: {
       marginTop: -50,
-      marginBottom: 5,
+      marginBottom: 200,
       opacity: 0,
       gap: "5rem",
     },
@@ -77,9 +78,7 @@ const Hero = () => {
           {word}
         </span>
         &nbsp;
-        <span id="arrow">
-        &#8617;
-        </span>
+        <img id="arrow" src={Arrow} alt="" />
         &nbsp;web developer from Glasgow, Scotland.
       </p>
 
