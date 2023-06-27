@@ -1,227 +1,86 @@
-import '../styles/style.css';
-import Slideshow from '../functions/Slideshow';
-import GetScreenshots from '../functions/GetScreenshots';
-import GetProjects from '../functions/GetProjects';
+import GetProjects from "../functions/GetProjects";
 
-//Shows the slideshow overlay
-function viewSlideshow() {
-    const slideshow = this.querySelector('.slideshow');
-    
-    //If the project doesn't have a slideshow, then just return
-    if (!slideshow) {
-        return;
-    }
+const Projects = () => {
+  const projects = GetProjects();
 
-    slideshow.style.display = 'grid';
-    document.body.style.overflow = 'hidden';
+  return (
+    <section id="projects">
+      <h2>My Projects</h2>
+      <p className="subtitle">Below are a select few of my projects to showcase the skills I possess.</p>
+      <article>
 
-    const close = this.querySelector('.slideshow-close');
-
-    close.addEventListener('click', () => {
-        document.body.style.overflow = 'unset';
-        slideshow.style.display = 'none';
-    });
+      {projects.map(project => (
+        <Project key={project.alias} project={project} />
+        ))}
+        </article>
+    </section>
+  )
 }
 
-//Creates a slideshow for each project
-//TO-DO: only create one slideshow, and send the images to it when viewing
-function CreateSlideshow(images) {
-    const slideshow = document.createElement('section');
-    slideshow.className = 'slideshow';
-
-    const container = document.createElement('div');
-    container.classList.add('slide-container');
-
-    const previous = document.createElement('button');
-    previous.classList.add('slideshow-button', 'previous');
-    previous.innerHTML = '&lsaquo;';
-
-    const next = document.createElement('button');
-    next.classList.add('slideshow-button', 'next');
-    next.innerHTML = `&rsaquo;`;
-
-    const slide = document.createElement('img');
-    slide.className = 'slide';
-    slide.src = images[0];
-
-    container.append(previous, slide, next);
-
-    const imagesDiv = document.createElement('div');
-    imagesDiv.className = 'images';
-    
-    const dots = document.createElement('div');
-
-    const closeBtn = document.createElement('button');
-    closeBtn.textContent = 'Close';
-    closeBtn.classList.add('slideshow-close','big-link');
-
-    images.forEach(image => {
-        const img = document.createElement('img');
-        img.src = image;
-        imagesDiv.append(img);
-
-        const dot = document.createElement('p');
-        dot.className = 'dot';
-        dots.append(dot);
-    });
-    
-    dots.className = 'dots';
-    
-    if (dots.children[0]) {
-        dots.children[0].classList.add('active');
-    }
-
-    slideshow.append(closeBtn, container, dots, imagesDiv);
-
-    return slideshow;
+const Project = ({ project }) => {
+  return (
+    <article className="individual-project background-style">
+      <h3>{project.title}</h3>
+      <ProjectTags tags={project.tags} />
+      <ProjectImage filename={project.alias} />
+      <ProjectLinks project={project} />
+      <ProjectDevelopment development={project.development} />
+    </article>
+  )
 }
 
-//Creates the tags i.e. 'HTML' 'API' etc.
-function CreateTags(tags) {
-    const list = document.createElement('ul');
-    list.classList.add('tags');
-    
-    tags.forEach(tag => {
-        const item = document.createElement('li');
-        item.textContent = tag;
-        list.append(item);
-    });
-    
-    return list;
+const ProjectImage = ({ filename }) => {
+  const images = require.context("../assets/images", true);
+  if (!images(`./${filename}.png`)) return;
+  return (
+    <img src={images(`./${filename}.png`) || null} className="project" alt="" />
+  )
 }
 
-//Creates the image links i.e. Live / Github / Slideshow
-function CreateLinks(links) {
-
-    const BASE_GITHUB_URL = 'https://github.com/mckensis/';
-    const BASE_LIVE_URL = 'https://mckensis.github.io/';
-
-    const list = document.createElement('ul');
-    list.className = 'project-links';
-
-    const listLive = document.createElement('li');
-    const live = document.createElement('a');
-    live.classList.add('big-link');
-    live.textContent = 'Live';
-    
-    if (links.live.includes('.fly.dev')) {
-        live.href = `https://${links.live}`;
-    } else {
-        live.href = `${BASE_LIVE_URL}${links.live}`;
-    }
-
-    live.target = '_blank';
-
-    const listGithub = document.createElement('li');
-    const github = document.createElement('a');
-    github.classList.add('big-link');
-    github.textContent = 'GitHub';
-    github.href = `${BASE_GITHUB_URL}${links.github}`;
-    github.target = '_blank';
-    
-    const listScreenshots = document.createElement('li');
-    const screenshots = document.createElement('a');
-    screenshots.classList.add('big-link');
-    screenshots.textContent = 'Screenshots';
-
-    listLive.append(live);
-    listGithub.append(github);
-    listScreenshots.append(screenshots);
-    list.append(listLive, listGithub, listScreenshots);
-
-    listScreenshots.addEventListener('click', viewSlideshow.bind(links.article));
-
-    return list;
+const ProjectDevelopment = ({ development }) => {
+  return (
+    <section className="development">
+      <h4>Development Process</h4>
+      <p>{development}</p>
+    </section>
+  )
 }
 
-//Details section
-function CreateDetailsSection(details) {
-    const section = document.createElement('section');
-    section.classList.add('details');
-
-    const heading = document.createElement('h3');
-    heading.textContent = 'Project Details';
-
-    const list = document.createElement('ul');
-
-    details?.forEach(piece => {
-        const item = document.createElement('li');
-        item.textContent = piece;
-        list.append(item);
-    })
-
-    section.append(heading, list);
-    
-    return section;
+const ProjectTags = ({ tags }) => {
+  return (
+   <ul className="tags">
+    {tags.map(tag => (
+      <li key={tag}>{tag}</li>
+    ))}
+   </ul>
+  )
 }
 
-//Development Process section
-function CreateDevelopmentSection(info) {
-    const section = document.createElement('section');
-    section.classList.add('development');
-    
-    const heading = document.createElement('h3');
-    heading.textContent = 'Development Process';
-    
-    const paragraph = document.createElement('p');
-    paragraph.textContent = info;
-
-    section.append(heading, paragraph);
-    return section;
-}
-
-//General layout for the project
-function CreateProject(project) {
-    const article = document.createElement('article');
-    article.className = 'individual-project';
-
-    //Heading
-    const heading = document.createElement('h2');
-    heading.textContent = project.title;
-    //Links
-    const links = CreateLinks({ live: project.live, github: project.code, article });
-    //Tags
-    const tags = CreateTags(project.tags);
-    //Info
-    // const info = CreateDetailsSection(project.info);
-    //Development
-    const development = CreateDevelopmentSection(project.development);
-    
-    article.append(heading, links, tags, development);
-    
-    //Slideshow if there are images present
-    if (project.images.length > 0) {
-        const slideshow = CreateSlideshow(project.images);
-        article.append(slideshow);
-    }
-    return article;
-}
-
-//The Projects parent section
-function Projects() {
-    const projects = document.createElement('section');
-    projects.className = 'projects';
-
-    const list = GetProjects();
-    let parents = [];
-
-    list.forEach(project => {
-        project.images = GetScreenshots(project.alias, require.context('../images/screenshots/', false, /\.jpg$/));
-        const parent = CreateProject(project);
-        projects.append(parent);
-        
-        if (list.indexOf(project) !== list.length -1) {
-            const hr = document.createElement('hr');
-            projects.append(hr);
-        };
-
-        const slideshow = parent.querySelector('.slideshow')
-        if (slideshow) parents.push(slideshow);
-    });
-
-    Slideshow(parents);
-
-    return projects;
+const ProjectLinks = ({ project }) => {
+  return (
+    <ul className="project-links">
+      <li>
+        <a
+          href={project.live.includes(".fly.dev") ? `https://${project.live}` : `https://mckensis.github.io/${project.live}`}
+          className="big-link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Live
+        </a>
+      </li>
+      <li>
+        <a 
+          href={`https://www.github.com/mckensis/${project.code}`}
+          className="big-link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </a>
+      </li>
+    </ul>
+  )
 }
 
 export default Projects;

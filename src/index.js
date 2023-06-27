@@ -1,4 +1,12 @@
-import LoadPage from './functions/LoadPage';
-import './styles/style.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import "./Nav.css";
+import App from "./App";
 
-window.addEventListener('load', LoadPage);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

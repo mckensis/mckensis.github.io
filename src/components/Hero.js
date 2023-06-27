@@ -1,57 +1,47 @@
-import '../styles/style.css';
-import Portrait from '../images/portrait.jpg';
-import Mail from '../images/icons/email.png';
+import { useEffect, useRef, useState } from "react";
+import Portrait from "../assets/images/portrait.jpg";
+import Mail from "../assets/icons/email.png";
 
-// Swaps the word on hero page
-function swapWord() {
-    let count = 0;
-    const words = ['creative', 'patient', 'personable', 'positive', 'reliable', 'passionate'];
-    setInterval(() => {
-        const element = document.querySelector("#swapping > span")
-        if (!element) return;
-        element.textContent = words[count];
-        count < words.length - 1 ? count = count + 1 : count = 0;
-    }, 1500);
+const Hero = () => {
+
+  const [word, setWord] = useState("passionate");
+  const [loading, setLoading] = useState(false);
+  const swapRef = useRef();
+
+  useEffect(() => {
+    
+    let count = 0; 
+    const words = [
+      'creative',
+      'patient',
+      'personable',
+      'positive',
+      'reliable',
+      'passionate'
+    ];
+
+    const interval = setInterval(() => {
+      setWord(words[count]);
+      count < words.length - 1 ? count = count + 1 : count = 0;
+      setLoading(true);
+      swapRef.current.classList.toggle("loading");
+    }, 1750);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section id="hero">
+      <img src={Portrait} className="portrait" alt="" />
+      <h1>Hi, I'm Aidan</h1>
+      <p id="swapping">I'm a <span ref={swapRef} className={loading ? "swap loading" : "swap"}>{word}</span><span>&#8630;</span> web developer from Glasgow.</p>
+
+      <section className="buttons">
+        <a href="#projects" className="big-link internal-link">View my Projects</a>
+        <a href="#contact" className="big-link hero-contact">Contact Me <img src={Mail} alt="" /></a>
+      </section>
+    </section>
+  )
 }
-
-function Hero() {
-    const hero = document.createElement('section');
-    hero.className = 'hero';
-
-    const portrait = document.createElement('img');
-    portrait.classList.add('portrait');
-    portrait.src = Portrait;
-
-    const header = document.createElement('h1');
-    header.textContent = `Hi, `;
-
-    const span = document.createElement('span');
-    span.textContent = `I'm Aidan`;
-
-    const para = document.createElement('p');
-    para.innerHTML = `A <span>passionate</span> web developer from Glasgow`;
-    para.id = 'swapping';
-
-    const projects = document.createElement('button');
-    projects.textContent = 'View My Projects';
-    projects.type = 'button';
-    projects.classList.add('big-link','internal-link');
-
-    const mailIcon = document.createElement('img');
-    mailIcon.src = Mail;
-
-    const contact = document.createElement('a');
-    contact.textContent = 'Contact Me';
-    contact.classList.add('big-link', 'hero-contact');
-    contact.href = 'mailto:adn.mck@gmail.com?subject=Hi Aidan';
-
-    header.append(span);
-    contact.append(mailIcon);
-    hero.append(portrait, header, para, projects, contact);
-
-    return hero;
-}
-
-swapWord();
 
 export default Hero;
