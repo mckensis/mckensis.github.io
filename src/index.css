@@ -143,6 +143,10 @@ nav ul li {
   color: var(--palette-light);
 }
 
+nav a:not(nav a.home) {
+  padding: 1rem 0;
+}
+
 nav a.home {
   z-index: 2;
   font-family: 'Charm';
@@ -850,6 +854,7 @@ textarea {
     gap: 3rem;
     font-size: 1.1rem;
     margin-left: auto;
+    transition: gap 5s ease;
   }
 
   nav ul li {
