@@ -43,7 +43,7 @@ const Hero = () => {
       opacity: 1,
       marginTop: 0,
       marginBottom: 0,
-      gap: "1rem",
+      gap: "2rem",
     },
     config: {
       mass: 1,

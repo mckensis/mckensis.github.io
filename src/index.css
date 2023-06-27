@@ -355,7 +355,7 @@ button:active {
   justify-content: center;
   align-items: center;
   align-self: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 #hero p {
@@ -372,6 +372,7 @@ button:active {
   flex-wrap: wrap;
   justify-content: center;
   column-gap: 2rem;
+  row-gap: 1rem;
 }
 
 .button-container {
@@ -382,8 +383,7 @@ button:active {
 }
 
 img.portrait {
-  width: 50%;
-  min-height: 300px;
+  width: 50vw;
   max-width: 300px;
   place-self: center;
   padding: 0.25rem;
