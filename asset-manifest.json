@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5c1b7bb3.css",
+    "main.js": "/static/js/main.a1baf807.js",
+    "static/media/to-do-list.png": "/static/media/to-do-list.490b3fde6be8beba2dc3.png",
+    "static/media/character-hunt.png": "/static/media/character-hunt.f2f5d00a5ebf265252fb.png",
+    "static/media/bothy-camp.png": "/static/media/bothy-camp.28c4567eb16f67c01a4e.png",
+    "static/media/shopping-cart.png": "/static/media/shopping-cart.3e37516b549ef1673f9e.png",
+    "static/media/cv-project.png": "/static/media/cv-project.c4a992262c4cf12afc9d.png",
+    "static/media/portrait.jpg": "/static/media/portrait.985aef3481f46615bf74.jpg",
+    "static/media/Charm-Regular.woff": "/static/media/Charm-Regular.7fbb22171576e355c031.woff",
+    "static/media/Charm-Regular.woff2": "/static/media/Charm-Regular.0398d2ab7657682a8626.woff2",
+    "static/media/mulish-italic-webfont.woff": "/static/media/mulish-italic-webfont.d5d89744a824d2e45bc9.woff",
+    "static/media/mulish-extrabold-webfont.woff": "/static/media/mulish-extrabold-webfont.bd5fd02b140e0405b635.woff",
+    "static/media/mulish-semibold-webfont.woff": "/static/media/mulish-semibold-webfont.95f768f197f1d131253a.woff",
+    "static/media/mulish-regular-webfont.woff": "/static/media/mulish-regular-webfont.eb64e3337e0720b71baa.woff",
+    "static/media/mulish-light-webfont.woff": "/static/media/mulish-light-webfont.c6e63901a2ff3a43832d.woff",
+    "static/media/mulish-italic-webfont.woff2": "/static/media/mulish-italic-webfont.3a765d7d20285d7f45e5.woff2",
+    "static/media/mulish-extrabold-webfont.woff2": "/static/media/mulish-extrabold-webfont.6d9e4d79d02b9e64b200.woff2",
+    "static/media/mulish-semibold-webfont.woff2": "/static/media/mulish-semibold-webfont.dace02c2ea434b8be382.woff2",
+    "static/media/mulish-regular-webfont.woff2": "/static/media/mulish-regular-webfont.511319b741ae431f6010.woff2",
+    "static/media/mulish-light-webfont.woff2": "/static/media/mulish-light-webfont.6d612cab0c8d4187e8ed.woff2",
+    "static/media/github-light.png": "/static/media/github-light.1c9111c5ecd6efaa9dfa.png",
+    "static/media/linkedin-light.png": "/static/media/linkedin-light.c4b9188f6e4684cfcc1a.png",
+    "index.html": "/index.html",
+    "main.5c1b7bb3.css.map": "/static/css/main.5c1b7bb3.css.map",
+    "main.a1baf807.js.map": "/static/js/main.a1baf807.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c1b7bb3.css",
+    "static/js/main.a1baf807.js"
+  ]
+}
