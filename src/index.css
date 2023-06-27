@@ -233,16 +233,17 @@ footer {
 
 h1 {
   width: 100%;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: .75rem;
   color: var(--palette-color);
   flex-basis: 100%;
+  flex-wrap: wrap;
 }
 
 h3 {
@@ -351,6 +352,7 @@ button:active {
 }
 
 #hero {
+  z-index: 1;
   min-height: 80vh;
   justify-content: center;
   align-items: center;
@@ -392,6 +394,7 @@ img.portrait {
 }
 
 #swapping {
+  z-index: 1;
   margin-top: 2rem;
   position: relative;
   flex-wrap: wrap;
@@ -400,11 +403,12 @@ img.portrait {
 }
 
 span.swap {
-  z-index: 2;
+  z-index: 1;
   position: absolute;
   font-size: 2.1rem;
   top: -2rem;
   left: 20%;
+  transform: translateX(-50%);
   color: var(--palette-color);
   transform: translateX(-50%) rotate(-5deg) rotateX(0deg);
   transition: transform .25s ease;
@@ -415,11 +419,11 @@ span.swap.loading {
   transition: transform .25s ease;
 }
 
-#swapping > span:nth-of-type(2) {
+#arrow {
   display: inline-block;
-  transform: rotate(130deg) scale(1.1);
+  transform: rotate(120deg) scale(.9) rotateX(180deg);
   color: var(--palette-color);
-  z-index: 0;
+  z-index: 20;
 }
 
 /* About section */

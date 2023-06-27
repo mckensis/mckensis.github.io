@@ -76,10 +76,11 @@ const Hero = () => {
         <span ref={swapRef} className={loading ? "swap loading" : "swap"}>
           {word}
         </span>
-        <span>
-          &#8630;
+        &nbsp;
+        <span id="arrow">
+        &#8617;
         </span>
-        web developer from Glasgow.
+        &nbsp;web developer from Glasgow, Scotland.
       </p>
 
       <animated.section style={ buttonProps } className="buttons">

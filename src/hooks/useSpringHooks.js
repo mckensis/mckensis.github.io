@@ -1,6 +1,8 @@
 import { useSpring } from "@react-spring/web";
 import useIntersectionObserver from "./useIntersectionObserver";
 
+
+
 // For subtitle below each section heading
 export const useSubtitleSpring = (ref) => {
 
@@ -26,6 +28,7 @@ export const useSubtitleSpring = (ref) => {
   });
 }
 
+// h2 headings i.e. About / Projects / Skills / etc.
 export const useHeadingSpring = (ref) => {
   
   const dataRef = useIntersectionObserver(ref, {
@@ -39,7 +42,7 @@ export const useHeadingSpring = (ref) => {
     },
     to: {
       opacity: dataRef?.isIntersecting ? 1 : 0,
-      fontSize: dataRef?.isIntersecting ? "2.5rem" : "1rem",
+      fontSize: dataRef?.isIntersecting ? "2rem" : "1rem",
     },
     delay: 50,
     config: {
