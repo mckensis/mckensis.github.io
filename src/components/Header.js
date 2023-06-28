@@ -38,7 +38,7 @@ const Header = ({ open, setOpen }) => {
   return (
     <header>
       <nav>
-        <a className="home internal-link" href="#hero">am.</a>
+        <a className="home internal-link" href="/">am.</a>
         <Burger open={open} toggleNav={toggleNav} />
         <List open={open} closeNav={closeNav} />
       </nav>

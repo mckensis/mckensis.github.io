@@ -1,14 +1,27 @@
 import { useRef } from "react";
-import { useHeadingSpring, useSubtitleSpring } from "../hooks/useSpringHooks";
 import { animated } from "@react-spring/web";
+import { useSlideUpLargeSpring, useSlideUpSmallSpring } from "../hooks/useSlideUpSpring";
+import { useScaleUpSmallSpring, useScaleUpTinySpring } from "../hooks/useScaleUpSpring";
 
 const Skills = () => {
 
   const headingRef = useRef();
-  const headingSpring = useHeadingSpring(headingRef);
-
   const subtitleRef = useRef();
-  const subtitleSpring = useSubtitleSpring(subtitleRef);
+  const listRef = useRef();
+
+  const headingSpring = useSlideUpLargeSpring(headingRef);
+  const subtitleSpring = useScaleUpSmallSpring(subtitleRef);
+  const listSpring = useSlideUpSmallSpring(listRef);
+  const skills = [
+    "HTML",
+    "React",
+    "CSS",
+    "Firebase",
+    "JavaScript",
+    "Linux",
+    "Git / GitHub",
+    "Node"
+  ];
 
   return (
     <section id="skills">
@@ -16,19 +29,26 @@ const Skills = () => {
       <animated.p className="subtitle" ref={ subtitleRef } style={ subtitleSpring }>The main libraries, frameworks, and tools that I use regularly. I am also keen to learn and utilise additional technologies besides these.</animated.p>
 
       <article>
-        <ul className="skills-list">
-          <li className="skill">HTML</li>
-          <li className="skill">React</li>
-          <li className="skill">CSS</li>
-          <li className="skill">Firebase</li>
-          <li className="skill">JavaScript</li>
-          <li className="skill">Linux</li>
-          <li className="skill">Git / Github</li>
-          <li className="skill">Node</li>
-        </ul>
+        <animated.ul className="skills-list" ref={ listRef } style={ listSpring }>
+          {skills.map(skill => (
+            <SkillItem key={skill} skill={skill} />
+          ))}
+        </animated.ul>
       </article>
       
     </section>
+  )
+}
+
+const SkillItem = ({ skill }) => {
+
+  const skillRef = useRef();
+  const skillSpring = useScaleUpTinySpring(skillRef);
+
+  return (
+    <animated.li key={skill} className="skill" ref={ skillRef } style={ skillSpring }>
+      {skill}
+    </animated.li>
   )
 }
 

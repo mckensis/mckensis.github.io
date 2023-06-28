@@ -1,31 +1,47 @@
 import { useRef } from "react";
 import { animated } from "@react-spring/web";
-import { useSectionSpring, useArticleSpring, useSubtitleSpring, useHeadingSpring } from "../hooks/useSpringHooks";
+import { useSlideUpLargeSpring, useSlideUpTinySpring } from "../hooks/useSlideUpSpring";
+import { useScaleUpSmallSpring } from "../hooks/useScaleUpSpring";
 
 const About = () => {
 
-  const aboutRef = useRef();
-  const aboutSpring = useSectionSpring(aboutRef);
-
   const headingRef = useRef();
-  const headingSpring = useHeadingSpring(headingRef);
-  
-  const articleRef = useRef();
-  const articleSpring = useArticleSpring(articleRef);
- 
   const subtitleRef = useRef();
-  const subtitleSpring = useSubtitleSpring(subtitleRef);
+  const articleRef = useRef();
+  
+  const headingSpring = useSlideUpLargeSpring(headingRef);
+  const subtitleSpring = useScaleUpSmallSpring(subtitleRef);
+  const articleSpring = useSlideUpTinySpring(articleRef);
 
   return (
     <section id="about">
       <animated.h2 ref={ headingRef } style={ headingSpring }>About Me</animated.h2>
       <animated.p className="subtitle" ref={ subtitleRef } style={ subtitleSpring } >A wee bit about me.</animated.p>
         <animated.article className="background-style" ref={ articleRef } style={ articleSpring }>
-          <p>I'm a self-taught developer who has been fully focusing my time and energy on learning web development since the beginning of 2022 when I decided to work towards a career change into software development. I've always been passionate about computers and technology, and this passion and interest has continued to grow as time has passed.</p>
+          
+          <p>
+            <span>I'm a full stack developer who specialises in front-end development.</span> 
+            At the beginning of 2022 I decided to chase after my true passion of working with computers, and began pursuing a career change from hospitality into software development. 
+            I've always been passionate about computers and technology since I was very young, and this sentiment has continued to grow as time has passed. 
+            My dream is to work within a company where I can contribute to their success and grow in an environment surrounded by like-minded people.
+          </p>
+
           <hr />
-          <p>I began my journey into web development via The Odin Project's curriculum. I spent a year creating projects with vanilla JavaScript, Webpack, and Git. I then moved on to learn React, and have been doing so for the past 6 months. I believe that keeping up to date with new technologies is essential in this industry, and learning is not something that should ever be considered complete.</p>
+
+          <p>
+            <span>I self-taught myself with The Odin Project curriculum.</span>
+            I spent a year self-teaching HTML, CSS, JavaScript, and Webpack before moving on to React and Firebase.
+            I also self-taught C, Python, and SQL while completing Harvard's online CS50 curriculum. 
+            I believe that learning is an ongoing process, especially within the software development industry where technology is continuously updating.
+            This is something that excites me, as I love both the process of learning new skills and developing current skills.
+          </p>
+
           <hr />
-          <p>My current goal is to find a role where I can begin my career and continue developing my skillset within a professional environment while doing a job that I am incredibly passionate about.</p>
+          
+          <p>
+            <span>I also like to spend my time doing other things.</span>
+            When I am not building things for the web, I generally spend my time gaming and cooking. I love trying out new recipes as well as perfecting my existing recipes. I also am a massive fan of eating out, and enjoy finding new places in the city to eat at.
+          </p>
         </animated.article>
     </section>
   )

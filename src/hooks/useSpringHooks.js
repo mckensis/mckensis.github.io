@@ -10,16 +10,17 @@ export const useSubtitleSpring = (ref) => {
 
   return useSpring({
     from: {
+      scale: .5,
       opacity: 0,
     },
     to: {
+      scale: dataRef?.isIntersecting ? 1 : .5,
       opacity: dataRef?.isIntersecting ? 1 : 0,
     },
-    delay: 200,
     config: {
       mass: 1,
-      tension: 120,
-      friction: 12,
+      tension: 100,
+      friction: 10,
     }
   });
 }
@@ -96,26 +97,28 @@ export const useArticleSpring = (ref) => {
   });
 }
 
-// For sections i.e. about / projects / skills / etc.
+// For about article
 export const useProjectSpring = (ref) => {
 
   const dataRef = useIntersectionObserver(ref, {
-    freezeOnceVisible: true
+    freezeOnceVisible: true,
+    threshold: .25,
   });
 
   return useSpring({
     from: {
+      marginTop: 50,
       opacity: 0,
     },
-    to: { 
+    to: {
+      marginTop: dataRef?.isIntersecting ? 0 : 50,
       opacity: dataRef?.isIntersecting ? 1 : 0,
     },
     config: {
-      duration: 500, 
-      mass: 1, 
-      tension: 300, 
-      friction: 1000
-    },
+      mass: 1,
+      tension: 50,
+      friction: 10,
+    }
   });
 }
 

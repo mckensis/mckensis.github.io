@@ -4,15 +4,52 @@ import { useNavSpring } from "../hooks/useSpringHooks";
 const List = ({ open, closeNav }) => {
 
   const nav = useNavSpring();
+  const list = [
+    {
+      link: "#about",
+      text: "About"
+    },
+    {
+      link: "#projects",
+      text: "Projects"
+    },
+    {
+      link: "#skills",
+      text: "Skills"
+    },
+    {
+      link: "#contact",
+      text: "Contact"
+    },
+    {
+      link: "https://www.github.com/mckensis",
+      text: "Github"
+    },
+  ]
 
   return (
     <animated.ul style={ nav } className={open ? "nav-list open" : "nav-list"}>
-      <li><a href="#about" className="small-link internal-link" onClick={closeNav}>About</a></li>
-      <li><a href="#projects" className="small-link internal-link" onClick={closeNav}>Projects</a></li>
-      <li><a href="#skills" className="small-link internal-link" onClick={closeNav}>Skills</a></li>
-      <li><a href="#contact" className="small-link internal-link" onClick={closeNav}>Contact</a></li>
-      <li><a href="https://www.github.com/mckensis" className="small-link external-link" target="_blank" rel="noreferrer" onClick={closeNav}>Github</a></li>
+      {list.map(item => (
+        <ListItem key={item.text} item={item} closeNav={closeNav} />
+      ))}
     </animated.ul>
+  )
+}
+
+const ListItem = ({ item, closeNav }) => {
+
+  return (
+    <li key={item.text}>
+      <a
+        href={item.link} 
+        alt="" 
+        className="small-link"
+        onClick={closeNav}
+      >
+        {item.text}
+      </a>
+    </li>
+
   )
 }
 

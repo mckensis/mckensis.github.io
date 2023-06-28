@@ -1,16 +1,18 @@
 import { useRef } from "react";
-import GetProjects from "../functions/GetProjects";
-import { useSubtitleSpring, useHeadingSpring, useArticleSpring } from "../hooks/useSpringHooks";
 import { animated } from "@react-spring/web";
+import GetProjects from "../functions/GetProjects";
+import { useSlideUpLargeSpring, useSlideUpTinySpring } from "../hooks/useSlideUpSpring";
+import { useScaleUpSmallSpring } from "../hooks/useScaleUpSpring";
+
 
 const Projects = () => {
   const projects = GetProjects();
   
-  const subtitleRef = useRef();
-  const subtitleSpring = useSubtitleSpring(subtitleRef);
-
   const headingRef = useRef();
-  const headingSpring = useHeadingSpring(headingRef);
+  const subtitleRef = useRef();
+  
+  const headingSpring = useSlideUpLargeSpring(headingRef);
+  const subtitleSpring = useScaleUpSmallSpring(subtitleRef);
 
   return (
     <section id="projects">
@@ -28,7 +30,7 @@ const Projects = () => {
 const Project = ({ project }) => {
 
   const articleRef = useRef();
-  const articleSpring = useArticleSpring(articleRef);
+  const articleSpring = useSlideUpTinySpring(articleRef);
 
   return (
     <animated.article className="individual-project background-style" ref={ articleRef } style={ articleSpring }>

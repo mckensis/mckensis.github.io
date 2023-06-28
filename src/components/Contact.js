@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import { animated } from "@react-spring/web";
-import emailjs from "@emailjs/browser"
-import { useArticleSpring, useHeadingSpring, useSubtitleSpring } from "../hooks/useSpringHooks";
+import emailjs from "@emailjs/browser";
+import { useSlideUpLargeSpring, useSlideUpSmallSpring } from "../hooks/useSlideUpSpring";
+import { useScaleUpSmallSpring } from "../hooks/useScaleUpSpring";
 
 const Contact = () => {
 
@@ -10,13 +11,12 @@ const Contact = () => {
   const [successful, setSuccessful] = useState(null);
 
   const headingRef = useRef();
-  const headingSpring = useHeadingSpring(headingRef);
-
   const subtitleRef = useRef();
-  const subtitleSpring = useSubtitleSpring(subtitleRef);
-
   const articleRef = useRef();
-  const articleSpring = useArticleSpring(articleRef);
+
+  const headingSpring = useSlideUpLargeSpring(headingRef);
+  const subtitleSpring = useScaleUpSmallSpring(subtitleRef);
+  const articleSpring = useSlideUpSmallSpring(articleRef);
 
   const sendEmail = async (e) => {
     e.preventDefault();
