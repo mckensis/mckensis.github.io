@@ -1,5 +1,5 @@
 import { animated } from "@react-spring/web";
-import { useNavSpring } from "../hooks/useSpringHooks";
+import { useNavSpring } from "../hooks/useNavSpring";
 
 const List = ({ open, closeNav }) => {
 

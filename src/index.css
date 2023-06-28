@@ -369,7 +369,7 @@ button:active {
   min-height: 75px;
 }
 
-.buttons {
+.links {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

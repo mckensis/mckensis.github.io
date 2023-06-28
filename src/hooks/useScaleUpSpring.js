@@ -51,10 +51,11 @@ export const useScaleUpSmallSpring = (ref) => {
 }
 
 // For subtitle below each section heading
-export const useScaleUpTinySpring = (ref) => {
+export const useScaleUpTinySpring = (ref, threshold) => {
 
   const dataRef = useIntersectionObserver(ref, {
-    freezeOnceVisible: true
+    freezeOnceVisible: true,
+    threshold: threshold || .5,
   });
 
   return useSpring({

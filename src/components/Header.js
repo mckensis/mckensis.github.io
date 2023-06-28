@@ -28,11 +28,16 @@ const Header = ({ open, setOpen }) => {
   useEffect(() => {
     if (!open) return;
 
+    document.addEventListener("touchstart", (e) => {
+      if (e.target.classList.contains("overlay")) closeNav();
+      return;
+    });
+
     // Listen for a click event outside the nav if it's open
     document.addEventListener("click", (e) => {
       if (e.target.classList.contains("overlay")) closeNav();
       return;
-    })
+    });
   }, [open, closeNav]);
 
   return (

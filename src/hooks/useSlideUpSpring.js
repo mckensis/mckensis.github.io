@@ -52,24 +52,24 @@ export const useSlideUpSmallSpring = (ref) => {
 }
 
 // Component slides up with low tension and friction
-export const useSlideUpTinySpring = (ref) => {
+export const useSlideUpTinySpring = (ref, threshold) => {
 
   const dataRef = useIntersectionObserver(ref, {
     freezeOnceVisible: true,
-    threshold: .25,
+    threshold: threshold || .25,
   });
 
   return useSpring({
     from: {
       position: "relative",
       top: 50,
-      left: 5,
+      scale: .9,
       opacity: 0,
     },
     to: {
       position: "relative",
+      scale: dataRef?.isIntersecting ? 1 : .9,
       top: dataRef?.isIntersecting ? 0 : 50,
-      left: dataRef?.isIntersecting ? 0 : 5,
       opacity: dataRef?.isIntersecting ? 1 : 0,
     },
     config: {

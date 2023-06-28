@@ -11,7 +11,7 @@ const About = () => {
   
   const headingSpring = useSlideUpLargeSpring(headingRef);
   const subtitleSpring = useScaleUpSmallSpring(subtitleRef);
-  const articleSpring = useSlideUpTinySpring(articleRef);
+  const articleSpring = useSlideUpTinySpring(articleRef, 0.05);
 
   return (
     <section id="about">

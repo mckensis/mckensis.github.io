@@ -43,7 +43,7 @@ const Skills = () => {
 const SkillItem = ({ skill }) => {
 
   const skillRef = useRef();
-  const skillSpring = useScaleUpTinySpring(skillRef);
+  const skillSpring = useScaleUpTinySpring(skillRef, 1);
 
   return (
     <animated.li key={skill} className="skill" ref={ skillRef } style={ skillSpring }>
