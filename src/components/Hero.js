@@ -49,12 +49,13 @@ const Hero = () => {
       <h1>Hi, I'm Aidan</h1>
 
       <p id="swapping">
-        I'm a
-        <span ref={swapRef} className={loading ? "swap loading" : "swap"}>
-          {word}
+        I'm a&nbsp;
+        <span className="arrow">
+          <img id="arrow" src={Arrow} alt="" />
+          <span ref={swapRef} className={loading ? "swap loading" : "swap"}>
+            {word}
+          </span>
         </span>
-        &nbsp;
-        <img id="arrow" src={Arrow} alt="" />
         &nbsp;web developer from Glasgow, Scotland.
       </p>
 

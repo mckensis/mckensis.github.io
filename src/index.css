@@ -399,9 +399,12 @@ img.portrait {
   z-index: -1;
   margin-top: 2rem;
   position: relative;
-  flex-wrap: wrap;
-  align-items: center;
   flex-basis: 100%;
+  text-align: center;
+}
+
+span.arrow {
+  position: relative;
 }
 
 span.swap {
@@ -409,7 +412,7 @@ span.swap {
   position: absolute;
   font-size: 2.1rem;
   top: -2.25rem;
-  left: 4.5rem;
+  left: 1rem;
   color: var(--palette-color);
   transform: rotate(-5deg) rotateX(0deg);
   transition: transform .25s ease;
@@ -424,6 +427,10 @@ span.swap.loading {
 #arrow {
   display: inline-block;
   transform: scale(.8);
+  rotate: 20deg;
+  position: relative;
+  top: 5px;
+  align-self: center
 }
 
 /* About section */
